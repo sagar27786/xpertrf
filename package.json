@@ -1,0 +1,30 @@
+{
+  "name": "XpertRF-website",
+  "version": "1.0.0",
+  "description": "XpertRF Corporation - High-performance semiconductor, IoT systems and Cloud connectivity",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.html",
+    "format": "prettier --write \"src/**/*.{js,css,html}\"",
+    "clean": "rm -rf dist",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "XpertRF",
+    "semiconductor",
+    "IoT",
+    "cloud-connectivity"
+  ],
+  "author": "XpertRF Corporation",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {}
+}
