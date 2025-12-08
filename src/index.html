@@ -50,95 +50,6 @@
       <!-- Start plausible -->
         <script defer data-domain="semtech.com" src="https://plausible.io/js/script.js"></script>
       <!-- End plausible -->
-<!-- OneTrust Consent Management Scripts (Essential) -->
-<script type="text/javascript" src="https://cdn.cookielaw.org/consent/355ce0b5-a538-4f50-929a-028727442fb7/OtAutoBlock.js"></script>
-<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" 
-        data-document-language="true" 
-        type="text/javascript" 
-        charset="UTF-8" 
-        data-domain-script="355ce0b5-a538-4f50-929a-028727442fb7">
-</script>
-
-<!-- Consent Default Set-Up -->
-<script nonce="ef5b8d32bd52a69ec768fd1506c3f8a1">
-  // Define dataLayer and the gtag function
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  // List of U.S. states and countries with opt-out privacy laws
-  const optOutRegions = {
-    "US": ["CA", "VA", "CO", "CT", "UT", "TX", "OR", "FL", "MT", "DE", "IA", "TN", "IN"], // U.S. Opt-Out States
-    "MX": "opt-out", // Mexico (opt-out)
-    "CA": "opt-out", // Canada (except Quebec is opt-in)
-    "CA-QC": "opt-in", // Québec (strict like GDPR)
-    "GDPR": "opt-in" // GDPR regions require explicit opt-in
-  };
-
-  // Function to wait for OneTrust to load before retrieving geolocation
-  function waitForOneTrust(callback) {
-    if (typeof OneTrust !== "undefined" && typeof OneTrust.getGeolocationData === "function" && typeof OneTrust.GetDomainData === "function") {callback();} else {
-      setTimeout(() => waitForOneTrust(callback), 500);
-    }
-  }
-
-  // Function to set default consent based on geolocation data
-  function setDefaultConsent() {
-    OneTrust.getGeolocationData(function(geoInfo) {
-      if (!geoInfo || !geoInfo.country) {
-        console.warn("OneTrust geolocation data not available");
-        return;
-      }
-
-      console.log("User location detected:", geoInfo); // Debugging
-
-      if (geoInfo.country === "US" && optOutRegions["US"].includes(geoInfo.state)) {
-        gtag('consent', 'default', { ad_storage: "granted", analytics_storage: "granted" });
-      } else if (geoInfo.country === "CA" && geoInfo.state === "QC") {
-        gtag('consent', 'default', { ad_storage: "denied", analytics_storage: "denied" });
-      } else if (geoInfo.country === "CA") {
-        gtag('consent', 'default', { ad_storage: "granted", analytics_storage: "granted" });
-      } else if (geoInfo.country === "MX") {
-        gtag('consent', 'default', { ad_storage: "granted", analytics_storage: "granted" });
-      } else if (geoInfo.region === "Europe") {
-        gtag('consent', 'default', { ad_storage: "denied", analytics_storage: "denied" });
-      } else {
-        gtag('consent', 'default', { ad_storage: "granted", analytics_storage: "granted" });
-      }
-    });
-  }
-
-  // Ensure the function runs after OneTrust initializes
-  waitForOneTrust(setDefaultConsent);
-</script>
-
-<script nonce="ef5b8d32bd52a69ec768fd1506c3f8a1">
-  function OptanonWrapper() {
-    waitForOneTrust(() => {
-      OneTrust.OnConsentChanged(function() {
-        let domainData = OneTrust.GetDomainData();
-        if (!domainData || !domainData.Groups) {
-          console.warn("OneTrust domain data not available");
-          return;
-        }
-
-        let consentGroups = domainData.Groups; // Extract consent categories
-
-        gtag('consent', 'update', {
-          ad_storage: consentGroups["C0002"]?.IsSelected ? "granted" : "denied",
-          analytics_storage: consentGroups["C0001"]?.IsSelected ? "granted" : "denied",
-          functionality_storage: consentGroups["C0003"]?.IsSelected ? "granted" : "denied",
-          personalization_storage: consentGroups["C0004"]?.IsSelected ? "granted" : "denied",
-          security_storage: consentGroups["C0005"]?.IsSelected ? "granted" : "denied",
-          ad_user_data: consentGroups["C0006"]?.IsSelected ? "granted" : "denied",
-          ad_personalization: consentGroups["C0007"]?.IsSelected ? "granted" : "denied"
-        });
-
-        console.log("Consent updated based on OneTrust data:", consentGroups);
-      });
-    });
-  }
-</script>
-<!-- OneTrust Cookies Consent Notice End -->
 
 <!-- Google Tag Manager -->
 <script id="gtmScript" nonce="ef5b8d32bd52a69ec768fd1506c3f8a1">
@@ -183,6 +94,8 @@
     <link rel="stylesheet"  href="https://www.semtech.com/?css=common/_styles.v.1713841118" >
     <link rel="stylesheet" href="https://www.semtech.com/?css=common/_main.v.1757453800" />
     
+    <!-- Custom styles for logo and navbar size reduction -->
+    <link rel="stylesheet" href="styles/custom.css">
     
     <link rel="preload" fetchpriority="high" as="image" href="uploads/uploads/home/circuit-boards-background.jpg" type="image/jpeg">
     <link rel="preload" fetchpriority="high" as="image" href="uploads/uploads/home/featured-product-img.png" type="image/png">
@@ -343,7 +256,7 @@
 				<div class="col-12 col-lg-9 d-none d-lg-block position-static">
 					<div class="nav-main justify-content-end d-flex align-items-center" id="main-nav">
 						<ul class="nav-main-depth1 justify-content-end d-flex align-items-center" role="menubar">
-							<li role="presentation"><a role="menuitem" href="https://xpertrf.in" class="">Home</a>
+							<li role="presentation"><a role="menuitem" href="index.html" class="">Home</a>
 								<div class="nav-depth2-container">
 									<ul class="nav-main-depth2 list-unstyled" role="menu">
 										<li role="presentation"><a href="https://xpertrf.in">RFID Solutions<span
@@ -434,7 +347,7 @@
 												</div>
 											</div>
 										</li>
-									<li role="presentation" ><a role="menuitem" href="https://xpertrf.in">Brady Products</a>
+									<li role="presentation" ><a role="menuitem" href="index.html">Brady Products</a>
 										<div class="nav-depth2-inner-container">
 											<div class="container p-0">
 												<div class="row">
@@ -469,7 +382,7 @@
 												</div>
 											</div>
 										</li>
-									<li role="presentation" ><a role="menuitem" href="https://xpertrf.in">Services</a>
+									<li role="presentation" ><a role="menuitem" href="index.html">Services</a>
 										<div class="nav-depth2-inner-container">
 											<div class="container">
 												<div class="row">
@@ -517,7 +430,7 @@
 									</ul>
 								</div>
 							</li>
-							<li role="presentation"><a role="menuitem" href="/products" class="">Products</a>
+							<li role="presentation"><a role="menuitem" href="index.html" class="">Products</a>
 								<div class="nav-depth2-container">
 									<ul class="nav-main-depth2 list-unstyled" role="menu">
 										<li role="presentation"><a role="menuitem" href="/products">Products Overview</a>
@@ -1712,15 +1625,13 @@
 					</div>
 					</li>
 
-					</ul>
-				</div>
-				</li>
-				<li role="presentation" class="nav-sub-container-fluid"><a role="menuitem" href="/quality"
-						class="">Lab Infra</a>
-					<div class="nav-depth2-container">
-						<ul class="nav-main-depth2 list-unstyled" role="menu">
-
-							<li role="presentation">
+				</ul>
+			</div>
+			</li>
+			<li role="presentation" class="nav-sub-container-fluid"><a role="menuitem" href="index.html"
+					class="">Lab Infra</a>
+				<div class="nav-depth2-container">
+					<ul class="nav-main-depth2 list-unstyled" role="menu">							<li role="presentation">
 								<div class="nav-depth2-inner-container">
 									<div class="container">
 										<div class="row">
@@ -1764,15 +1675,13 @@
 								</div>
 							</li>
 
-						</ul>
-					</div>
-				</li>
-				<li role="presentation" class="nav-sub-container-fluid"><a role="menuitem" href="/company"
-						class="">Trainings</a>
-					<div class="nav-depth2-container">
-						<ul class="nav-main-depth2 list-unstyled" role="menu">
-
-							<li role="presentation">
+				</ul>
+			</div>
+		</li>
+		<li role="presentation" class="nav-sub-container-fluid"><a role="menuitem" href="index.html"
+				class="">Trainings</a>
+			<div class="nav-depth2-container">
+				<ul class="nav-main-depth2 list-unstyled" role="menu">							<li role="presentation">
 								<div class="nav-depth2-inner-container">
 									<div class="container">
 										<div class="row">
@@ -1812,7 +1721,7 @@
 						</ul>
 					</div>
 				</li>
-				<li role="presentation" class="contact"><a role="menuitem" href="/company/contact/support"><button type="button" class="btn button-primary">Contact Us</button></a></li>
+				<li role="presentation" class="contact"><a role="menuitem" href="mailto:contact@xpertrf.in" class="btn button-primary">Contact Us</a></li>
 				</ul>
 			</div>
 		</div>
@@ -1942,7 +1851,7 @@
     <div class="container-fluid banner-nav-products">
 	<div class="banner-nav" style="margin-top:0; padding-top:0;">
         <div class="banner-nav-item">
-			<a href="/products/wireless-rf" class="sweep-up-link">
+			<a href="rfid-products.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">RFID/IIOT products</span>
 				</div>
@@ -1950,7 +1859,7 @@
         </div>
     
         <div class="banner-nav-item">
-			<a href="/products/circuit-protection" class="sweep-up-link">
+			<a href="pcb-design.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">PCB Design</span>
 				</div>
@@ -1958,7 +1867,7 @@
         </div>
     
         <div class="banner-nav-item">
-			<a href="/products/signal-integrity" class="sweep-up-link">
+			<a href="si-pi-em-simulations.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">SI/PI/EM Simulations</span>
 				</div>
@@ -1966,7 +1875,7 @@
         </div>
     
         <div class="banner-nav-item">
-			<a href="/products/broadcast-video" class="sweep-up-link">
+			<a href="silicon-services.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">End to End Silicon Services</span>
 				</div>
@@ -1974,7 +1883,7 @@
         </div>
     
         <div class="banner-nav-item">
-			<a href="/products/power-management" class="sweep-up-link">
+			<a href="brady-products.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">Brady products</span>
 				</div>
@@ -1982,7 +1891,7 @@
         </div>
     
         <div class="banner-nav-item">
-			<a href="/products/perse-smart-sensing" class="sweep-up-link">
+			<a href="professional-av.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">Brady products</span>
 				</div>
@@ -1997,7 +1906,7 @@
 			</a>
         </div>
         <div class="banner-nav-item">
-			<a href="https://www.sierrawireless.com/router-solutions/" target="_blank" class="sweep-up-link">
+			<a href="trainings.html" class="sweep-up-link">
 				<div class="sweep-up">
 					<span class="sweep-up-title">Trainings</span>
 				</div>
@@ -2308,133 +2217,6 @@
 
 
 
-  <section class="homepage-categories">
-    <div class="container">
-      <div class="row homepage-categories-featured lora-wireless-rf">
-        <div class="col-md-6 col-lg-4 offset-lg-1 left">
-          <span class="homepage-categories-featured-headline">RFID Solutions & Services</span>
-          <span class="homepage-categories-featured-text">End-to-end RFID systems delivering tags, readers, antennas, software and integration services to simplify real-time tracking, inventory management and industrial automation.</span>
-          <a href="https://www.sierrawireless.com/" class="text-white" target="_blank"><button type="button" class="btn button-outline mt-2 mb-0 mb-md-2">Learn More <i class="fas fa-external-link-alt"></i></button></a>
-        </div>
-        <div class="col-md-6 col-lg-5 offset-lg-1 right">
-          <!-- <img src="/uploads/home/product_lora.jpg" alt="LoRa&reg;" class="lazyload img-fluid homepage-categories-section-card-image"> -->
-          <picture id="" class="img-fluid homepage-categories-section-card-image">
-            <img data-src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_0Fm4u8q.13.58_PM_VZ7PTjH.jpeg" alt="RFID Solutions" width="" class="lazyload img-fluid homepage-categories-section-card-image">
-        </picture>
-        </div>
-      </div>
-      <div class="row homepage-categories-sections">
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-0">
-          <a href="/products/wireless-rf">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">LoRa&reg;<br> Software Platform</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-              <img data-src="https://xpertrf.in/media/images/images_5_2ZBxkKp.jpg" alt="RFID Products" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">LoRa&reg;<br> Software Platform</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Crafting responsive, user-friendly websites that not only look stunning but also offer seamless functionality. From e-commerce platforms to corporate websites, we bring your vision to life on the web..</span>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-0">
-          <a href="/products/signal-integrity">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">Signal<br>Integrity</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-              <img data-src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_wbsl9QV.14.06_PM.jpeg" alt="Safety & Identification" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">Signal<br>Integrity</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Implementing advanced RFID solutions to streamline your operations, improve inventory management, and enhance asset tracking. Our RFID technology ensures accurate and efficient data collection and management. </span>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-1">
-          <a href="/products/circuit-protection">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">Circuit<br>Protection</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-            <img data-src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_MI40a2S.14.28_PM_8YoZ7ZA.jpeg" alt="Floor Safety Products" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">Circuit<br>Protection</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Developing robust, high-performance Android applications tailored to meet your specific requirements. Our apps are designed to enhance user experience and drive engagement on the Android platform.</span>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-2">
-          <a href="/products/professional-av">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">Professional<br>AV</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-            <img data-src="https://xpertrf.in/media/images/download_pL3OJR8.jfif" alt="Industrial Printers" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">Professional<br>AV</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Creating powerful desktop applications that are intuitive, reliable, and scalable. Whether you need custom software for business operations or specialized tools, our solutions are designed to boost productivity and efficiency..</span>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-3">
-          <a href="/products/perse-smart-sensing">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">PerSe&reg; Smart<br>Sensing</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-            <img data-src="https://xpertrf.in/media/images/images_5_2ZBxkKp.jpg" alt="RFID Automation" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">PerSe&reg; Smart<br>Sensing</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Supplying high-quality electronic equipment and components to meet your technical needs. From essential components to sophisticated devices, we provide reliable products that ensure optimal performance in your projects..</span>
-            </div>
-          </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="homepage-categories-section-card hp-cats-card-4">
-          <a href="products/broadcast-video">
-            <div class="homepage-categories-section-title-container">
-              <span class="homepage-categories-section-title">Broadcast<br>Video</span>
-            </div>
-            <div class="homepage-categories-section-card-overlay"></div>
-            <img data-src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_0Fm4u8q.13.58_PM_VZ7PTjH.jpeg" alt="Customized Labels" class="lazyload img-fluid homepage-categories-section-card-image">
-            <div class="homepage-categories-section-card-details">
-              <div class="homepage-categories-section-overlay-title-container">
-                <span class="homepage-categories-section-overlay-title">Broadcast<br>Video</span>
-              </div>
-              <span class="homepage-categories-section-overlay-details">Push the boundaries of broadcast possibility—enhance performance, reach, power, and signal integrity. Get to market faster and minimize design risk with advanced solutions that lead the industry.</span>
-            </div>
-          </a>
-          </div>
-        </div>
-      </div>
-      <div class="homepage-categories-button">
-        <div class="btn-smtc-centered-wrapper">
-          <a href="/products"><button type="button" class="btn button-primary">All Categories</button></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   
 
   <section class="homepage-2up news-and-insights">
@@ -2562,7 +2344,7 @@
             <div class="row">
               <div class="homepage-section-banner-footer-button">
                 <div class="btn-smtc-centered-wrapper">
-                  <a href="/company/contact"><button type="button" class="btn button-primary">Contact Us</button></a>
+                  <a href="mailto:contact@xpertrf.in" class="btn button-primary">Contact Us</a>
                 </div>
               </div>
             </div>
@@ -2616,7 +2398,7 @@
   <li><a href="https://semtech.my.site.com/DP" target="_blank" rel="noopener">My XPertRf</a></li>
 	<li><a href="//blog.semtech.com/" target="_blank">Blogs</a></li>
 	<li><a href="https://www.semtech.com/careers">Careers</a></li>
-	<li><a href="https://www.semtech.com/company/contact">Contact Us</a></li>
+	<li><a href="mailto:contact@xpertrf.in">Contact Us</a></li>
 </ul>
 </div>
 				<div class="col-12 offset-md-1 col-md-3"><p class="footer-col-3">XPertRf Corporation is a high-performance semiconductor, IoT systems and Cloud connectivity service provider dedicated to delivering high quality technology solutions that enable a smarter, more connected and sustainable planet.</p><ul class="footer-social text-end">
@@ -2787,7 +2569,10 @@
       
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2507363.js"></script>
     
-    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
     
   </body>
 </html>

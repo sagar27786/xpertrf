@@ -1,0 +1,300 @@
+/* Custom styles for XpertRF - Reduced logo and navbar size */
+
+/* Reduce logo size */
+.header-logo {
+    max-width: 150px !important;
+}
+
+.header-logo .smtc-logo {
+    max-width: 150px !important;
+    height: auto !important;
+}
+
+/* Reduce navbar height and padding */
+.nav-top {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Reduce navbar font size */
+.nav-main-depth1 > li > a {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0.8rem !important;
+}
+
+/* Reduce header height */
+header.header-autohide {
+    min-height: 60px !important;
+}
+
+/* Compact navigation items */
+.nav-main-depth1 {
+    gap: 0.5rem;
+}
+
+/* Reduce dropdown menu font size */
+.nav-main-depth2 a,
+.nav-main-depth3 a {
+    font-size: 0.85rem !important;
+}
+
+/* Reduce mobile toggle button size */
+#sb-toggle {
+    width: 35px !important;
+    height: 35px !important;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 991px) {
+    .header-logo {
+        max-width: 120px !important;
+    }
+    
+    .header-logo .smtc-logo {
+        max-width: 120px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-logo {
+        max-width: 100px !important;
+    }
+    
+    .header-logo .smtc-logo {
+        max-width: 100px !important;
+    }
+}
+
+/* Reduce spacing in navigation container */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Compact button sizing */
+.nav-top .btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+}
+
+/* Reduce height of nav depth containers */
+.nav-depth2-container {
+    margin-top: 0.5rem !important;
+}
+
+/* Override green colors with custom color #2596be */
+.text-light-blue-green {
+    color: #2596be !important;
+}
+
+.btn-light-green {
+    background-color: #2596be !important;
+    border-color: #2596be !important;
+    color: #fff !important;
+}
+
+.btn-light-green:hover {
+    background-color: #1e7a9e !important;
+    border-color: #1e7a9e !important;
+}
+
+/* Banner navigation hover effects */
+.banner-nav-item:hover,
+.banner-nav-item a.sweep-up-link:hover,
+.banner-nav-item:hover .sweep-up,
+.banner-nav-item:hover .sweep-up-title {
+    background-color: #2596be !important;
+    color: #fff !important;
+}
+
+.banner-nav-item:hover a.sweep-up-link {
+    color: #fff !important;
+}
+
+/* Learn More button hover effect in announcement section */
+.announcement-link:hover {
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+
+/* Announcement section default background color - entire section */
+.under-banner-news {
+    background-color: #2596be !important;
+}
+
+.announcement-summary {
+    background-color: #2596be !important;
+}
+
+.announcement-summary p,
+.announcement-summary .text-white,
+.announcement-summary .announcement-link {
+    color: #000 !important;
+}
+
+/* Main banner Learn More button color */
+.homepage-featured-front-text-block .btn.button-primary {
+    background-color: #2596be !important;
+    border-color: #2596be !important;
+    color: #fff !important;
+}
+
+.homepage-featured-front-text-block .btn.button-primary:hover {
+    background-color: #1e7a9e !important;
+    border-color: #1e7a9e !important;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+    }
+}
+
+/* Disable dropdown on hover - only show on click */
+.nav-main-depth1 > li:hover .nav-depth2-container {
+    display: none !important;
+}
+
+.nav-main-depth1 > li.active .nav-depth2-container {
+    display: block !important;
+}
+
+/* Hide all dropdowns - make navigation links direct */
+.nav-main-depth1 > li .nav-depth2-container {
+    display: none !important;
+}
+
+/* Hide dropdown arrows */
+.nav-main-depth1 > li > a::after {
+    display: none !important;
+}
+
+/* Add bottom border on hover for navigation items */
+.nav-main-depth1 > li > a {
+    position: relative;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-main-depth1 > li > a:hover {
+    border-bottom-color: #2596be !important;
+}
+
+/* Featured Products section text color */
+.homepage-featured-products-name a,
+.homepage-featured-products-name a.text-teal-blue {
+    color: #2596be !important;
+}
+
+.homepage-featured-products-haedline {
+    color: #2596be !important;
+}
+
+/* Section headings color */
+.homepage-markets h2,
+.homepage-callout h2,
+.homepage-2up h2 {
+    color: #2596be !important;
+}
+
+/* Tab headlines color */
+.homepage-markets-headline {
+    color: #2596be !important;
+}
+
+/* Search Tools section background color */
+.homepage-parametric-search {
+    background-color: #2596be !important;
+}
+
+.homepage-parametric-search .homepage-parametric-search-wrapper {
+    background-color: #2596be !important;
+}
+
+.homepage-parametric-search .parametric-search-title,
+.homepage-parametric-search .parametric-search-description {
+    color: #fff !important;
+}
+
+.homepage-parametric-search .btn.button-outline {
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.homepage-parametric-search .btn.button-outline:hover {
+    background-color: #fff !important;
+    color: #2596be !important;
+}
+
+/* Corporate Sustainability section heading color */
+.homepage-corporate-responsibility h2 {
+    color: #2596be !important;
+}
+
+/* See All Products button color */
+.homepage-featured-products .btn.button-primary {
+    background-color: #2596be !important;
+    border-color: #2596be !important;
+}
+
+.homepage-featured-products .btn.button-primary:hover {
+    background-color: #1e7a9e !important;
+    border-color: #1e7a9e !important;
+}
+
+/* Join Our Team section colors */
+.homepage-join-our-team h2 {
+    color: #2596be !important;
+}
+
+.homepage-join-our-team-headline {
+    color: #2596be !important;
+}
+
+.homepage-join-our-team .btn.button-primary {
+    background-color: #2596be !important;
+    border-color: #2596be !important;
+}
+
+.homepage-join-our-team .btn.button-primary:hover {
+    background-color: #1e7a9e !important;
+    border-color: #1e7a9e !important;
+}

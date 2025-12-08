@@ -284,7 +284,7 @@ p {
 }
 
 .product-icon.bg-info {
-  background: linear-gradient(135deg, #17a2b8 0%, #3dbcc9 100%);
+  background: linear-gradient(135deg, #c3eeef 0%, #c3eeef 100%);
 }
 
 .product-card:hover .product-icon {
