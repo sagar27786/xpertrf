@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>End to End Silicon Services | XpertRF</title>
-    <link rel="stylesheet" href="https://www.semtech.com/assets/css/titillium-fonts.css">
-    <link rel="stylesheet" href="https://www.semtech.com/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.semtech.com/?css=common/_styles.v.1713841118">
-    <link rel="stylesheet" href="https://www.semtech.com/?css=common/_main.v.1757453800" />
+    <link rel="stylesheet" href="assets/css/titillium-fonts.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/brands.min.css">
+    <link rel="stylesheet" href="assets/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+
+
     <link rel="stylesheet" href="src/styles/custom.css">
 </head>
 <body>
@@ -150,8 +155,627 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- Floating Contact Buttons -->
+    <!-- <a href="tel:+919876543210" class="phone-float" aria-label="Call Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+    
+    <a href="mailto:contact@xpertrf.in" class="gmail-float" aria-label="Email Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End to End Silicon Services | XpertRF</title>
+    <link rel="stylesheet" href="assets/css/titillium-fonts.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/brands.min.css">
+    <link rel="stylesheet" href="assets/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Professional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-blue: #1565c0;
+            --accent-blue: #42a5f5;
+            --dark-gray: #263238;
+            --light-gray: #f5f7fa;
+            --tech-gradient: linear-gradient(135deg, #0d47a1 0%, #42a5f5 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: #f9fafc;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        /* Header Section */
+        .service-header {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: -2rem;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(13, 71, 161, 0.15);
+        }
+        
+        .service-header h1 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        /* Card Styles */
+        .service-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(13, 71, 161, 0.15);
+        }
+        
+        .card-body {
+            padding: 1.75rem;
+        }
+        
+        .card-title {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-blue);
+            display: inline-block;
+        }
+        
+        /* Technology Nodes Section */
+        .nodes-container {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .node-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .node-badge {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+            transition: all 0.2s ease;
+        }
+        
+        .node-badge:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* EDA Tools Section */
+        .eda-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .eda-vendor {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .eda-vendor:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .eda-vendor h5 {
+            margin-bottom: 1rem;
+            color: var(--secondary-blue);
+        }
+        
+        .eda-vendor ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .eda-vendor li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        /* Floating Buttons Enhancement */
+        .phone-float, .gmail-float, .whatsapp-float {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .phone-float {
+            background: linear-gradient(135deg, #34a853, #2e7d32);
+            bottom: 140px;
+            right: 25px;
+        }
+        
+        .gmail-float {
+            background: linear-gradient(135deg, #ea4335, #b71c1c);
+            bottom: 210px;
+            right: 25px;
+        }
+        
+        .whatsapp-float {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            bottom: 70px;
+            right: 25px;
+        }
+        
+        .phone-float:hover, .gmail-float:hover, .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .phone-float svg, .gmail-float svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Hero Image */
+        .hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Content Styling */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .service-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-list li:before {
+            content: "▸";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .service-header {
+                padding: 3rem 0 1.5rem;
+                border-radius: 0 0 15px 15px;
+            }
+            
+            .node-list {
+                justify-content: center;
+            }
+            
+            .eda-vendor {
+                margin-bottom: 1.5rem;
+            }
+            
+            .phone-float, .gmail-float, .whatsapp-float {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .gmail-float {
+                bottom: 180px;
+            }
+            
+            .phone-float {
+                bottom: 120px;
+            }
+        }
+        
+        /* Tech-themed decorative elements */
+        .circuit-pattern {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            opacity: 0.03;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230d47a1' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .circuit-pattern-1 {
+            top: 10%;
+            right: 5%;
+        }
+        
+        .circuit-pattern-2 {
+            bottom: 10%;
+            left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tech-themed background patterns -->
+    <div class="circuit-pattern circuit-pattern-1"></div>
+    <div class="circuit-pattern circuit-pattern-2"></div>
+    
+    <!-- Header Section -->
+    <div class="service-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+                    <h1 class="mb-3">End to End Silicon Services</h1>
+                    <p class="lead" style="color: rgba(255,255,255,0.9); max-width: 700px;">Complete silicon design solutions from concept to production, delivering high-quality ASIC/SoC designs with industry-leading expertise.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://www.semtech.com/assets/bootstrap/js/popper.min.js"></script>
+    <div class="container">
+        <div class="row content-section">
+            <div class="col-lg-6 mb-4">
+                <div class="hero-image">
+                    <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_MI40a2S.14.28_PM_8YoZ7ZA.jpeg" alt="Silicon Services" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="mb-4">Complete Silicon Design Solutions</h2>
+                <p class="mb-4">XpertRF provides comprehensive end-to-end silicon design services, from concept to production, including ASIC/SoC design, verification, and manufacturing support. Our team of experts ensures your silicon solutions are delivered with precision and reliability.</p>
+                
+                <h3 class="mt-4 mb-3">Service Portfolio</h3>
+                <ul class="service-list">
+                    <li><strong>RTL Design:</strong> Verilog/VHDL based digital design with industry best practices</li>
+                    <li><strong>Verification:</strong> Advanced UVM-based functional verification and validation</li>
+                    <li><strong>Physical Design:</strong> Full flow from synthesis to GDSII with timing closure</li>
+                    <li><strong>Analog/Mixed-Signal:</strong> Custom analog IP design and integration</li>
+                    <li><strong>DFT:</strong> Comprehensive design for testability and ATPG solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Design Services</h5>
+                        <ul class="service-list">
+                            <li>RTL Design and Coding</li>
+                            <li>IP Integration</li>
+                            <li>Clock Domain Crossing (CDC)</li>
+                            <li>Low Power Design</li>
+                            <li>Lint and Synthesis</li>
+                            <li>STA (Static Timing Analysis)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Verification Services</h5>
+                        <ul class="service-list">
+                            <li>UVM Testbench Development</li>
+                            <li>Functional Coverage</li>
+                            <li>Assertion-Based Verification</li>
+                            <li>Formal Verification</li>
+                            <li>Emulation & FPGA Prototyping</li>
+                            <li>Silicon Validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Physical Design Services</h5>
+                        <ul class="service-list">
+                            <li>Floorplanning</li>
+                            <li>Place and Route</li>
+                            <li>Clock Tree Synthesis</li>
+                            <li>Power Planning</li>
+                            <li>Timing Closure</li>
+                            <li>Physical Verification (DRC/LVS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Analog/Mixed-Signal Design</h5>
+                        <ul class="service-list">
+                            <li>Custom Analog IP Design</li>
+                            <li>PLL/DLL Design</li>
+                            <li>ADC/DAC Design</li>
+                            <li>SerDes Design</li>
+                            <li>Power Management ICs</li>
+                            <li>Layout and Parasitic Extraction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Nodes Section -->
+        <div class="nodes-container">
+            <h3>Technology Nodes Expertise</h3>
+            <p class="mb-4">We support a wide range of technology nodes, from legacy to advanced FinFET processes:</p>
+            
+            <div class="mb-4">
+                <h5 class="mb-3">Advanced Nodes</h5>
+                <div class="node-list">
+                    <span class="node-badge">7nm FinFET</span>
+                    <span class="node-badge">10nm FinFET</span>
+                    <span class="node-badge">14nm FinFET</span>
+                    <span class="node-badge">16nm FinFET</span>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h5 class="mb-3">Mature Nodes</h5>
+                <div class="node-list">
+                    <span class="node-badge">28nm</span>
+                    <span class="node-badge">40nm</span>
+                    <span class="node-badge">65nm</span>
+                    <span class="node-badge">90nm</span>
+                </div>
+            </div>
+            
+            <div>
+                <h5 class="mb-3">Legacy Nodes</h5>
+                <div class="node-list">
+                    <span class="node-badge">130nm</span>
+                    <span class="node-badge">180nm</span>
+                    <span class="node-badge">250nm</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDA Tools Section -->
+        <div class="eda-section">
+            <h3 class="mb-4">EDA Tools Expertise</h3>
+            <p class="mb-4">Our engineers are proficient in industry-leading EDA tools across all major vendors:</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="eda-vendor">
+                        <h5>Cadence</h5>
+                        <ul>
+                            <li>Virtuoso</li>
+                            <li>Genus</li>
+                            <li>Innovus</li>
+                            <li>Xcelium</li>
+                            <li>Spectre</li>
+                            <li>Tempus</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="eda-vendor">
+                        <h5>Synopsys</h5>
+                        <ul>
+                            <li>Design Compiler</li>
+                            <li>IC Compiler II</li>
+                            <li>VCS</li>
+                            <li>PrimeTime</li>
+                            <li>Formality</li>
+                            <li>StarRC</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="eda-vendor">
+                        <h5>Mentor Graphics</h5>
+                        <ul>
+                            <li>Questa</li>
+                            <li>Calibre</li>
+                            <li>Tessent</li>
+                            <li>Catapult</li>
+                            <li>ModelSim</li>
+                            <li>Questa Formal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Buttons -->
+    <a href="tel:+919876543210" class="phone-float" aria-label="Call Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+    
+    <a href="mailto:contact@xpertrf.in" class="gmail-float" aria-label="Email Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Add subtle animation to cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4 class="footer-heading">About XpertRF</h4>
+            <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">Products</a></li>
+              <li><a href="index.html">Services</a></li>
+              <li><a href="index.html">Brady Products</a></li>
+              <li><a href="index.html">Trainings</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4 class="footer-heading">Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="https://xpertrf.in">RFID Solutions</a></li>
+              <li><a href="https://xpertrf.in">Web Development</a></li>
+              <li><a href="https://xpertrf.in">Android Development</a></li>
+              <li><a href="https://xpertrf.in">Antenna Design</a></li>
+              <li><a href="https://xpertrf.in">Technical Support</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4 class="footer-heading">Contact Info</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bangalore, Karnataka, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom">
+              <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="#">Terms & Conditions</a>
+                <span class="separator">|</span>
+                <a href="#">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 </body>
 </html>

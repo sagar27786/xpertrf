@@ -3,190 +3,754 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional AV Solutions | XpertRF</title>
-    <link rel="stylesheet" href="https://www.semtech.com/assets/css/titillium-fonts.css">
-    <link rel="stylesheet" href="https://www.semtech.com/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.semtech.com/?css=common/_styles.v.1713841118">
-    <link rel="stylesheet" href="https://www.semtech.com/?css=common/_main.v.1757453800" />
-    <link rel="stylesheet" href="src/styles/custom.css">
+    <title>Professional AV Solutions | XpertRF - Audio Visual Systems</title>
+    <link rel="stylesheet" href="assets/css/titillium-fonts.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/brands.min.css">
+    <link rel="stylesheet" href="assets/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Professional Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --av-primary: #2196f3;
+            --av-secondary: #9c27b0;
+            --av-accent: #00bcd4;
+            --av-dark: #1a237e;
+            --av-light: #e3f2fd;
+            --av-gradient: linear-gradient(135deg, #2196f3 0%, #9c27b0 100%);
+            --av-gradient-alt: linear-gradient(135deg, #00bcd4 0%, #673ab7 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+            color: var(--av-dark);
+        }
+        
+        /* Hero Section */
+        .av-hero {
+            background: var(--av-gradient), url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+            padding: 6rem 0 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .av-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        .av-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            transform: translateX(-8px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .about-av {
+            margin-bottom: 5rem;
+        }
+        
+        .av-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(33, 150, 243, 0.15);
+            transition: transform 0.5s ease;
+            border: 5px solid white;
+        }
+        
+        .av-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .av-services {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+        }
+        
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--av-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* Feature Cards */
+        .av-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--av-primary);
+        }
+        
+        .av-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(33, 150, 243, 0.2);
+        }
+        
+        .card-video {
+            background: var(--av-gradient-alt);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .card-audio {
+            background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .card-control {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .av-card .card-body {
+            padding: 2rem;
+        }
+        
+        .av-card h5 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .av-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .av-card li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .av-card li:before {
+            content: "▶";
+            color: var(--av-accent);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+        
+        /* Space Solutions */
+        .space-section {
+            background: var(--av-light);
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+        
+        .space-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--av-secondary);
+        }
+        
+        .space-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .space-card h5 {
+            color: var(--av-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .space-card h5 i {
+            margin-right: 10px;
+            color: var(--av-secondary);
+        }
+        
+        /* Technology Partners */
+        .partners-section {
+            padding: 3rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 3rem 0;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .partner-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .partner-item:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--av-primary);
+        }
+        
+        .partner-item .partner-name {
+            font-weight: 600;
+            color: var(--av-dark);
+            margin-top: 1rem;
+        }
+        
+        /* Floating Contact Buttons */
+        .phone-float, .gmail-float, .whatsapp-float {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .phone-float {
+            background: linear-gradient(135deg, #34a853, #2e7d32);
+            bottom: 140px;
+            right: 25px;
+        }
+        
+        .gmail-float {
+            background: linear-gradient(135deg, #ea4335, #b71c1c);
+            bottom: 210px;
+            right: 25px;
+        }
+        
+        .whatsapp-float {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            bottom: 70px;
+            right: 25px;
+        }
+        
+        .phone-float:hover, .gmail-float:hover, .whatsapp-float:hover {
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .phone-float svg, .gmail-float svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .av-hero {
+                padding: 4rem 0 3rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .av-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .partner-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .space-section {
+                padding: 3rem 1rem;
+            }
+            
+            .phone-float, .gmail-float, .whatsapp-float {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .gmail-float {
+                bottom: 180px;
+            }
+            
+            .phone-float {
+                bottom: 120px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .float-in {
+            animation: floatIn 0.6s ease forwards;
+        }
+        
+        /* Decorative Elements */
+        .audio-wave {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35,6.36,119.13-6.29,75-23.58,136.6-86.67,173.8-137.3C953.98,14,1026.69-10.76,1100,10.58V0Z' opacity='.5' fill='%23ffffff'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5 pt-5">
-        <div class="row">
-            <div class="col-12">
-                <a href="index.html" class="btn btn-link mb-4">&larr; Back to Home</a>
-                <h1 class="mb-4">Professional AV Solutions</h1>
-                
-                <div class="row mb-5">
-                    <div class="col-md-6">
-                        <img src="https://xpertrf.in/media/images/images_5_2ZBxkKp.jpg" alt="Professional AV" class="img-fluid mb-4">
-                    </div>
-                    <div class="col-md-6">
-                        <h2>Advanced Audio-Visual Systems</h2>
-                        <p>XpertRF provides comprehensive professional AV solutions for corporate, educational, and entertainment environments with cutting-edge technology and seamless integration.</p>
-                        
-                        <h3 class="mt-4">Our AV Services:</h3>
-                        <ul>
-                            <li><strong>System Design:</strong> Custom AV system architecture and planning</li>
-                            <li><strong>Installation:</strong> Professional installation and commissioning</li>
-                            <li><strong>Integration:</strong> Seamless integration with existing infrastructure</li>
-                            <li><strong>Control Systems:</strong> Intelligent room control and automation</li>
-                            <li><strong>Maintenance:</strong> Ongoing support and system maintenance</li>
-                        </ul>
-                    </div>
+    <!-- Hero Section -->
+    <div class="av-hero">
+        <div class="container">
+            <a href="index.html" class="back-btn">&larr; Back to Home</a>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1>Professional AV Solutions</h1>
+                    <p class="lead" style="font-size: 1.25rem; color: rgba(255,255,255,0.9);">Advanced Audio-Visual Systems for Corporate, Educational, and Entertainment Environments</p>
                 </div>
+            </div>
+        </div>
+        <div class="audio-wave"></div>
+    </div>
 
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">Video Distribution</h5>
-                                <p class="card-text">Advanced video distribution and management systems:</p>
-                                <ul class="small">
-                                    <li>4K/8K video distribution</li>
-                                    <li>Video wall controllers</li>
-                                    <li>Matrix switchers</li>
-                                    <li>HDMI over IP</li>
-                                    <li>Wireless presentation systems</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">Audio Systems</h5>
-                                <p class="card-text">Professional audio solutions for any environment:</p>
-                                <ul class="small">
-                                    <li>Conference room audio</li>
-                                    <li>Sound reinforcement</li>
-                                    <li>Digital signal processing</li>
-                                    <li>Microphone systems</li>
-                                    <li>Audio mixing consoles</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 class="card-title">Control & Automation</h5>
-                                <p class="card-text">Intelligent room control and automation:</p>
-                                <ul class="small">
-                                    <li>Touch panel control</li>
-                                    <li>Room scheduling systems</li>
-                                    <li>Lighting control integration</li>
-                                    <li>Climate control integration</li>
-                                    <li>Mobile device control</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container">
+        <!-- About AV Solutions -->
+        <div class="row about-av align-items-center float-in">
+            <div class="col-lg-6 mb-4">
+                <div class="av-image">
+                    <img src="https://xpertrf.in/media/images/images_5_2ZBxkKp.jpg" alt="Professional AV" class="img-fluid">
                 </div>
-
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <h3>Solutions by Space</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5>Corporate Meeting Rooms</h5>
-                                        <ul>
-                                            <li>Video conferencing systems</li>
-                                            <li>Interactive displays</li>
-                                            <li>Wireless content sharing</li>
-                                            <li>Room booking systems</li>
-                                        </ul>
-                                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="av-services">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h2>Advanced Audio-Visual Systems</h2>
+                    <p class="mb-4">XpertRF provides comprehensive professional AV solutions with cutting-edge technology and seamless integration for modern environments.</p>
+                    
+                    <h4 class="mb-3">Our AV Services</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-drafting-compass text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">System Design</h6>
+                                    <p class="small mb-0">Custom AV system architecture and planning</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5>Auditoriums & Theaters</h5>
-                                        <ul>
-                                            <li>Large-format projection</li>
-                                            <li>Professional sound systems</li>
-                                            <li>Stage lighting control</li>
-                                            <li>Recording & streaming</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5>Education Spaces</h5>
-                                        <ul>
-                                            <li>Interactive whiteboards</li>
-                                            <li>Lecture capture systems</li>
-                                            <li>Distance learning solutions</li>
-                                            <li>Campus-wide distribution</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5>Control Rooms</h5>
-                                        <ul>
-                                            <li>Video wall displays</li>
-                                            <li>Multi-source monitoring</li>
-                                            <li>KVM switching</li>
-                                            <li>24/7 operation systems</li>
-                                        </ul>
-                                    </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-tools text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Installation</h6>
+                                    <p class="small mb-0">Professional installation and commissioning</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <h3>Technology Partners</h3>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <ul class="list-unstyled">
-                                    <li>• Crestron</li>
-                                    <li>• Extron</li>
-                                    <li>• Biamp</li>
-                                    <li>• QSC</li>
-                                </ul>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-link text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Integration</h6>
+                                    <p class="small mb-0">Seamless integration with existing infrastructure</p>
+                                </div>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <ul class="list-unstyled">
-                                    <li>• Shure</li>
-                                    <li>• Sennheiser</li>
-                                    <li>• Barco</li>
-                                    <li>• Christie</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <ul class="list-unstyled">
-                                    <li>• Poly</li>
-                                    <li>• Cisco</li>
-                                    <li>• Logitech</li>
-                                    <li>• Yamaha</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <ul class="list-unstyled">
-                                    <li>• Samsung</li>
-                                    <li>• LG</li>
-                                    <li>• Sony</li>
-                                    <li>• Panasonic</li>
-                                </ul>
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-cogs text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Control Systems</h6>
+                                    <p class="small mb-0">Intelligent room control and automation</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Feature Cards -->
+        <div class="row mb-5 float-in">
+            <div class="col-md-4 mb-4">
+                <div class="av-card">
+                    <div class="card-video">
+                        <i class="fas fa-desktop fa-3x mb-3"></i>
+                        <h4>Video Distribution</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Advanced video distribution and management systems for any environment</p>
+                        <ul>
+                            <li>4K/8K video distribution</li>
+                            <li>Video wall controllers</li>
+                            <li>Matrix switchers</li>
+                            <li>HDMI over IP</li>
+                            <li>Wireless presentation systems</li>
+                            <li>Content management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="av-card">
+                    <div class="card-audio">
+                        <i class="fas fa-volume-up fa-3x mb-3"></i>
+                        <h4>Audio Systems</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Professional audio solutions with crystal-clear sound quality</p>
+                        <ul>
+                            <li>Conference room audio</li>
+                            <li>Sound reinforcement</li>
+                            <li>Digital signal processing</li>
+                            <li>Microphone systems</li>
+                            <li>Audio mixing consoles</li>
+                            <li>Surround sound systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="av-card">
+                    <div class="card-control">
+                        <i class="fas fa-sliders-h fa-3x mb-3"></i>
+                        <h4>Control & Automation</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Intelligent room control and automation for seamless operation</p>
+                        <ul>
+                            <li>Touch panel control</li>
+                            <li>Room scheduling systems</li>
+                            <li>Lighting control integration</li>
+                            <li>Climate control integration</li>
+                            <li>Mobile device control</li>
+                            <li>Voice control integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Space Solutions -->
+        <div class="space-section float-in">
+            <div class="container">
+                <h3 class="text-center mb-5">Solutions by Space</h3>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="space-card">
+                            <h5><i class="fas fa-building"></i> Corporate Meeting Rooms</h5>
+                            <ul>
+                                <li>Video conferencing systems</li>
+                                <li>Interactive displays & whiteboards</li>
+                                <li>Wireless content sharing</li>
+                                <li>Room booking systems</li>
+                                <li>Acoustic treatment</li>
+                                <li>Professional lighting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="space-card">
+                            <h5><i class="fas fa-theater-masks"></i> Auditoriums & Theaters</h5>
+                            <ul>
+                                <li>Large-format projection</li>
+                                <li>Professional sound systems</li>
+                                <li>Stage lighting control</li>
+                                <li>Recording & streaming</li>
+                                <li>Stage management</li>
+                                <li>Live production</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="space-card">
+                            <h5><i class="fas fa-graduation-cap"></i> Education Spaces</h5>
+                            <ul>
+                                <li>Interactive whiteboards</li>
+                                <li>Lecture capture systems</li>
+                                <li>Distance learning solutions</li>
+                                <li>Campus-wide distribution</li>
+                                <li>Student response systems</li>
+                                <li>Digital signage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="space-card">
+                            <h5><i class="fas fa-desktop"></i> Control Rooms</h5>
+                            <ul>
+                                <li>Video wall displays</li>
+                                <li>Multi-source monitoring</li>
+                                <li>KVM switching systems</li>
+                                <li>24/7 operation systems</li>
+                                <li>Redundant systems</li>
+                                <li>Monitoring software</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Partners -->
+        <div class="partners-section float-in">
+            <h3 class="text-center mb-4">Technology Partners</h3>
+            <p class="text-center text-muted mb-5">We partner with industry-leading manufacturers to deliver the best AV solutions</p>
+            
+            <div class="partner-grid">
+                <div class="partner-item">
+                    <i class="fas fa-tv fa-2x text-primary"></i>
+                    <div class="partner-name">Crestron</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-broadcast-tower fa-2x text-primary"></i>
+                    <div class="partner-name">Extron</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-microphone-alt fa-2x text-primary"></i>
+                    <div class="partner-name">Biamp</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-music fa-2x text-primary"></i>
+                    <div class="partner-name">QSC</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-headphones fa-2x text-primary"></i>
+                    <div class="partner-name">Shure</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-podcast fa-2x text-primary"></i>
+                    <div class="partner-name">Sennheiser</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-projector fa-2x text-primary"></i>
+                    <div class="partner-name">Barco</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-video fa-2x text-primary"></i>
+                    <div class="partner-name">Christie</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-video-conference fa-2x text-primary"></i>
+                    <div class="partner-name">Poly</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-network-wired fa-2x text-primary"></i>
+                    <div class="partner-name">Cisco</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-mouse fa-2x text-primary"></i>
+                    <div class="partner-name">Logitech</div>
+                </div>
+                <div class="partner-item">
+                    <i class="fas fa-sliders-h fa-2x text-primary"></i>
+                    <div class="partner-name">Yamaha</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://www.semtech.com/assets/bootstrap/js/popper.min.js"></script>
+    <!-- Floating Contact Buttons -->
+    <a href="tel:+919876543210" class="phone-float" aria-label="Call Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+    
+    <a href="mailto:contact@xpertrf.in" class="gmail-float" aria-label="Email Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatElements = document.querySelectorAll('.float-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            floatElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+            
+            // Add hover effect to partner items
+            const partnerItems = document.querySelectorAll('.partner-item');
+            partnerItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4 class="footer-heading">About XpertRF</h4>
+            <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html">Products</a></li>
+              <li><a href="index.html">Services</a></li>
+              <li><a href="index.html">Brady Products</a></li>
+              <li><a href="index.html">Trainings</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4 class="footer-heading">Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="https://xpertrf.in">RFID Solutions</a></li>
+              <li><a href="https://xpertrf.in">Web Development</a></li>
+              <li><a href="https://xpertrf.in">Android Development</a></li>
+              <li><a href="https://xpertrf.in">Antenna Design</a></li>
+              <li><a href="https://xpertrf.in">Technical Support</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h4 class="footer-heading">Contact Info</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bangalore, Karnataka, India</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom">
+              <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="#">Terms & Conditions</a>
+                <span class="separator">|</span>
+                <a href="#">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 </body>
 </html>
