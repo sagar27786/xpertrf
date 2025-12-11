@@ -134,6 +134,10 @@ header.header-autohide {
     color: #fff !important;
 }
 
+.banner-nav-item:hover i {
+    color: #000 !important;
+}
+
 /* Learn More button hover effect in announcement section */
 .announcement-link:hover {
     color: #fff !important;
@@ -143,16 +147,19 @@ header.header-autohide {
 /* Announcement section default background color - entire section */
 .under-banner-news {
     background-color: #2596be !important;
+    padding: 10px 0 !important;
+    margin-top: 0 !important;
 }
 
 .announcement-summary {
     background-color: #2596be !important;
+    margin-bottom: 0 !important;
 }
 
 .announcement-summary p,
 .announcement-summary .text-white,
 .announcement-summary .announcement-link {
-    color: #000 !important;
+    color: #fff !important;
 }
 
 /* Main banner Learn More button color */

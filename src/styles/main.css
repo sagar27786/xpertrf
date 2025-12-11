@@ -4,7 +4,7 @@
   --primary-dark: #004d99;
   --primary-light: #3399ff;
   --secondary-color: #6c757d;
-  --success-color: #28a745;
+  --success-color: #2596be;
   --danger-color: #dc3545;
   --warning-color: #ffc107;
   --info-color: #17a2b8;
@@ -276,7 +276,7 @@ p {
 }
 
 .product-icon.bg-success {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background: linear-gradient(135deg, #2596be 0%, #2596be 100%);
 }
 
 .product-icon.bg-warning {

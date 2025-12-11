@@ -96,7 +96,7 @@
     <link rel="stylesheet" href="https://www.semtech.com/?css=common/_main.v.1757453800" />
     
     <!-- Custom styles for logo and navbar size reduction -->
-    <link rel="stylesheet" href="src/styles/custom.css">
+    <link rel="stylesheet" href="./src/styles/custom.css">
     
     <link rel="preload" fetchpriority="high" as="image" href="uploads/uploads/home/circuit-boards-background.jpg" type="image/jpeg">
     <link rel="preload" fetchpriority="high" as="image" href="uploads/uploads/home/featured-product-img.png" type="image/png">
@@ -1753,30 +1753,52 @@
 
 <main class="main " role="main">
   <section class="homepage-section-banner" style="min-height: 600px; position: relative; overflow: hidden; background-color: #000;">
-    <video id="hero-video" autoplay muted loop playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+    <video id="hero-video" autoplay muted playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
       <source src="/assets/videos/Generate_Tech_Hero_Video_Concept.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
     <script>
-      // Ensure video plays infinitely on page load
+      // Array of videos to play in sequence
+      const videoPlaylist = [
+        '/assets/videos/Generate_Tech_Hero_Video_Concept.mp4',
+        '/assets/videos/Phased_Array_Antenna_Video_Generation.mp4',
+        '/assets/videos/Ultra_Realistic_RF_Antenna_Video_Generation.mp4'
+      ];
+      let currentVideoIndex = 0;
+
       document.addEventListener('DOMContentLoaded', function() {
         const video = document.getElementById('hero-video');
         if (video) {
-          console.log('Video element found, attempting to play...');
-          
-          // Force video to load and play
-          video.load();
+          console.log('Video element found, setting up playlist...');
           
           // Set volume to 0 to ensure muted
           video.volume = 0;
           
-          // Attempt to play
+          // Function to play next video in playlist
+          function playNextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
+            video.src = videoPlaylist[currentVideoIndex];
+            video.load();
+            video.play().then(() => {
+              console.log('Playing video:', videoPlaylist[currentVideoIndex]);
+            }).catch(error => {
+              console.error('Error playing video:', error);
+            });
+          }
+
+          // When current video ends, play next video
+          video.addEventListener('ended', function() {
+            console.log('Video ended, playing next...');
+            playNextVideo();
+          });
+
+          // Attempt to play first video
           const playPromise = video.play();
           
           if (playPromise !== undefined) {
             playPromise.then(function() {
-              console.log('Video is playing successfully');
+              console.log('First video is playing successfully');
             }).catch(function(error) {
               console.error('Video autoplay failed:', error);
               // Try to play on any user interaction
@@ -1788,13 +1810,6 @@
               }, { once: true });
             });
           }
-
-          // Ensure video loops infinitely
-          video.addEventListener('ended', function() {
-            console.log('Video ended, restarting...');
-            video.currentTime = 0;
-            video.play();
-          });
 
           // Handle video load errors
           video.addEventListener('error', function(e) {
@@ -1854,6 +1869,7 @@
         <div class="banner-nav-item">
 			<a href="rfid-products.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-broadcast-tower" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">RFID/IIOT products</span>
 				</div>
 			</a>
@@ -1862,6 +1878,7 @@
         <div class="banner-nav-item">
 			<a href="pcb-design.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-microchip" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">PCB Design</span>
 				</div>
 			</a>
@@ -1870,6 +1887,7 @@
         <div class="banner-nav-item">
 			<a href="si-pi-em-simulations.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-wave-square" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">SI/PI/EM Simulations</span>
 				</div>
 			</a>
@@ -1878,6 +1896,7 @@
         <div class="banner-nav-item">
 			<a href="silicon-services.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-memory" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">End to End Silicon Services</span>
 				</div>
 			</a>
@@ -1886,6 +1905,7 @@
         <div class="banner-nav-item">
 			<a href="brady-products.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-tags" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">Brady products</span>
 				</div>
 			</a>
@@ -1894,6 +1914,7 @@
         <div class="banner-nav-item">
 			<a href="professional-av.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-video" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">Professional AV</span>
 				</div>
 			</a>
@@ -1902,6 +1923,7 @@
         <div class="banner-nav-item">
 			<a href="trainings.html" class="sweep-up-link">
 				<div class="sweep-up">
+					<i class="fas fa-graduation-cap" style="font-size: 2.5rem; margin-bottom: 10px; display: block; color: #2596be;"></i>
 					<span class="sweep-up-title">Trainings</span>
 				</div>
 			</a>
@@ -1911,31 +1933,13 @@
     </div>
   </section>
       
-    
-    
-     
-    <section class="container-fluid under-banner-news container-single-row">
+    <section class="container-fluid under-banner-news container-single-row" style="margin-top: 0; padding-top: 0;">
     <div class="container">
-          <div class="row announcement-summary  d-flex align-items-center mb-0 mb-lg-6" style="border-radius: 6px; margin-left: 0; margin-right: 0; margin-bottom: 0;">
-            <div class="col-12"><p class="text-white  text-center mb-0"><b>Welcome to XpertRf, your one stop
-
-
-
-
-
-
-
-
-
-
-              
+          <div class="row announcement-summary  d-flex align-items-center mb-0" style="border-radius: 6px; margin-left: 0; margin-right: 0; margin-bottom: 0;">
+            <div class="col-12"><p class="text-white text-center mb-0" style="padding: 10px 0;"><b>Welcome to XpertRf, your one stop</b>
               <a href="https://www.semtech.com/company/events" class="text-white announcement-link" target="_blank">Learn More</a>
               &nbsp; &rarr;
-
-              
             </p></div>
-            
-       
           </div>
        </div>
     </section>
