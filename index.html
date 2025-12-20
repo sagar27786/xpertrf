@@ -373,8 +373,8 @@
 
     <div class="row">
       <div class="col-12">
-        <div class="map-container" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(38, 150, 190, 0.15); border: 2px solid #e6f7fb;">
-          <div id="simple-india-map" style="width:100%;height:600px;position:relative;"></div>
+        <div class="map-container" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(38, 150, 190, 0.15); border: 2px solid #2596be;">
+          <div id="simple-india-map" style="width:100%;height:600px;position:relative; background:#2596be;"></div>
           
           <!-- Map Controls -->
           <div class="map-controls" style="position: absolute; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;">
@@ -395,7 +395,7 @@
 
 
     <!-- Vision & Mission: Unique Modern Section -->
-    <section class="vision-mission-unique" style="background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); padding: 70px 0 50px 0;">
+    <section class="vision-mission-unique" style="background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); padding: 70px 0 50px 0; margin-top: 60px;">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -461,6 +461,10 @@
 
 <!-- Custom Styles -->
 <style>
+  /* Custom map background color for India map */
+  #simple-india-map {
+    background: #2596be !important;
+  }
   /* Map Marker Animations */
   @keyframes pulse-green {
     0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
@@ -508,7 +512,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize Map
   const map = L.map('simple-india-map', {
-    center: [22.5937, 78.9629],
+    center: [22.5937, 78.9629], // Central India
     zoom: 5,
     zoomControl: false,
     scrollWheelZoom: true,
@@ -593,11 +597,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   ];
 
-  // Create custom icons
-  const createCustomIcon = (isActive) => {
-    const color = isActive ? '#28a745' : '#ffc107';
-    const pulseClass = isActive ? 'pulse-green' : 'pulse-yellow';
-    
+  // Create custom icons (all #2596be)
+  const createCustomIcon = () => {
+    const color = '#2596be';
     const iconHtml = `
       <div style="
         position: relative;
@@ -610,12 +612,10 @@ document.addEventListener('DOMContentLoaded', function() {
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: ${pulseClass} 2s infinite;
       ">
         <i class="fas fa-map-marker-alt" style="color: white; font-size: 18px;"></i>
       </div>
     `;
-    
     return L.divIcon({
       html: iconHtml,
       className: 'custom-marker',
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add markers to map
   cities.forEach(city => {
     const marker = L.marker(city.coords, {
-      icon: createCustomIcon(city.active)
+      icon: createCustomIcon()
     }).addTo(map);
 
     // Create popup content
@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div style="
             width: 50px;
             height: 50px;
-            background: ${city.active ? '#28a745' : '#ffc107'};
+            background: #2596be;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -648,15 +648,13 @@ document.addEventListener('DOMContentLoaded', function() {
             <i class="${city.icon}" style="color: white; font-size: 1.5rem;"></i>
           </div>
           <div>
-            <h3 style="margin: 0; color: #0a3d62; font-weight: 700;">${city.name}</h3>
-            <span style="color: ${city.active ? '#28a745' : '#ffc107'}; font-weight: 600; font-size: 0.9rem;">
+            <h3 style="margin: 0; color: #2596be; font-weight: 700;">${city.name}</h3>
+            <span style="color: #2596be; font-weight: 600; font-size: 0.9rem;">
               ${city.active ? '✓ Active Service Location' : '⚡ Coming Soon'}
             </span>
           </div>
         </div>
-        
         <p style="color: #666; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5;">${city.description}</p>
-        
         <div style="background: #e6f7fb; padding: 12px; border-radius: 8px; margin-bottom: 15px;">
           <h4 style="margin: 0 0 10px 0; color: #2596be; font-size: 1rem;">Services Offered:</h4>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
@@ -672,7 +670,6 @@ document.addEventListener('DOMContentLoaded', function() {
             ).join('')}
           </div>
         </div>
-        
         ${city.active ? `
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
             <div style="text-align: center; background: #2596be; color: white; padding: 8px; border-radius: 6px;">
@@ -710,10 +707,8 @@ document.addEventListener('DOMContentLoaded', function() {
     map.setView([22.5937, 78.9629], 5);
   });
 
-  // Initial view - focus on Bangalore
-  setTimeout(() => {
-    map.setView([12.9716, 77.5946], 8);
-  }, 500);
+  // Initial view - set to central India (no auto-zoom to Bangalore)
+  map.setView([22.5937, 78.9629], 5);
 });
 </script>
 
