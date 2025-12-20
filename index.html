@@ -104,9 +104,7 @@
 				<div class="col-12 col-lg-9 d-none d-lg-block position-static">
 					<div class="nav-main justify-content-end d-flex align-items-center" id="main-nav">
 						<ul class="nav-main-depth1 justify-content-end d-flex align-items-center" role="menubar">
-							<li role="presentation"><a role="menuitem" href="index.html" class="">Home</a>
-							
-							</li>
+              <li role="presentation"><a role="menuitem" href="index.html" class="">Home</a></li>
 							 <li role="presentation"><a role="menuitem" href="index.html" class="">Products</a>
 							
 							</li> 
@@ -378,15 +376,8 @@
           
           <!-- Map Controls -->
           <div class="map-controls" style="position: absolute; top: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;">
-            <button class="map-btn zoom-in" style="background: white; border: none; width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <i class="fas fa-plus" style="color: #2596be;"></i>
-            </button>
-            <button class="map-btn zoom-out" style="background: white; border: none; width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <i class="fas fa-minus" style="color: #2596be;"></i>
-            </button>
-            <button class="map-btn reset-view" style="background: white; border: none; width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <i class="fas fa-home" style="color: #2596be;"></i>
-            </button>
+            <!-- Zoom in button removed -->
+              <!-- All map control buttons removed -->
           </div>
           
         </div>
@@ -696,15 +687,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Map Controls
   document.querySelector('.zoom-in').addEventListener('click', () => {
-    map.zoomIn();
+    // map.zoomIn();
   });
 
-  document.querySelector('.zoom-out').addEventListener('click', () => {
-    map.zoomOut();
-  });
+  // document.querySelector('.zoom-out').addEventListener('click', () => {
+  //   map.zoomOut();
+  // });
 
   document.querySelector('.reset-view').addEventListener('click', () => {
-    map.setView([22.5937, 78.9629], 5);
+    // map.setView([22.5937, 78.9629], 5);
   });
 
   // Initial view - set to central India (no auto-zoom to Bangalore)
