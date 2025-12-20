@@ -7,176 +7,235 @@
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-900 font-sans">
-		<!-- RFID Product Gallery Section -->
-		<section class="py-16 px-4 bg-white">
-			<div class="max-w-6xl mx-auto">
-				<h2 class="text-3xl font-bold text-center text-blue-800 mb-8">RFID Product Gallery</h2>
-				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-					<div class="bg-blue-50 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-4">
-						<img src="/assets/img/rfid/rfid%20-1.jpeg" alt="RFID Product 1" class="rounded-lg mb-4 object-cover h-40 w-full" loading="lazy">
-						<div class="text-blue-900 font-semibold text-center">RFID Product 1</div>
-					</div>
-					<div class="bg-blue-50 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-4">
-						<img src="/assets/img/rfid/rfid-2.jpeg" alt="RFID Product 2" class="rounded-lg mb-4 object-cover h-40 w-full" loading="lazy">
-						<div class="text-blue-900 font-semibold text-center">RFID Product 2</div>
-					</div>
-					<div class="bg-blue-50 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-4">
-						<img src="/assets/img/rfid/rfid-3.jpeg" alt="RFID Product 3" class="rounded-lg mb-4 object-cover h-40 w-full" loading="lazy">
-						<div class="text-blue-900 font-semibold text-center">RFID Product 3</div>
-					</div>
-					<div class="bg-blue-50 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-4">
-						<img src="/assets/img/rfid/rfid-4.jpeg" alt="RFID Product 4" class="rounded-lg mb-4 object-cover h-40 w-full" loading="lazy">
-						<div class="text-blue-900 font-semibold text-center">RFID Product 4</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	<!-- 1. Hero Section -->
-	<section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-16 px-4">
-		<div class="max-w-5xl mx-auto flex flex-col items-center text-center">
-			<h1 class="text-4xl md:text-5xl font-bold mb-4">Transform Your Operations with RFID Solutions</h1>
-			<p class="text-lg md:text-xl mb-8 opacity-90">Real-time visibility, automation, and efficiency for logistics, healthcare, retail, and warehouses.</p>
-			<div class="flex flex-col sm:flex-row gap-4">
-				<a href="#cta" class="bg-white text-blue-800 font-semibold px-8 py-3 rounded-full shadow hover:bg-blue-50 transition">Request a Demo</a>
-				<a href="#" class="bg-blue-800 text-white font-semibold px-8 py-3 rounded-full border border-white/20 hover:bg-blue-700 transition">Download Brochure</a>
-			</div>
-		</div>
-	</section>
+	<!-- RFID System Overview Section -->
+	<section class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
+  <!-- Decorative Blur -->
+  <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
 
-	<!-- 2. What is RFID? -->
-	<section class="py-12 px-4 bg-white">
-		<div class="max-w-3xl mx-auto text-center">
-			<h2 class="text-2xl font-bold mb-3 text-blue-800">What is RFID?</h2>
-			<p class="text-lg text-gray-700">RFID (Radio Frequency Identification) uses wireless tags and readers to identify, track, and manage assets automatically—no line of sight needed. It streamlines inventory, reduces errors, and enables real-time data.</p>
-		</div>
-	</section>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-blue-900 mb-4 tracking-tight">
+        Intelligent RFID Ecosystem
+      </h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        A next-generation RFID architecture that seamlessly integrates smart tags,
+        high-speed readers, automation layers, and analytics software to deliver
+        real-time visibility and operational intelligence.
+      </p>
+    </div>
 
-	<!-- 3. Industries using RFID -->
-	<section class="py-12 px-4 bg-blue-50">
-		<div class="max-w-6xl mx-auto">
-			<h2 class="text-2xl font-bold text-center text-blue-800 mb-8">Industries Using RFID</h2>
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-				<div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-					<span class="text-3xl mb-2">🚚</span>
-					<span class="font-semibold text-blue-800">Logistics</span>
-				</div>
-				<div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-					<span class="text-3xl mb-2">🏥</span>
-					<span class="font-semibold text-blue-800">Healthcare</span>
-				</div>
-				<div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-					<span class="text-3xl mb-2">🛒</span>
-					<span class="font-semibold text-blue-800">Retail</span>
-				</div>
-				<div class="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-					<span class="text-3xl mb-2">🏭</span>
-					<span class="font-semibold text-blue-800">Warehouse</span>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Image -->
+      <div class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 flex items-center justify-center hover:shadow-2xl transition">
+        <img 
+          src="./public/assets/img/rfid/rfid -1.jpeg"
+          alt="RFID System Architecture"
+          class="object-contain w-full h-[300px]"
+          loading="lazy"
+        />
+      </div>
 
-	<!-- 4. RFID Workflow -->
-	<section class="py-12 px-4 bg-white">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-2xl font-bold text-center text-blue-800 mb-8">RFID Workflow</h2>
-			<div class="flex flex-col md:flex-row items-center justify-between gap-6">
-				<div class="flex flex-col items-center">
-					<div class="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg mb-2">P</div>
-					<span class="text-sm font-medium text-blue-800">Production</span>
-				</div>
-				<span class="mx-2 text-blue-400 text-2xl hidden md:inline-block">→</span>
-				<div class="flex flex-col items-center">
-					<div class="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg mb-2">W</div>
-					<span class="text-sm font-medium text-blue-800">Warehouse</span>
-				</div>
-				<span class="mx-2 text-blue-400 text-2xl hidden md:inline-block">→</span>
-				<div class="flex flex-col items-center">
-					<div class="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg mb-2">D</div>
-					<span class="text-sm font-medium text-blue-800">Distribution</span>
-				</div>
-				<span class="mx-2 text-blue-400 text-2xl hidden md:inline-block">→</span>
-				<div class="flex flex-col items-center">
-					<div class="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg mb-2">S</div>
-					<span class="text-sm font-medium text-blue-800">Store</span>
-				</div>
-			</div>
-		</div>
-	</section>
+      <!-- Feature Flow -->
+      <div class="space-y-6">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold">
+            01
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">Smart RFID Tags</h3>
+            <p class="text-gray-600">
+              Embedded identifiers store unique data and respond wirelessly without
+              direct line-of-sight.
+            </p>
+          </div>
+        </div>
 
-	<!-- 5. Warehouse RFID Architecture -->
-	<section class="py-12 px-4 bg-blue-50">
-		<div class="max-w-5xl mx-auto">
-			<h2 class="text-2xl font-bold text-center text-blue-800 mb-8">Warehouse RFID Architecture</h2>
-			<div class="flex flex-col md:flex-row items-center gap-8">
-				<div class="flex-1">
-					<ul class="space-y-4 text-gray-700">
-						<li><span class="font-semibold text-blue-800">RFID Tags:</span> Attached to pallets, boxes, or items</li>
-						<li><span class="font-semibold text-blue-800">RFID Readers:</span> Installed at entry/exit, shelves, conveyors</li>
-						<li><span class="font-semibold text-blue-800">Antenna Network:</span> Covers key zones for real-time tracking</li>
-						<li><span class="font-semibold text-blue-800">Software Platform:</span> Visualizes inventory, automates alerts</li>
-					</ul>
-				</div>
-				<div class="flex-1 flex justify-center">
-					<div class="w-64 h-40 bg-white border rounded-lg flex flex-col justify-between p-4 shadow">
-						<div class="flex justify-between">
-							<div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold">R</div>
-							<div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold">R</div>
-						</div>
-						<div class="flex-1 flex items-center justify-center">
-							<div class="w-32 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-blue-800 font-semibold">Inventory</div>
-						</div>
-						<div class="flex justify-between">
-							<div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold">R</div>
-							<div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-blue-800 font-bold">R</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold">
+            02
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">High-Performance Readers</h3>
+            <p class="text-gray-600">
+              Readers capture tag signals in bulk, even in dynamic or high-speed
+              environments.
+            </p>
+          </div>
+        </div>
 
-	<!-- 6. Key Features & Benefits -->
-	<section class="py-12 px-4 bg-white">
-		<div class="max-w-6xl mx-auto">
-			<h2 class="text-2xl font-bold text-center text-blue-800 mb-8">Key Features & Benefits</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Real-Time Tracking</span>
-					<span class="text-gray-700">Instant asset and inventory visibility.</span>
-				</div>
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Error Reduction</span>
-					<span class="text-gray-700">Automated data capture eliminates manual mistakes.</span>
-				</div>
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Seamless Integration</span>
-					<span class="text-gray-700">Works with ERP, WMS, and existing systems.</span>
-				</div>
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Scalable</span>
-					<span class="text-gray-700">From small warehouses to global supply chains.</span>
-				</div>
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Secure</span>
-					<span class="text-gray-700">Enterprise-grade data protection.</span>
-				</div>
-				<div class="bg-blue-50 rounded-lg p-6 flex flex-col items-start shadow">
-					<span class="text-blue-800 font-semibold mb-2">Actionable Insights</span>
-					<span class="text-gray-700">Analytics for smarter decisions.</span>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold">
+            03
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">Automation & Middleware</h3>
+            <p class="text-gray-600">
+              Intelligent rules filter, process, and trigger actions from raw RFID
+              events.
+            </p>
+          </div>
+        </div>
 
-	<!-- 7. Call-to-Action -->
-	<section id="cta" class="py-16 px-4 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
-		<div class="max-w-3xl mx-auto text-center">
-			<h2 class="text-3xl font-bold mb-4">Ready to Modernize Your Operations?</h2>
-			<p class="text-lg mb-8 opacity-90">Discover how RFID can transform your business. Book a free demo with our experts.</p>
-			<a href="#" class="bg-white text-blue-800 font-semibold px-10 py-4 rounded-full shadow hover:bg-blue-50 transition">Request a Demo</a>
-		</div>
-	</section>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold">
+            04
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">Analytics & Insights</h3>
+            <p class="text-gray-600">
+              Dashboards and reports transform RFID data into actionable business
+              intelligence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use Cases -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100">
+        <p class="text-2xl font-bold text-blue-800">Inventory</p>
+        <p class="text-gray-600 text-sm mt-2">Real-time stock tracking</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100">
+        <p class="text-2xl font-bold text-blue-800">Logistics</p>
+        <p class="text-gray-600 text-sm mt-2">Automated movement visibility</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100">
+        <p class="text-2xl font-bold text-blue-800">Manufacturing</p>
+        <p class="text-gray-600 text-sm mt-2">Process & asset tracking</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100">
+        <p class="text-2xl font-bold text-blue-800">Retail</p>
+        <p class="text-gray-600 text-sm mt-2">Loss prevention & analytics</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visibility and Traceability with RFID Section -->
+<section class="py-16 px-4 bg-blue-50">
+  <div class="max-w-6xl mx-auto flex flex-col items-center">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Visibility & Traceability with RFID</h2>
+    <p class="text-lg text-gray-700 mb-8 text-center max-w-3xl">RFID enables end-to-end asset visibility and authentication across production, warehousing, distribution, and in-store environments. Track every item, logistics unit, and RTI in real time.</p>
+    <div class="w-full flex justify-center mb-8">
+      <img src="./public/assets/img/rfid/rfid-3.jpeg" alt="Visibility and Traceability with RFID Technology" class="rounded-xl shadow-lg border border-blue-100 w-full max-w-5xl h-auto" style="background:white;" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- RFID Application Usage Section -->
+<section class="py-20 px-4 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+  
+  <!-- Soft Background Accent -->
+  <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-extrabold text-blue-900 mb-4 tracking-tight">
+        RFID Application Landscape
+      </h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        RFID technology powers intelligent automation across industries—enabling
+        seamless identification, real-time tracking, secure access, and data-driven
+        decision making at scale.
+      </p>
+    </div>
+
+    <!-- Image + Applications -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Image -->
+      <div class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 hover:shadow-2xl transition">
+        <img 
+          src="./public/assets/img/rfid/rfid-2.jpeg"
+          alt="RFID Applications Diagram"
+          class="w-full h-[300px] object-contain"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Application Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Access Control</h3>
+          <p class="text-gray-600 text-sm">
+            Secure authentication for offices, campuses, and restricted zones using
+            contactless RFID credentials.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Inventory Management</h3>
+          <p class="text-gray-600 text-sm">
+            Real-time visibility into stock levels, item movement, and warehouse
+            efficiency.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Asset Tracking</h3>
+          <p class="text-gray-600 text-sm">
+            Track high-value equipment and resources across facilities with minimal
+            manual intervention.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Logistics & Supply Chain</h3>
+          <p class="text-gray-600 text-sm">
+            Automate shipment tracking and reduce losses through end-to-end traceability.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Healthcare</h3>
+          <p class="text-gray-600 text-sm">
+            Improve patient safety, staff workflow, and equipment utilization in
+            hospitals.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-xl shadow-md border border-blue-100 hover:scale-[1.02] transition">
+          <h3 class="text-xl font-semibold text-blue-800 mb-2">Retail & Anti-Theft</h3>
+          <p class="text-gray-600 text-sm">
+            Prevent losses while enabling smart shelves and frictionless checkout
+            experiences.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-6 bg-white rounded-xl shadow border border-blue-100">
+        <p class="text-3xl font-bold text-blue-900">99%</p>
+        <p class="text-gray-600 text-sm mt-1">Read Accuracy</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow border border-blue-100">
+        <p class="text-3xl font-bold text-blue-900">50%</p>
+        <p class="text-gray-600 text-sm mt-1">Process Automation</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow border border-blue-100">
+        <p class="text-3xl font-bold text-blue-900">3×</p>
+        <p class="text-gray-600 text-sm mt-1">Operational Efficiency</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow border border-blue-100">
+        <p class="text-3xl font-bold text-blue-900">24/7</p>
+        <p class="text-gray-600 text-sm mt-1">Real-Time Monitoring</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 </body>
 </html>
