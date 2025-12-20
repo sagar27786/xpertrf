@@ -468,6 +468,57 @@
             color: var(--dark-blue);
         }
 
+        /* Simulation Proof Section */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .proof-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .proof-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .proof-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .proof-content {
+            padding: 1.5rem;
+        }
+
+        .proof-content h4 {
+            font-size: 1.35rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.6rem;
+        }
+
+        .proof-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .proof-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 55px rgba(0,0,0,0.12);
+        }
+
         /* Case Studies */
         .case-grid {
             display: grid; 
@@ -784,6 +835,10 @@
                 margin: 0 1rem;
             }
             
+            .proof-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
             .case-grid {
                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                 gap: 2.5rem;
@@ -817,7 +872,23 @@
 </head>
 <body>
     <!-- Navigation -->
-   
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo"><i class="fas fa-microchip"></i> Einnovior</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="active">Home</a>
+                <a href="#stats">Our Expertise</a>
+                <a href="#si">Signal Integrity</a>
+                <a href="#pi">Power Integrity</a>
+                <a href="#proof">Simulation Proof</a>
+                <a href="#cases">Case Studies</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -936,7 +1007,56 @@
         </div>
     </section>
 
-    <!-- Our Process -->
+    <!-- Simulation Proof Section -->
+    <section class="section" id="proof">
+        <div class="container">
+            <h2 class="section-title fade-up">Simulation-Driven Engineering Proof</h2>
+            <p class="section-subtitle fade-up stagger-delay-1">
+                Real post-layout SI, PI, and Thermal simulations executed using industry-grade solvers
+                to validate high-speed, high-power designs.
+            </p>
+
+            <div class="proof-grid">
+                <!-- SGMII -->
+                <div class="proof-card fade-up">
+                    <img src="./assets/img/SGMII Interface SERDES Analysis.png" alt="SGMII SERDES Analysis">
+                    <div class="proof-content">
+                        <h4>SGMII SERDES Signal Integrity</h4>
+                        <p>
+                            Post-layout eye diagram and channel analysis validating 1.25 Gbps SERDES compliance
+                            across SOM, MCC, and Backplane cards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PI -->
+                <div class="proof-card fade-up stagger-delay-1">
+                    <img src="./assets/img/pi_analysis.png" alt="Power Integrity Analysis">
+                    <div class="proof-content">
+                        <h4>Power Integrity & PDN Analysis</h4>
+                        <p>
+                            Voltage drop, PDN impedance, and current density analysis ensuring
+                            stable power delivery under dynamic load conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Thermal -->
+                <div class="proof-card fade-up stagger-delay-2">
+                    <img src="./assets/img/thermal_analysis.png" alt="Thermal Analysis">
+                    <div class="proof-content">
+                        <h4>Thermal & Hot-Spot Analysis</h4>
+                        <p>
+                            Component-level thermal simulations identifying hot-spots and verifying
+                            junction temperatures under worst-case scenarios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
     <section class="section" id="process">
         <div class="container">
             <h2 class="section-title fade-up">Our Analysis Process</h2>
@@ -1061,9 +1181,9 @@
                     <h4>Services</h4>
                     <a href="#si">Signal Integrity (SI) Analysis</a>
                     <a href="#pi">Power Integrity (PI) Analysis</a>
-                    <a href="#">Thermal Analysis</a>
-                    <a href="#">EMI/EMC Analysis</a>
-                    <a href="#">PCB Design Services</a>
+                    <a href="#proof">Thermal Analysis</a>
+                    <a href="#proof">EMI/EMC Analysis</a>
+                    <a href="#cases">PCB Design Services</a>
                 </div>
                 
                 <div class="footer-contact">
@@ -1129,7 +1249,15 @@
 
         // Animated counter function
         function animateCounter(element) {
+            if (!element.hasAttribute('data-count')) return;
+            
             const target = parseInt(element.getAttribute('data-count'));
+            if (isNaN(target)) return;
+            
+            // Check if already animated
+            if (element.getAttribute('data-animated') === 'true') return;
+            element.setAttribute('data-animated', 'true');
+            
             const increment = target / 50;
             let current = 0;
             
@@ -1144,14 +1272,21 @@
             }, 30);
         }
 
-        // Observe all elements with fade-up class
-        document.querySelectorAll('.fade-up, .service-card, .challenge-item, .case-study, .cta-section, .process-step').forEach(el => {
+        // Observe all elements with animations
+        const animatedElements = document.querySelectorAll(
+            '.fade-up, .service-card, .challenge-item, .case-study, ' +
+            '.cta-section, .process-step, .proof-card'
+        );
+        
+        animatedElements.forEach(el => {
             observer.observe(el);
         });
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            
             if (window.scrollY > 50) {
                 navbar.classList.add('nav-scrolled');
             } else {
@@ -1194,16 +1329,6 @@
                 }
             });
         });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you within 24 hours.');
-                this.reset();
-            });
-        }
     </script>
 </body>
 </html>
