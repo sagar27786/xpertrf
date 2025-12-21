@@ -256,7 +256,7 @@
             </span>
           
           
-            <a href="/products" class="d-inline-block" ><button type="button" class="btn button-primary">Learn More</button></a>
+            
           
           
           </div>
@@ -265,9 +265,9 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid banner-nav-products">
-	
-	<div class="banner-nav" style="margin-top:0; padding-top:0;">
+    <div class="container-fluid banner-nav-products" style="margin-bottom: 0;">
+    
+    <div class="banner-nav" style="margin-top:0; padding-top:0; margin-bottom: 0;">
         <div class="banner-nav-item">
 			<a href="rfid-products.html" class="sweep-up-link">
 				<div class="sweep-up">
@@ -331,7 +331,6 @@
 			</a>
         </div>
     </div>    
-
     </div>
   </section>
    
@@ -356,7 +355,7 @@
 
 
 <!-- Simplified India Map Section -->
-<section class="service-areas-section" style="background: linear-gradient(135deg, #f8fdff 0%, #e6f7fb 100%); padding: 80px 0;">
+<section class="service-areas-section" style="background: linear-gradient(135deg, #f8fdff 0%, #e6f7fb 100%); padding: 20px 0 80px 0; margin-top: 0;">
   <div class="container">
     <div class="row mb-5">
       <div class="col-12 text-center">
@@ -452,6 +451,95 @@
 
 <!-- Custom Styles -->
 <style>
+  /* Footer Custom Styles */
+  .site-footer {
+    background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
+    color: #fff;
+    padding: 50px 0 20px 0;
+    font-family: 'Titillium Web', sans-serif;
+    margin-top: 40px;
+  }
+  .site-footer .footer-heading {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .site-footer .footer-description {
+    color: #e6f7fb;
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .site-footer .footer-links,
+  .site-footer .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .site-footer .footer-links li,
+  .site-footer .footer-contact li {
+    margin-bottom: 10px;
+  }
+  .site-footer .footer-links a {
+    color: #e6f7fb;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .site-footer .footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .site-footer .footer-contact i {
+    color: #fff;
+    margin-right: 8px;
+  }
+  .site-footer .footer-bottom {
+    border-top: 1px solid #2596be;
+    margin-top: 30px;
+    padding-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.98rem;
+  }
+  .site-footer .footer-bottom-links a {
+    color: #e6f7fb;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 0.97rem;
+  }
+  .site-footer .footer-bottom-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .site-footer .footer-bottom .separator {
+    color: #e6f7fb;
+    margin: 0 4px;
+  }
+  @media (max-width: 767.98px) {
+    .site-footer {
+      padding: 30px 0 10px 0;
+      font-size: 0.98rem;
+    }
+    .site-footer .footer-heading {
+      font-size: 1.1rem;
+    }
+    .site-footer .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .banner-nav-products {
+      margin-bottom: 0 !important;
+    }
+    .service-areas-section {
+      padding-top: 10px !important;
+    }
+  }
   /* Custom map background color for India map */
   #simple-india-map {
     background: #2596be !important;
