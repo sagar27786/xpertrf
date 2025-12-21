@@ -259,7 +259,7 @@
 							<li role="presentation"><a role="menuitem" href="index.html" class="">Home</a>
 								<div class="nav-depth2-container">
 									<ul class="nav-main-depth2 list-unstyled" role="menu">
-										<li role="presentation"><a href="https://xpertrf.in">RFID Solutions<span
+										<li role="presentation"><a role="menuitem" href="https://xpertrf.in">RFID Solutions<span
 													class="text-lowercase" role="menuitem"></span> Overview</a>
 											<div class="nav-depth2-inner-container">
 												<div class="container p-0">
@@ -1089,8 +1089,7 @@
 																<li role="presentation" class="nav-item"><a role="menuitem" class="navg-link"
 																		href="https://xpertrf.in">Services Brochure</a></li>
 																<li role="presentation" class="nav-item"><a role="menuitem" class="navg-link"
-																		href="https://xpertrf.in">Case Studies</a>
-																</li>
+																		href="https://xpertrf.in">Case Studies</a></li>
 																<li role="presentation" class="nav-item"><a role="menuitem" class="navg-link"
 																	href="https://xpertrf.in">Mobile Apps</a>
 																</li>
@@ -1456,6 +1455,7 @@
 																	href="https://www.semtech.com/applications/automotive-apps/adas-body-electronics">Advanced Driver Assistance Systems</a>
 															</li>
 															
+															
 															<li role="presentation" class="nav-item"><a role="menuitem" class="navg-link"
 																	href="https://www.semtech.com/applications/automotive-apps/automotive-battery-management-systems">Automotive Battery Management Systems</a>
 															</li>
@@ -1660,9 +1660,9 @@
 	
 	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/environment">Environmental Initiatives</a></li>
 	
-	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/policy">Quality Policy</a></li>
+	<li role="menuitem"  href="https://www.semtech.com/quality/policy"><a role="menuitem"  href="https://www.semtech.com/quality/policy">Quality Policy</a></li>
 	
-	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/certifications">Quality Certifications</a></li>
+	<li role="menuitem"  href="https://www.semtech.com/quality/certifications"><a role="menuitem"  href="https://www.semtech.com/quality/certifications">Quality Certifications</a></li>
 	
 	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/reflow-profiles">IR Reflow Profiles</a></li>
 	
@@ -2507,9 +2507,9 @@
 	
 	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/environment">Environmental Initiatives</a></li>
 	
-	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/policy">Quality Policy</a></li>
+	<li role="menuitem"  href="https://www.semtech.com/quality/policy"><a role="menuitem"  href="https://www.semtech.com/quality/policy">Quality Policy</a></li>
 	
-	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/certifications">Quality Certifications</a></li>
+	<li role="menuitem"  href="https://www.semtech.com/quality/certifications"><a role="menuitem"  href="https://www.semtech.com/quality/certifications">Quality Certifications</a></li>
 	
 	<li role="presentation"><a role="menuitem"  href="https://www.semtech.com/quality/reflow-profiles">IR Reflow Profiles</a></li>
 	
@@ -2569,11 +2569,64 @@
       
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2507363.js"></script>
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-    
+    <!-- Floating Call & WhatsApp Button -->
+    <div class="floating-contact-group">
+      <a href="tel:9019609379" class="floating-btn call-btn" title="Call Now" aria-label="Call Now">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="https://wa.me/919019609379" target="_blank" class="floating-btn whatsapp-btn" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <style>
+      .floating-contact-group {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .floating-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        font-size: 2rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        transition: background 0.2s, box-shadow 0.2s;
+        text-decoration: none;
+      }
+      .floating-btn.call-btn {
+        background: #2596be;
+      }
+      .floating-btn.whatsapp-btn {
+        background: #25d366;
+      }
+      .floating-btn:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+        filter: brightness(1.1);
+      }
+      @media (max-width: 600px) {
+        .floating-contact-group {
+          bottom: 16px;
+          right: 16px;
+        }
+        .floating-btn {
+          width: 48px;
+          height: 48px;
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+    <!-- End Floating Call & WhatsApp Button -->
+    <!-- Remove old WhatsApp float if present -->
+    <script>document.querySelectorAll('.whatsapp-float').forEach(e=>e.remove());</script>
   </body>
 </html>
 
