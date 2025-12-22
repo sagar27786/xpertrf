@@ -137,6 +137,368 @@
     .floating {
       animation: float 6s ease-in-out infinite;
     }
+    
+    /* ================== ENHANCED FOOTER STYLES ================== */
+    .footer-container {
+      background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer-wave {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
+      background-size: 1200px 100%;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #93c5fd, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    
+    .footer-column {
+      margin-bottom: 2rem;
+    }
+    
+    .footer-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+    
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(to right, #60a5fa, #93c5fd);
+      border-radius: 2px;
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .footer-links li:hover {
+      transform: translateX(5px);
+    }
+    
+    .footer-links a {
+      color: #e6f7fb;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #fff;
+    }
+    
+    .footer-links i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+      color: #93c5fd;
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+      color: #dbeafe;
+    }
+    
+    .footer-contact-icon {
+      background: rgba(96, 165, 250, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .footer-contact-icon i {
+      color: #fff;
+    }
+    
+    .footer-newsletter {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-newsletter input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-newsletter input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-newsletter button {
+      width: 100%;
+      padding: 0.75rem;
+      background: linear-gradient(to right, #3b82f6, #60a5fa);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-newsletter button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-social a:hover {
+      background: #3b82f6;
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #dbeafe;
+      font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .footer-bottom-links a {
+      color: #e6f7fb;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+      color: #fff;
+    }
+    
+    /* ================== ENHANCED FLOATING BUTTONS ================== */
+    .floating-buttons {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .floating-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .floating-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .floating-btn:hover::before {
+      transform: translateY(0);
+    }
+    
+    .floating-btn i {
+      font-size: 1.5rem;
+      color: white;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .floating-btn.phone {
+      background: #2596be;
+    }
+    
+    .floating-btn.email {
+      background: #2596be;
+    }
+    
+    .floating-btn.whatsapp {
+      background: #2596be;
+    }
+    
+    .floating-btn.chat {
+      background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+    }
+    
+    .floating-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .floating-btn .tooltip {
+      position: absolute;
+      right: 70px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .floating-btn:hover .tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .floating-btn .pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: inherit;
+      opacity: 0.6;
+      animation: pulse-ring 2s infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+    
+    /* Floating button animations */
+    @keyframes float-up {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .floating-btn:nth-child(1) { animation: float-up 0.5s 0.1s both; }
+    .floating-btn:nth-child(2) { animation: float-up 0.5s 0.2s both; }
+    .floating-btn:nth-child(3) { animation: float-up 0.5s 0.3s both; }
+    .floating-btn:nth-child(4) { animation: float-up 0.5s 0.4s both; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .floating-buttons {
+        right: 20px;
+        bottom: 20px;
+      }
+      
+      .floating-btn {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .floating-btn i {
+        font-size: 1.2rem;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .floating-buttons {
+        right: 15px;
+        bottom: 15px;
+        gap: 10px;
+      }
+      
+      .floating-btn {
+        width: 45px;
+        height: 45px;
+      }
+    }
   </style>
 </head>
 
@@ -170,7 +532,7 @@
         <div class="relative">
           <div class="floating">
             <div class="bg-white/20 rounded-2xl p-2 backdrop-blur-sm border border-white/30">
-              <img src="./assets/img/rfid/rfid -1.jpeg" 
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                    alt="RFID Technology"
                    class="w-full h-80 object-cover rounded-xl shadow-2xl">
             </div>
@@ -200,7 +562,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 card-hover scale-in">
-          <img src="./assets/img/rfid/rfid-4.jpeg"
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                alt="RFID System Architecture"
                class="w-full h-[300px] object-cover rounded-lg"
                loading="lazy">
@@ -280,7 +642,7 @@
 
       <div class="relative">
         <div class="bg-white rounded-2xl shadow-2xl border border-blue-100 overflow-hidden scale-in">
-          <img src="./public//assets/img/rfid/rfid-3.jpeg"
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                alt="RFID Visibility Diagram"
                class="w-full h-auto object-cover"
                loading="lazy">
@@ -349,7 +711,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="bg-white rounded-2xl shadow-xl border p-6 card-hover scale-in">
-          <img src="./assets/img/rfid/rfid-2.jpeg"
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                alt="RFID Applications"
                class="w-full h-[300px] object-cover rounded-lg"
                loading="lazy">
@@ -391,91 +753,131 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="py-16 px-4 bg-gradient-to-r from-blue-800 to-blue-600 text-white scroll-fade">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Operations?</h2>
-      <p class="text-xl mb-8 text-blue-100">Discover how our RFID solutions can bring intelligence and efficiency to your business.</p>
-      <a href="#footer" class="inline-block bg-white text-blue-900 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg btn-pulse">
-        Get Started Today
-      </a>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer id="footer" class="bg-blue-900 text-white pt-12 pb-6 scroll-fade">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-blue-800 pb-8 mb-8">
-        <div>
-          <a href="/" class="text-2xl font-extrabold tracking-wide text-white">XPertRf</a>
-          <p class="mt-4 text-blue-100 text-sm">
-            XPertRf Corporation is a high-performance semiconductor, IoT systems and Cloud connectivity service provider dedicated to delivering high quality technology solutions that enable a smarter, more connected and sustainable planet.
+ 
+  <!-- ================= ENHANCED FOOTER ================= -->
+  <footer id="footer" class="footer-container pt-20 pb-8 px-4 md:px-8">
+    <div class="footer-wave"></div>
+    
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Company Info Column -->
+        <div class="footer-column">
+          <h3 class="footer-logo">XpertRF</h3>
+          <p class="mt-4 text-blue-100">
+            Leading provider of RFID, automation, and safety solutions for industrial tracking and identification. 
+            We deliver innovative technology solutions for a smarter, more connected future.
           </p>
-          <div class="flex space-x-4 mt-4">
-            <a href="//www.facebook.com/semtechcorporation" aria-label="Facebook" class="hover:text-blue-300 text-xl"><i class="fab fa-facebook-f"></i></a>
-            <a href="//twitter.com/SemtechCorp" aria-label="Twitter" class="hover:text-blue-300 text-xl"><i class="fab fa-x-twitter"></i></a>
-            <a href="//www.youtube.com/user/SemtechMediacenter" aria-label="YouTube" class="hover:text-blue-300 text-xl"><i class="fab fa-youtube"></i></a>
-            <a href="//www.linkedin.com/company/semtech/" aria-label="LinkedIn" class="hover:text-blue-300 text-xl"><i class="fab fa-linkedin-in"></i></a>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         
-        <div>
-          <h3 class="font-bold mb-3">Quick Links</h3>
-          <ul class="space-y-2 text-blue-100 text-sm">
-            <li><a href="https://www.sierrawireless.com/" target="_blank" class="hover:text-white">Sierra Wireless</a></li>
-            <li><a href="https://www.semtech.com/lora" class="hover:text-white">LoRa</a></li>
-            <li><a href="https://www.semtech.com/products" class="hover:text-white">Products</a></li>
-            <li><a href="https://www.semtech.com/technology" class="hover:text-white">Technology</a></li>
-            <li><a href="https://www.semtech.com/design-support/product-guides" class="hover:text-white">Design Resources</a></li>
-            <li><a href="https://www.semtech.com/quality" class="hover:text-white">Quality</a></li>
-            <li><a href="https://www.semtech.com/company" class="hover:text-white">About XPertRf</a></li>
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="brady.html"><i class="fas fa-chevron-right"></i> Brady Products</a></li>
+            <li><a href="trainings.html"><i class="fas fa-chevron-right"></i> Trainings</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
           </ul>
         </div>
         
-        <div>
-          <h3 class="font-bold mb-3">Resources</h3>
-          <ul class="space-y-2 text-blue-100 text-sm">
-            <li><a href="https://www.semtech.com/design-support/cross-reference-search" class="hover:text-white">Cross Reference Search</a></li>
-            <li><a href="https://www.semtech.com/design-support/parametric-search" class="hover:text-white">Parametric Search</a></li>
-            <li><a href="https://semtech.my.site.com/DP" target="_blank" rel="noopener" class="hover:text-white">My XPertRf</a></li>
-            <li><a href="//blog.semtech.com/" target="_blank" class="hover:text-white">Blogs</a></li>
-            <li><a href="https://www.semtech.com/careers" class="hover:text-white">Careers</a></li>
-            <li><a href="mailto:contact@xpertrf.in" class="hover:text-white">Contact Us</a></li>
+        <!-- Our Services Column -->
+        <div class="footer-column">
+          <h4 class="footer-title">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="rfid-solutions.html"><i class="fas fa-rss"></i> RFID Solutions</a></li>
+            <li><a href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
+            <li><a href="android-development.html"><i class="fab fa-android"></i> Android Development</a></li>
+            <li><a href="antenna-design.html"><i class="fas fa-satellite"></i> Antenna Design</a></li>
+            <li><a href="technical-support.html"><i class="fas fa-headset"></i> Technical Support</a></li>
+            <li><a href="consulting.html"><i class="fas fa-lightbulb"></i> Consulting</a></li>
           </ul>
         </div>
         
-        <div>
-          <h3 class="font-bold mb-3">Newsletter</h3>
-          <p class="text-blue-100 text-sm mb-3">
-            Get the latest on innovations, product launches, customer stories and news of wireless applications in the IoT space.
-          </p>
-          <a href="/subscribe" target="_blank">
-            <button type="button" class="bg-blue-700 hover:bg-blue-600 text-white font-semibold px-5 py-3 rounded-full mt-2 transition duration-300">
-              Subscribe Now
-            </button>
-          </a>
+        <!-- Contact & Newsletter Column -->
+        <div class="footer-column">
+          <h4 class="footer-title">Contact Info</h4>
+          <div class="space-y-4">
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Bangalore Office</p>
+                <p class="text-blue-100">Karnataka, India</p>
+              </div>
+            </div>
+            
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Call Us</p>
+                <a href="tel:+919876543210" class="text-blue-100 hover:text-white">+91 98765 43210</a>
+              </div>
+            </div>
+            
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p class="font-semibold">Email Us</p>
+                <a href="mailto:contact@xpertrf.in" class="text-blue-100 hover:text-white">contact@xpertrf.in</a>
+              </div>
+            </div>
+          </div>
+          
+         
         </div>
       </div>
       
-      <div class="flex flex-col md:flex-row justify-between items-center text-blue-200 text-xs">
-        <div class="space-x-2 mb-2 md:mb-0">
-          <a href="https://www.semtech.com/legal" class="hover:text-white">Privacy Policy</a>
-          <span>|</span>
-          <a href="https://www.semtech.com/company/accessibility" class="hover:text-white">Accessibility</a>
-          <span>|</span>
-          <a href="https://www.semtech.com/quality/policy" class="hover:text-white">Supplier Responsibility</a>
-          <span>|</span>
-          <a href="https://www.semtech.com/quality/policy" class="hover:text-white">Statement Against Human Trafficking and Slavery</a>
+      <div class="footer-bottom">
+        <div>
+          <p>&copy; 2025 <span class="font-bold">XpertRF TechnoSolutions</span>. All Rights Reserved.</p>
         </div>
-        <div>&copy; 2025 XPertRf. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 opacity-0">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <!-- Enhanced Floating Contact Buttons -->
+  <div class="floating-buttons">
+    <div class="floating-btn whatsapp" onclick="window.open('https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20your%20RFID%20solutions', '_blank')">
+      <div class="pulse"></div>
+      <i class="fab fa-whatsapp"></i>
+      <div class="tooltip">Chat on WhatsApp</div>
+    </div>
+    
+    <div class="floating-btn phone" onclick="window.location.href='tel:+919876543210'">
+      <div class="pulse"></div>
+      <i class="fas fa-phone"></i>
+      <div class="tooltip">Call Us Now</div>
+    </div>
+    
+    <div class="floating-btn email" onclick="window.location.href='mailto:sales@xpertrf.in'">
+      <i class="fas fa-envelope"></i>
+      <div class="tooltip">Send Email</div>
+    </div>
+    
+    
+  </div>
+
 
   <!-- Enhanced Scroll Animation Script -->
   <script>
@@ -502,9 +904,6 @@
                 }, index * 100);
               });
             }
-            
-            // Only unobserve if we want animation to happen once
-            // observer.unobserve(entry.target);
           }
         });
       }, { 
@@ -541,6 +940,16 @@
           const yPos = -(winScroll * speed);
           element.style.transform = `translateY(${yPos}px)`;
         });
+        
+        // Floating buttons scroll effect
+        const floatingContainer = document.querySelector('.floating-buttons');
+        if (winScroll > 500) {
+          floatingContainer.style.opacity = '1';
+          floatingContainer.style.transform = 'translateY(0)';
+        } else {
+          floatingContainer.style.opacity = '0.7';
+          floatingContainer.style.transform = 'translateY(10px)';
+        }
       });
       
       // Back to top functionality
@@ -551,10 +960,24 @@
         });
       });
       
-      // Mobile menu toggle (simplified)
+      // Mobile menu toggle
       const mobileMenuBtn = document.querySelector('button.md\\:hidden');
-      mobileMenuBtn.addEventListener('click', () => {
-        alert('Mobile menu would open here. In a full implementation, this would show/hide a menu.');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          alert('Mobile menu would open here. In a full implementation, this would show/hide a menu.');
+        });
+      }
+      
+      // Floating buttons click animations
+      const floatingButtons = document.querySelectorAll('.floating-btn');
+      floatingButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          // Add click animation
+          btn.style.transform = 'scale(0.9)';
+          setTimeout(() => {
+            btn.style.transform = '';
+          }, 200);
+        });
       });
     });
   </script>

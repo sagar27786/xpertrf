@@ -4,1113 +4,674 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDA Tools Training | Cadence, Synopsys & More</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2596be',
+                        'primary-dark': '#0a3d62',
+                        'primary-light': '#e6f7fb',
+                        secondary: '#2596be',
+                        'secondary-dark': '#0a3d62',
+                        'light-gray': '#f8f9fa',
+                        'dark-gray': '#333',
+                        'medium-gray': '#666',
+                        'border-color': '#e0e0e0',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 5px 15px rgba(0, 0, 0, 0.08)',
+                        'card-hover': '0 15px 30px rgba(0, 0, 0, 0.15)',
+                        'button': '0 10px 20px rgba(0, 0, 0, 0.1)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            'to': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* ========== CSS Variables ========== */
-        :root {
-            --primary: #0066cc;
-            --primary-dark: #004d99;
-            --primary-light: #3399ff;
-            --secondary: #ff6600;
-            --secondary-dark: #cc5200;
-            --light-gray: #f8f9fa;
-            --dark-gray: #333;
-            --medium-gray: #666;
-            --border-color: #e0e0e0;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+        /* Custom styles that can't be handled by Tailwind */
+        .tool-feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2596be;
+            font-weight: bold;
         }
-
-        /* ========== Reset & Base Styles ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: #fff;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2:after {
+        
+        .section-title-underline::after {
             content: '';
             position: absolute;
             width: 80px;
             height: 4px;
-            background-color: var(--secondary);
+            background-color: #2596be;
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
         }
-
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-            max-width: 700px;
-            margin: 20px auto 0;
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1629654291660-3c98113a0438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
         }
-
-        /* ========== Header Styles ========== */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        
+        .tool-header-bg {
+            background-color: #2596be;
         }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
+        
+        .benefit-icon-bg {
+            background-color: rgba(37, 150, 190, 0.1);
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
+        
+        .contact-icon-bg {
+            background-color: #2596be;
         }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        .nav-menu {
-            display: flex;
-        }
-
-        .nav-menu li {
-            margin-left: 30px;
-        }
-
-        .nav-menu a {
-            color: var(--dark-gray);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: var(--transition);
-            padding: 5px 0;
+        
+        .footer-container {
+            background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
             position: relative;
+            overflow: hidden;
         }
-
-        .nav-menu a:hover {
-            color: var(--primary);
+        
+        .footer-wave {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
+            background-size: 1200px 100%;
         }
-
-        .nav-menu a:after {
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+        
+        .footer-logo {
+            background: linear-gradient(to right, #93c5fd, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Floating buttons */
+        .floating-contact-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-btn:hover::before {
+            transform: translateY(0);
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating-btn-phone {
+            background: linear-gradient(135deg, #34a853, #2e7d32);
+        }
+        
+        .floating-btn-email {
+            background: linear-gradient(135deg, #ea4335, #b71c1c);
+        }
+        
+        .floating-btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        
+        .floating-label {
+            position: absolute;
+            right: 70px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            color: #333;
+        }
+        
+        .floating-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 8px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .floating-btn:hover .floating-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Responsive floating buttons */
+        @media (max-width: 768px) {
+            .floating-contact-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .floating-label {
+                display: none;
+            }
+        }
+        
+        /* Custom hover effects */
+        .nav-link-hover::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
+            background-color: #2596be;
             bottom: 0;
             left: 0;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-
-        .nav-menu a:hover:after {
+        
+        .nav-link-hover:hover::after {
             width: 100%;
         }
-
-        /* ========== Hero Section ========== */
-        .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1629654291660-3c98113a0438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: var(--secondary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ========== Tools Section ========== */
-        .tools-section {
-            background-color: var(--light-gray);
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .tool-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .tool-card:hover {
+        
+        .tool-card-hover:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
-        .tool-header {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .tool-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            font-size: 2rem;
-        }
-
-        .tool-header h3 {
-            font-size: 1.5rem;
-            color: white;
-            margin: 0;
-        }
-
-        .tool-content {
-            padding: 25px;
-        }
-
-        .tool-content p {
-            margin-bottom: 20px;
-            color: var(--medium-gray);
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .features-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .features-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        .tool-button {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .tool-button:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* ========== Training Programs ========== */
-        .programs-section {
-            padding: 80px 0;
-        }
-
-        .programs-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .program-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .program-badge {
-            background-color: var(--secondary);
-            color: white;
-            padding: 8px 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            border-radius: 0 0 4px 4px;
-        }
-
-        .program-content {
-            padding: 25px;
-        }
-
-        .program-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .program-content p {
-            margin-bottom: 20px;
-            color: var(--medium-gray);
-        }
-
-        .program-details {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .detail-item {
-            text-align: center;
-        }
-
-        .detail-value {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .detail-label {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-
-        /* ========== Benefits Section ========== */
-        .benefits-section {
-            background-color: var(--light-gray);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .benefit-card:hover {
+        
+        .program-card-hover:hover {
             transform: translateY(-5px);
         }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(0, 102, 204, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        .benefit-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        /* ========== Contact Section ========== */
-        .contact-section {
-            padding: 80px 0;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 30px;
-            color: var(--medium-gray);
-        }
-
-        .contact-details {
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        /* ========== Footer Styles ========== */
-        .site-footer {
-            background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-            color: #fff;
-            padding: 50px 0 20px;
-            margin-top: 40px;
-        }
-
-        .footer-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-heading {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-            letter-spacing: 1px;
-        }
-
-        .footer-description {
-            color: #e6f7fb;
-            font-size: 1rem;
-            margin-bottom: 18px;
-        }
-
-        .footer-links,
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li,
-        .footer-contact li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #e6f7fb;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .footer-contact i {
-            color: #fff;
-            margin-right: 8px;
-        }
-
-        .footer-social {
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            display: inline-block;
-            margin-right: 12px;
-            color: #e6f7fb;
-            font-size: 1.3rem;
-            transition: color 0.2s;
-        }
-
-        .footer-social a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #2596be;
-            margin-top: 30px;
-            padding-top: 18px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.98rem;
-        }
-
-        .footer-bottom-links a {
-            color: #e6f7fb;
-            margin: 0 8px;
-            text-decoration: none;
-            font-size: 0.97rem;
-        }
-
-        .footer-bottom-links a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .separator {
-            color: #e6f7fb;
-            margin: 0 4px;
-        }
-
-        .footer-newsletter {
-            margin-top: 20px;
-        }
-
-        .footer-newsletter form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (min-width: 576px) {
-            .footer-newsletter form {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-
-        .footer-newsletter input {
-            background: #e6f7fb;
-            color: #2596be;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 16px;
-            margin-bottom: 10px;
-            max-width: 200px;
-        }
-
-        @media (min-width: 576px) {
-            .footer-newsletter input {
-                margin-bottom: 0;
-                margin-right: 10px;
-            }
-        }
-
-        .footer-newsletter button {
-            background: #2596be;
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .footer-newsletter button:hover {
-            background: #0a3d62;
-        }
-
-        /* ========== Responsive Styles ========== */
-        @media (max-width: 992px) {
-            .tools-grid,
-            .programs-container,
-            .benefits-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            .nav-menu {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-menu li {
-                margin: 0 10px 10px;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .tools-grid,
-            .programs-container,
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tool-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .tool-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .footer-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ========== Mobile Menu ========== */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                padding: 20px;
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .nav-menu li {
-                margin: 10px 0;
-            }
+        
+        .benefit-card-hover:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body>
-    <!-- ========== Header ========== -->
- 
-
+<body class="font-roboto text-dark-gray">
     <!-- ========== Hero Section ========== -->
-    <section class="hero">
-        <div class="container">
-            <h1>Master EDA Tools for Chip Design</h1>
-            <p>Comprehensive training on industry-standard Electronic Design Automation tools including Cadence, Synopsys, Siemens EDA, and more. Learn from industry experts with hands-on projects.</p>
-            <a href="#programs" class="cta-button">Explore Training Programs</a>
+    <section class="hero-bg text-white py-32 text-center">
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
+            <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl mb-8">Master EDA Tools for Chip Design</h1>
+            <p class="text-xl md:text-2xl max-w-4xl mx-auto mb-12 opacity-90">
+                Comprehensive training on industry-standard Electronic Design Automation tools including Cadence, Synopsys, Siemens EDA, and more. Learn from industry experts with hands-on projects.
+            </p>
+            <a href="#programs" class="cta-button bg-secondary text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-secondary-dark hover:shadow-button transition-all duration-300 inline-block">
+                Explore Training Programs
+            </a>
         </div>
     </section>
 
     <!-- ========== EDA Tools Section ========== -->
-    <section id="tools" class="section-padding tools-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Industry-Leading EDA Tools</h2>
-                <p>Comprehensive training on the most widely used Electronic Design Automation tools in semiconductor industry</p>
+    <section id="tools" class="py-20 bg-light-gray">
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-montserrat font-semibold text-3xl md:text-4xl mb-4 relative section-title-underline inline-block">
+                    Industry-Leading EDA Tools
+                </h2>
+                <p class="text-medium-gray text-lg max-w-3xl mx-auto mt-8">
+                    Comprehensive training on the most widely used Electronic Design Automation tools in semiconductor industry
+                </p>
             </div>
             
-            <div class="tools-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Cadence Tool -->
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-project-diagram"></i>
+                <div class="bg-white rounded-lg overflow-hidden shadow-card transition-all duration-300 tool-card-hover">
+                    <div class="tool-header-bg text-white p-8 flex items-center">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mr-6">
+                            <i class="fas fa-project-diagram text-3xl"></i>
                         </div>
-                        <h3>Cadence Tools</h3>
+                        <h3 class="font-montserrat font-semibold text-2xl">Cadence Tools</h3>
                     </div>
-                    <div class="tool-content">
-                        <p>Complete suite for digital, analog, and mixed-signal design, verification, and implementation.</p>
-                        <ul class="features-list">
-                            <li>Virtuoso for Analog/Custom Design</li>
-                            <li>Genus for RTL Synthesis</li>
-                            <li>Innovus for Place & Route</li>
-                            <li>Spectre for Circuit Simulation</li>
-                            <li>Pegasus for Physical Verification</li>
-                            <li>JasperGold for Formal Verification</li>
+                    <div class="p-8">
+                        <p class="text-medium-gray mb-6">
+                            Complete suite for digital, analog, and mixed-signal design, verification, and implementation.
+                        </p>
+                        <ul class="tool-feature-list mb-8 space-y-3">
+                            <li class="pb-2 border-b border-border-color relative pl-8">Virtuoso for Analog/Custom Design</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Genus for RTL Synthesis</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Innovus for Place & Route</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Spectre for Circuit Simulation</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Pegasus for Physical Verification</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">JasperGold for Formal Verification</li>
                         </ul>
-                        <a href="#contact" class="tool-button">Enroll for Cadence Training</a>
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary-dark transition-all duration-300 inline-block">
+                            Enroll for Cadence Training
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Synopsys Tool -->
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-code-branch"></i>
+                <div class="bg-white rounded-lg overflow-hidden shadow-card transition-all duration-300 tool-card-hover">
+                    <div class="tool-header-bg text-white p-8 flex items-center">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mr-6">
+                            <i class="fas fa-code-branch text-3xl"></i>
                         </div>
-                        <h3>Synopsys Tools</h3>
+                        <h3 class="font-montserrat font-semibold text-2xl">Synopsys Tools</h3>
                     </div>
-                    <div class="tool-content">
-                        <p>Industry-leading tools for digital design, verification, and sign-off with advanced AI capabilities.</p>
-                        <ul class="features-list">
-                            <li>Design Compiler for Synthesis</li>
-                            <li>VCS for Simulation & Verification</li>
-                            <li>IC Compiler II for Place & Route</li>
-                            <li>PrimeTime for Timing Analysis</li>
-                            <li>Formality for Formal Verification</li>
-                            <li>StarRC for Extraction</li>
+                    <div class="p-8">
+                        <p class="text-medium-gray mb-6">
+                            Industry-leading tools for digital design, verification, and sign-off with advanced AI capabilities.
+                        </p>
+                        <ul class="tool-feature-list mb-8 space-y-3">
+                            <li class="pb-2 border-b border-border-color relative pl-8">Design Compiler for Synthesis</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">VCS for Simulation & Verification</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">IC Compiler II for Place & Route</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">PrimeTime for Timing Analysis</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Formality for Formal Verification</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">StarRC for Extraction</li>
                         </ul>
-                        <a href="#contact" class="tool-button">Enroll for Synopsys Training</a>
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary-dark transition-all duration-300 inline-block">
+                            Enroll for Synopsys Training
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Siemens EDA Tool -->
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-cube"></i>
+                <div class="bg-white rounded-lg overflow-hidden shadow-card transition-all duration-300 tool-card-hover">
+                    <div class="tool-header-bg text-white p-8 flex items-center">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mr-6">
+                            <i class="fas fa-cube text-3xl"></i>
                         </div>
-                        <h3>Siemens EDA (Mentor Graphics)</h3>
+                        <h3 class="font-montserrat font-semibold text-2xl">Siemens EDA (Mentor Graphics)</h3>
                     </div>
-                    <div class="tool-content">
-                        <p>Comprehensive EDA solutions for IC design, verification, and manufacturing with focus on system-level design.</p>
-                        <ul class="features-list">
-                            <li>Calibre for Physical Verification</li>
-                            <li>Tessent for DFT & Test</li>
-                            <li>Questa for Advanced Verification</li>
-                            <li>Analog FastSPICE for Simulation</li>
-                            <li>Catapult for High-Level Synthesis</li>
-                            <li>Pyxis for Custom IC Design</li>
+                    <div class="p-8">
+                        <p class="text-medium-gray mb-6">
+                            Comprehensive EDA solutions for IC design, verification, and manufacturing with focus on system-level design.
+                        </p>
+                        <ul class="tool-feature-list mb-8 space-y-3">
+                            <li class="pb-2 border-b border-border-color relative pl-8">Calibre for Physical Verification</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Tessent for DFT & Test</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Questa for Advanced Verification</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Analog FastSPICE for Simulation</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Catapult for High-Level Synthesis</li>
+                            <li class="pb-2 border-b border-border-color relative pl-8">Pyxis for Custom IC Design</li>
                         </ul>
-                        <a href="#contact" class="tool-button">Enroll for Siemens EDA Training</a>
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary-dark transition-all duration-300 inline-block">
+                            Enroll for Siemens EDA Training
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- 
-     ========== Training Programs ========== -->
-    <section id="programs" class="section-padding programs-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Comprehensive Training Programs</h2>
-                <p>Structured learning paths designed for engineers at all levels - from beginners to advanced professionals</p>
-            </div>
-            
-            <div class="programs-container">
-                <!-- Program 1 -->
-                <div class="program-card">
-                    <div class="program-badge">Beginner Level</div>
-                    <div class="program-content">
-                        <h3>Fundamentals of Digital Design with EDA Tools</h3>
-                        <p>Learn the basics of digital design flow using industry-standard EDA tools. Perfect for students and new engineers.</p>
-                        <div class="program-details">
-                            <div class="detail-item">
-                                <div class="detail-value">8 Weeks</div>
-                                <div class="detail-label">Duration</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">40 Hours</div>
-                                <div class="detail-label">Hands-on Labs</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">$499</div>
-                                <div class="detail-label">Price</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Program 2 -->
-                <div class="program-card">
-                    <div class="program-badge" style="background-color: var(--primary);">Intermediate Level</div>
-                    <div class="program-content">
-                        <h3>Advanced RTL to GDSII Flow</h3>
-                        <p>Master complete digital implementation flow from RTL design to GDSII using Cadence and Synopsys tools.</p>
-                        <div class="program-details">
-                            <div class="detail-item">
-                                <div class="detail-value">12 Weeks</div>
-                                <div class="detail-label">Duration</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">60 Hours</div>
-                                <div class="detail-label">Hands-on Labs</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">$899</div>
-                                <div class="detail-label">Price</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Program 3 -->
-                <div class="program-card">
-                    <div class="program-badge" style="background-color: #28a745;">Advanced Level</div>
-                    <div class="program-content">
-                        <h3>Analog/Mixed-Signal Design Mastery</h3>
-                        <p>Deep dive into analog and mixed-signal design using Cadence Virtuoso and Spectre simulation tools.</p>
-                        <div class="program-details">
-                            <div class="detail-item">
-                                <div class="detail-value">16 Weeks</div>
-                                <div class="detail-label">Duration</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">80 Hours</div>
-                                <div class="detail-label">Hands-on Labs</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-value">$1299</div>
-                                <div class="detail-label">Price</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> 
 
     <!-- ========== Benefits Section ========== -->
-    <section id="benefits" class="section-padding benefits-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Our EDA Training?</h2>
-                <p>Industry-relevant training that bridges the gap between academic learning and professional requirements</p>
+    <section id="benefits" class="py-20 bg-light-gray">
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-montserrat font-semibold text-3xl md:text-4xl mb-4 relative section-title-underline inline-block">
+                    Why Choose Our EDA Training?
+                </h2>
+                <p class="text-medium-gray text-lg max-w-3xl mx-auto mt-8">
+                    Industry-relevant training that bridges the gap between academic learning and professional requirements
+                </p>
             </div>
             
-            <div class="benefits-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Benefit 1 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="bg-white text-center p-8 rounded-lg shadow-card transition-all duration-300 benefit-card-hover">
+                    <div class="w-20 h-20 rounded-full benefit-icon-bg flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-primary"></i>
                     </div>
-                    <h3>Hands-on Lab Sessions</h3>
-                    <p>Practical training on actual EDA tools with real design examples and projects.</p>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Hands-on Lab Sessions</h3>
+                    <p class="text-medium-gray">
+                        Practical training on actual EDA tools with real design examples and projects.
+                    </p>
                 </div>
                 
                 <!-- Benefit 2 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-tie"></i>
+                <div class="bg-white text-center p-8 rounded-lg shadow-card transition-all duration-300 benefit-card-hover">
+                    <div class="w-20 h-20 rounded-full benefit-icon-bg flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-tie text-2xl text-primary"></i>
                     </div>
-                    <h3>Industry Expert Trainers</h3>
-                    <p>Learn from professionals with 10+ years of experience in semiconductor industry.</p>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Industry Expert Trainers</h3>
+                    <p class="text-medium-gray">
+                        Learn from professionals with 10+ years of experience in semiconductor industry.
+                    </p>
                 </div>
                 
                 <!-- Benefit 3 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-certificate"></i>
+                <div class="bg-white text-center p-8 rounded-lg shadow-card transition-all duration-300 benefit-card-hover">
+                    <div class="w-20 h-20 rounded-full benefit-icon-bg flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-certificate text-2xl text-primary"></i>
                     </div>
-                    <h3>Industry-Recognized Certification</h3>
-                    <p>Receive certification that adds value to your resume and career prospects.</p>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Industry-Recognized Certification</h3>
+                    <p class="text-medium-gray">
+                        Receive certification that adds value to your resume and career prospects.
+                    </p>
                 </div>
                 
                 <!-- Benefit 4 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-briefcase"></i>
+                <div class="bg-white text-center p-8 rounded-lg shadow-card transition-all duration-300 benefit-card-hover">
+                    <div class="w-20 h-20 rounded-full benefit-icon-bg flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-briefcase text-2xl text-primary"></i>
                     </div>
-                    <h3>Job Placement Assistance</h3>
-                    <p>Career guidance and placement support with our industry partner companies.</p>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Job Placement Assistance</h3>
+                    <p class="text-medium-gray">
+                        Career guidance and placement support with our industry partner companies.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== Footer ========== -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-row">
-                <div class="footer-col">
-                    <h4 class="footer-heading">About XpertRF</h4>
-                    <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://facebook.com/xpertrf" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <footer class="footer-container text-white pt-20 pb-8">
+        <div class="footer-wave"></div>
+        
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Company Info Column -->
+                <div class="space-y-6">
+                    <h3 class="footer-logo font-extrabold text-2xl">XpertRF</h3>
+                    <p class="text-blue-100 leading-relaxed text-sm">
+                        Leading provider of SI/PI simulation, PCB design, RFID, and automation solutions. 
+                        We deliver innovative technology solutions for a smarter, more connected future.
+                    </p>
+                    <div class="flex gap-4 pt-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 hover:translate-y-[-3px] transition-all duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 hover:translate-y-[-3px] transition-all duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 hover:translate-y-[-3px] transition-all duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 hover:translate-y-[-3px] transition-all duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 hover:translate-y-[-3px] transition-all duration-300" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">Products</a></li>
-                        <li><a href="index.html">Services</a></li>
-                        <li><a href="index.html">Brady Products</a></li>
-                        <li><a href="index.html">Trainings</a></li>
+                <!-- Quick Links Column -->
+                <div>
+                    <h4 class="footer-title font-bold text-lg mb-6 pb-3 relative">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="index.html" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> Home
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> SI/PI Analysis
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> PCB Design
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> RFID Solutions
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> Trainings
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chevron-right mr-2 w-5 text-blue-300"></i> About Us
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Our Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://xpertrf.in">RFID Solutions</a></li>
-                        <li><a href="https://xpertrf.in">Web Development</a></li>
-                        <li><a href="https://xpertrf.in">Android Development</a></li>
-                        <li><a href="https://xpertrf.in">Antenna Design</a></li>
-                        <li><a href="https://xpertrf.in">Technical Support</a></li>
+                <!-- Services Column -->
+                <div>
+                    <h4 class="footer-title font-bold text-lg mb-6 pb-3 relative">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-chart-line mr-2 w-5 text-blue-300"></i> SI/PI Simulation
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-microchip mr-2 w-5 text-blue-300"></i> PCB Design
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-rss mr-2 w-5 text-blue-300"></i> RFID Solutions
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-code mr-2 w-5 text-blue-300"></i> Web Development
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-satellite mr-2 w-5 text-blue-300"></i> Antenna Design
+                            </a>
+                        </li>
+                        <li class="hover:translate-x-2 transition-transform duration-200">
+                            <a href="#" class="text-blue-100 hover:text-white flex items-center text-sm">
+                                <i class="fas fa-headset mr-2 w-5 text-blue-300"></i> Technical Support
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Bangalore, Karnataka, India</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+919876543210">+91 98765 43210</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
-                        </li>
-                    </ul>
-                    <div class="footer-newsletter">
-                        <form action="#" method="post">
-                            <input type="email" placeholder="Subscribe to newsletter">
-                            <button type="submit">Subscribe</button>
-                        </form>
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title font-bold text-lg mb-6 pb-3 relative">Contact Info</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Bangalore Office</p>
+                                <p class="text-blue-100 text-sm">Karnataka, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Call Us</p>
+                                <a href="tel:+919876543210" class="text-blue-100 hover:text-white text-sm transition-colors duration-200">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Email Us</p>
+                                <a href="mailto:contact@xpertrf.in" class="text-blue-100 hover:text-white text-sm transition-colors duration-200">contact@xpertrf.in</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="#">Sitemap</a>
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-6 mt-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-blue-100 text-sm">
+                    <span>&copy; 2025 <span class="text-white">XpertRF TechnoSolutions</span>. All Rights Reserved.</span>
+                    <span class="hidden md:inline">|</span>
+                    <a href="privacy.html" class="hover:text-white hover:underline transition-colors duration-200">Privacy Policy</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="terms.html" class="hover:text-white hover:underline transition-colors duration-200">Terms & Conditions</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="sitemap.html" class="hover:text-white hover:underline transition-colors duration-200">Sitemap</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="cookies.html" class="hover:text-white hover:underline transition-colors duration-200">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ========== Floating Contact Buttons ========== -->
+    <div class="floating-contact-container">
+        <a href="tel:+919019609379" class="floating-btn floating-btn-phone" aria-label="Call Us">
+            <i class="fas fa-phone"></i>
+            <span class="floating-label">Call +91 90196 09379</span>
+        </a>
+        
+        <a href="mailto:sales@xpertrf.in" class="floating-btn floating-btn-email" aria-label="Email Us">
+            <i class="fas fa-envelope"></i>
+            <span class="floating-label">Email sales@xpertrf.in</span>
+        </a>
+        
+        <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20EDA%20Training" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-label">WhatsApp Chat</span>
+        </a>
+    </div>
+
     <script>
-        // ========== Mobile Menu Toggle ==========
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // ========== Form Submission ==========
-        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            
-            alert(`Thank you ${name}! We have received your enrollment request. Course details will be sent to ${email} within 24 hours.`);
-            
-            this.reset();
-        });
-
-        // ========== Smooth Scrolling ==========
-        document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (navMenu.classList.contains('active')) {
-                            navMenu.classList.remove('active');
-                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                        }
-                    }
-                }
-            });
-        });
-
-        // ========== Scroll Animations ==========
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe cards for animation
-        document.querySelectorAll('.tool-card, .program-card, .benefit-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-
         // ========== Newsletter Form ==========
-        const newsletterForm = document.querySelector('.footer-newsletter form');
+        const newsletterForm = document.querySelector('.newsletter-form form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = this.querySelector('input[type="email"]').value;
-                alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
-                this.reset();
+                if (email && email.includes('@')) {
+                    alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+                    this.reset();
+                } else {
+                    alert('Please enter a valid email address.');
+                }
             });
         }
+
+        // ========== Floating Buttons Hover Effects ==========
+        const floatingButtons = document.querySelectorAll('.floating-btn');
+        floatingButtons.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // ========== Footer Animation ==========
+        const footerColumns = document.querySelectorAll('.footer-column');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${index * 0.1}s`;
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        footerColumns.forEach(column => {
+            column.style.opacity = '0';
+            observer.observe(column);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>

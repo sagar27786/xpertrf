@@ -8,6 +8,9 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Bootstrap for responsive grid -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Styles -->
   <style>
     /* ===== Global ===== */
@@ -26,11 +29,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 40px 20px;
     }
 
     .coming-soon {
       text-align: center;
       padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .coming-soon i {
@@ -51,6 +57,80 @@
     .coming-soon p {
       font-size: 1.3rem;
       color: #0a3d62;
+      line-height: 1.6;
+    }
+
+    .coming-soon .lead {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #2596be;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .countdown-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 80px;
+    }
+
+    .countdown-item span {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #0a3d62;
+    }
+
+    .countdown-item small {
+      color: #2596be;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .coming-soon-form {
+      max-width: 400px;
+      margin: 40px auto 0;
+    }
+
+    .coming-soon-form input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e6f7fb;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .coming-soon-form input:focus {
+      outline: none;
+      border-color: #2596be;
+      box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
+    }
+
+    .coming-soon-form button {
+      background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .coming-soon-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(37, 150, 190, 0.2);
     }
 
     @keyframes bounce {
@@ -58,113 +138,337 @@
       50% { transform: translateY(-18px); }
     }
 
-    /* ===== Footer ===== */
-    footer {
-      background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-      color: #fff;
-      width: 100%;
-    }
-
-    .footer-container {
-      max-width: 1600px;
-      margin: auto;
-      padding: 50px 40px 20px;
+    /* ===== Floating Contact Buttons ===== */
+    .floating-contact-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
       display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .footer-column {
-      flex: 1 1 220px;
-      min-width: 220px;
-    }
-
-    .footer-logo {
-      width: 120px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 8px 12px;
-      margin-bottom: 18px;
-    }
-
-    .footer-column h4 {
-      margin-bottom: 18px;
-      font-size: 1.2rem;
-    }
-
-    .footer-column p,
-    .footer-column li,
-    .footer-column a {
-      color: #e6f7fb;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-column li {
-      margin-bottom: 10px;
+    .floating-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .footer-column li i {
-      margin-right: 8px;
+    .floating-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
     }
 
-    .social-icons a {
-      margin-right: 12px;
-      font-size: 1.3rem;
+    .floating-btn:hover::before {
+      transform: translateY(0);
     }
 
-    .newsletter {
-      display: flex;
-      margin-top: 15px;
+    .floating-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
-    .newsletter input {
-      flex: 1;
-      padding: 8px 16px;
-      border-radius: 20px 0 0 20px;
-      border: none;
+    .floating-btn-phone {
+      background: linear-gradient(135deg, #34a853, #2e7d32);
     }
 
-    .newsletter button {
-      padding: 8px 18px;
-      border-radius: 0 20px 20px 0;
-      border: none;
-      background: #2596be;
+    .floating-btn-email {
+      background: linear-gradient(135deg, #ea4335, #b71c1c);
+    }
+
+    .floating-btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+    }
+
+    .floating-label {
+      position: absolute;
+      right: 70px;
+      background: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      color: #0a3d62;
+    }
+
+    .floating-btn:hover .floating-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .floating-label::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 8px;
+      border-color: transparent transparent transparent white;
+    }
+
+    /* ===== Enhanced Footer Styles ===== */
+    .site-footer {
+      background: linear-gradient(135deg, #0a3d62 0%, #1a4a6e 100%);
       color: #fff;
-      cursor: pointer;
+      padding: 60px 0 20px;
+      position: relative;
+      overflow: hidden;
+      margin-top: auto;
     }
 
-    .footer-bottom {
-      border-top: 1px solid #2596be;
-      padding: 15px 40px;
-      max-width: 1600px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e63946, #2a9d8f, #2596be);
+    }
+
+    .footer-heading {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #2596be;
+      border-radius: 2px;
+    }
+
+    .footer-description {
       font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #e6f7fb;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
     }
 
     .footer-links a {
-      margin: 0 8px;
+      color: #e6f7fb;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a::before {
+      content: '›';
+      margin-right: 10px;
+      font-weight: bold;
+      color: #2596be;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-links a:hover::before {
+      transform: translateX(5px);
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .footer-contact i {
+      color: #2596be;
+      margin-right: 12px;
+      margin-top: 3px;
+      font-size: 1.1rem;
+    }
+
+    .footer-contact span, .footer-contact a {
+      color: #e6f7fb;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: #2596be;
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      margin-top: 40px;
+      padding-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .footer-bottom-links a {
+      color: #e6f7fb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .separator {
+      color: #2596be;
     }
 
     /* ===== Responsive ===== */
-    @media (max-width: 900px) {
-      .footer-container {
-        flex-direction: column;
-        padding: 30px 20px;
+    @media (max-width: 992px) {
+      .coming-soon h1 {
+        font-size: 2.5rem;
       }
+      
+      .countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      
+      .countdown-item {
+        min-width: 70px;
+        padding: 15px;
+      }
+      
+      .countdown-item span {
+        font-size: 2rem;
+      }
+      
+      .site-footer {
+        padding: 40px 0 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon {
+        padding: 40px 20px;
+      }
+      
+      .coming-soon p {
+        font-size: 1.1rem;
+      }
+      
+      .floating-contact-container {
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      
+      .floating-label {
+        display: none;
+      }
+      
       .footer-bottom {
         flex-direction: column;
-        gap: 10px;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .site-footer .row > div {
+        margin-bottom: 30px;
       }
     }
   </style>
@@ -177,81 +481,188 @@
     <section class="coming-soon">
       <i class="fas fa-tools"></i>
       <h1>Professional AV</h1>
+      <p class="lead">
+        <strong>Coming Soon</strong>
+      </p>
       <p>
-        This page is <strong>Coming Soon</strong>.<br>
+        We're working hard to bring you cutting-edge Audio-Visual solutions. 
+        Our team is designing state-of-the-art systems for conference rooms, 
+        home theaters, live events, and professional installations.
+      </p>
+      
+      <div class="countdown">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+      
+      <p style="font-size: 1.1rem; margin-top: 40px;">
         Stay tuned for our Professional Audio-Visual solutions!
       </p>
+      
+      <div class="coming-soon-form">
+        <input type="email" placeholder="Enter your email for updates">
+        <button type="button">Notify Me</button>
+      </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="footer-container">
-
-      <!-- About -->
-      <div class="footer-column">
-        <img src="./Logo.png" alt="XpertRF Logo" class="footer-logo">
-        <p>
-          XpertRF TechnoSolutions delivers innovative RFID, automation,
-          and safety solutions for a smarter future.
-        </p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
+  <!-- Enhanced Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h4 class="footer-heading"> XpertRF</h4>
+          <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="brady-products.html">Brady Products</a></li>
+            <li><a href="index.html#trainings">Trainings</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="https://xpertrf.in">RFID Solutions</a></li>
+            <li><a href="https://xpertrf.in">Web Development</a></li>
+            <li><a href="https://xpertrf.in">Android Development</a></li>
+            <li><a href="https://xpertrf.in">Antenna Design</a></li>
+            <li><a href="https://xpertrf.in">Technical Support</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="footer-heading">Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Bangalore, Karnataka, India</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">+91 90196 09379</a>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:sales@xpertrf.in">sales@xpertrf.in</a>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <!-- Quick Links -->
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Trainings</a></li>
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div class="footer-column">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="#">RFID Solutions</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Android Development</a></li>
-          <li><a href="#">Antenna Design</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-column">
-        <h4>Contact Info</h4>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
-          <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-          <li><i class="fas fa-envelope"></i> contact@xpertrf.in</li>
-        </ul>
-
-        <form class="newsletter">
-          <input type="email" placeholder="Subscribe to newsletter" required>
-          <button><i class="fas fa-paper-plane"></i></button>
-        </form>
-      </div>
-
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p>© 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a> |
-        <a href="#">Terms</a> |
-        <a href="#">Sitemap</a>
+      
+      <div class="footer-bottom">
+        <div class="copyright">
+          &copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="site-map.html">Site Map</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact-container">
+    <a href="tel:+919019609379" class="floating-btn floating-btn-phone" aria-label="Call Us">
+      <i class="fas fa-phone"></i>
+      <span class="floating-label">Call +91 90196 09379</span>
+    </a>
+    
+    <a href="mailto:sales@xpertrf.in" class="floating-btn floating-btn-email" aria-label="Email Us">
+      <i class="fas fa-envelope"></i>
+      <span class="floating-label">Email sales@xpertrf.in</span>
+    </a>
+    
+    <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20Professional%20AV%20Solutions" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span class="floating-label">WhatsApp Chat</span>
+    </a>
+  </div>
+
+  <script>
+    // Countdown timer
+    function updateCountdown() {
+      const launchDate = new Date('2025-12-31T00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+      }
+    }
+    
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+    
+    // Notify Me button
+    document.querySelector('.coming-soon-form button').addEventListener('click', function() {
+      const email = document.querySelector('.coming-soon-form input').value;
+      if (email && email.includes('@')) {
+        alert('Thank you! We will notify you when our Professional AV solutions are ready.');
+        document.querySelector('.coming-soon-form input').value = '';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+    
+    // Enter key support for email input
+    document.querySelector('.coming-soon-form input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.querySelector('.coming-soon-form button').click();
+      }
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

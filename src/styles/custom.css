@@ -99,10 +99,7 @@ header.header-autohide {
 }
 
 /* Banner navigation hover effects */
-.banner-nav-products {
-    position: relative;
-    z-index: 10;
-}
+
 
 .banner-nav {
     position: relative;
@@ -709,4 +706,17 @@ header.header-autohide {
     .footer-bottom-links {
         justify-content: center;
     }
+}
+/* Remove gap between navigation and next section */
+.banner-nav-products {
+     margin-bottom: 0 !important;
+     padding-bottom: 0 !important;
+}
+.banner-nav {
+     margin-bottom: 0 !important;
+     padding-bottom: 0 !important;
+}
+.service-areas-section {
+     margin-top: 0 !important;
+     padding-top: 0 !important;
 }
