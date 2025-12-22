@@ -10,6 +10,7 @@
     height: auto !important;
 }
 
+
 /* Reduce navbar height and padding */
 .nav-top {
     padding-top: 0.5rem !important;
@@ -178,7 +179,7 @@ header.header-autohide {
     height: 60px;
     bottom: 30px;
     right: 30px;
-    background-color: #25d366;
+    background-color: #2596be;
     color: #fff;
     border-radius: 50%;
     text-align: center;
@@ -199,7 +200,7 @@ header.header-autohide {
 }
 
 .whatsapp-float:hover {
-    background-color: #20ba5a;
+    background-color: #2596be;
     transform: scale(1.1);
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
 }
@@ -243,7 +244,7 @@ header.header-autohide {
     height: 60px;
     bottom: 190px;
     right: 30px;
-    background-color: #EA4335;
+    background-color: #2596be;
     color: #fff;
     border-radius: 50%;
     text-align: center;
@@ -263,7 +264,7 @@ header.header-autohide {
 }
 
 .gmail-float:hover {
-    background-color: #d33828;
+    background-color: #2596be;
     transform: scale(1.1);
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
 }
@@ -706,17 +707,4 @@ header.header-autohide {
     .footer-bottom-links {
         justify-content: center;
     }
-}
-/* Remove gap between navigation and next section */
-.banner-nav-products {
-     margin-bottom: 0 !important;
-     padding-bottom: 0 !important;
-}
-.banner-nav {
-     margin-bottom: 0 !important;
-     padding-bottom: 0 !important;
-}
-.service-areas-section {
-     margin-top: 0 !important;
-     padding-top: 0 !important;
 }
