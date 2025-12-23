@@ -1,0 +1,192 @@
+/* ================= GLOBAL FOOTER ================= */
+/* ===== FOOTER CSS ISOLATION RESET ===== */
+.site-footer {
+  all: revert;
+  font-family: 'Inter', 'Titillium Web', sans-serif;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.site-footer * {
+  box-sizing: border-box;
+}
+
+
+.site-footer {
+  background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
+  color: #ffffff;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.site-footer,
+.site-footer * {
+  color: #ffffff;
+}
+
+/* ================= CONTAINER ================= */
+.site-footer .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px 30px;
+}
+
+
+/* ================= TOP GRID (3 COLUMNS) ================= */
+.site-footer .row.gy-4 {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 2fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* ================= HEADINGS ================= */
+.site-footer .footer-heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.site-footer .footer-heading::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ffffff;
+  margin-top: 8px;
+}
+
+/* ================= LEFT: COMPANY ================= */
+.footer-description {
+  line-height: 2.0;
+  letter-spacing: 1.2px;
+  opacity: 0.95;
+}
+
+.site-footer .d-flex.gap-3 a {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.site-footer .d-flex.gap-3 a:hover {
+  opacity: 1;
+}
+
+/* ================= CENTER: SERVICES ================= */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ================= RIGHT: CONTACT ================= */
+.site-footer .row.gy-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 20px;
+}
+
+.site-footer .row.gy-3 strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.site-footer .row.gy-3 p {
+  line-height: 1.7;
+}
+
+/* Email full width */
+.site-footer .row.gy-3 .col-12 {
+  grid-column: span 2;
+  margin-top: 15px;
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.site-footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.site-footer .footer-bottom > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-bottom-links a {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-bottom-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .site-footer .row.gy-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer .row.gy-4 > div:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer .row.gy-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .row.gy-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .row.gy-3 .col-12 {
+    grid-column: span 1;
+  }
+
+  .site-footer .footer-bottom > div {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+.site-footer .d-flex a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: 16px;
+}
+
+.site-footer .d-flex a:last-child {
+  margin-right: 0;
+}

@@ -1,166 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Professional AV | Coming Soon</title>
 
   <!-- Icons -->
+ 
+  <!-- styles -->
+  
+
+  <!-- Custom styles for logo and navbar size reduction -->
+  <link rel="stylesheet" href="./src/styles/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link rel="stylesheet" href="./src/styles/css/footer.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Bootstrap for responsive grid -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#2596be',
+            'primary-dark': '#0a3d62',
+            'accent': '#2a9d8f',
+            'accent-red': '#e63946',
+            'light-bg': '#f8fdff',
+            'lighter-bg': '#e6f7fb',
+            'footer-bg': '#1a4a6e',
+            'whatsapp': '#25d366',
+            'whatsapp-dark': '#128c7e',
+          },
+          fontFamily: {
+            'sans': ['Titillium Web', 'Arial', 'sans-serif'],
+          },
+          animation: {
+            'bounce': 'bounce 1.5s infinite',
+          },
+          keyframes: {
+            bounce: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-18px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Styles -->
+  <!-- Additional Styles -->
   <style>
-    /* ===== Global ===== */
     body {
       min-height: 100vh;
-      margin: 0;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(135deg, #f8fdff 0%, #e6f7fb 100%);
-      font-family: 'Titillium Web', Arial, sans-serif;
-    }
-
-    /* ===== Main Content ===== */
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    .coming-soon {
-      text-align: center;
-      padding: 80px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .coming-soon i {
-      font-size: 4rem;
-      color: #2596be;
-      margin-bottom: 30px;
-      animation: bounce 1.5s infinite;
-    }
-
-    .coming-soon h1 {
-      font-size: 3rem;
-      color: #2596be;
-      margin-bottom: 20px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-
-    .coming-soon p {
-      font-size: 1.3rem;
-      color: #0a3d62;
-      line-height: 1.6;
-    }
-
-    .coming-soon .lead {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      color: #2596be;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .countdown-item {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      min-width: 80px;
-    }
-
-    .countdown-item span {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #0a3d62;
-    }
-
-    .countdown-item small {
-      color: #2596be;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-    }
-
-    .coming-soon-form {
-      max-width: 400px;
-      margin: 40px auto 0;
-    }
-
-    .coming-soon-form input {
-      width: 100%;
-      padding: 15px;
-      border: 2px solid #e6f7fb;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .coming-soon-form input:focus {
-      outline: none;
-      border-color: #2596be;
-      box-shadow: 0 0 0 3px rgba(37, 150, 190, 0.1);
-    }
-
-    .coming-soon-form button {
-      background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    .coming-soon-form button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(37, 150, 190, 0.2);
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
-    }
-
-    /* ===== Floating Contact Buttons ===== */
-    .floating-contact-container {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      background: #f8fdff;
     }
 
     .floating-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      text-decoration: none;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
@@ -181,85 +81,13 @@
       transform: translateY(0);
     }
 
-    .floating-btn:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .floating-btn-phone {
-      background: linear-gradient(135deg, #34a853, #2e7d32);
-    }
-
-    .floating-btn-email {
-      background: linear-gradient(135deg, #ea4335, #b71c1c);
-    }
-
-    .floating-btn-whatsapp {
-      background: linear-gradient(135deg, #25d366, #128c7e);
-    }
-
     .floating-label {
-      position: absolute;
-      right: 70px;
-      background: white;
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      white-space: nowrap;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      opacity: 0;
-      transform: translateX(20px);
       transition: all 0.3s ease;
-      pointer-events: none;
-      color: #0a3d62;
     }
 
     .floating-btn:hover .floating-label {
       opacity: 1;
       transform: translateX(0);
-    }
-
-    .floating-label::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -8px;
-      transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 8px 0 8px 8px;
-      border-color: transparent transparent transparent white;
-    }
-
-    /* ===== Enhanced Footer Styles ===== */
-    .site-footer {
-      background: linear-gradient(135deg, #0a3d62 0%, #1a4a6e 100%);
-      color: #fff;
-      padding: 60px 0 20px;
-      position: relative;
-      overflow: hidden;
-      margin-top: auto;
-    }
-
-    .site-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #e63946, #2a9d8f, #2596be);
-    }
-
-    .footer-heading {
-      color: white;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 25px;
-      position: relative;
-      display: inline-block;
     }
 
     .footer-heading::after {
@@ -273,396 +101,248 @@
       border-radius: 2px;
     }
 
-    .footer-description {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 25px;
-      color: #e6f7fb;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: #e6f7fb;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      font-size: 0.95rem;
-    }
-
-    .footer-links a:hover {
-      color: white;
-      transform: translateX(5px);
-    }
-
-    .footer-links a::before {
-      content: '›';
-      margin-right: 10px;
-      font-weight: bold;
-      color: #2596be;
-      transition: transform 0.3s ease;
-    }
-
-    .footer-links a:hover::before {
-      transform: translateX(5px);
-    }
-
-    .footer-contact {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-contact li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 18px;
-    }
-
-    .footer-contact i {
-      color: #2596be;
-      margin-right: 12px;
-      margin-top: 3px;
-      font-size: 1.1rem;
-    }
-
-    .footer-contact span, .footer-contact a {
-      color: #e6f7fb;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-contact a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
       background: #2596be;
-      transform: translateY(-5px);
     }
+ 
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      margin-top: 40px;
-      padding-top: 25px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9rem;
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .footer-bottom-links a {
-      color: #e6f7fb;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-bottom-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .separator {
-      color: #2596be;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 992px) {
-      .coming-soon h1 {
-        font-size: 2.5rem;
-      }
-      
-      .countdown {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      
-      .countdown-item {
-        min-width: 70px;
-        padding: 15px;
-      }
-      
-      .countdown-item span {
-        font-size: 2rem;
-      }
-      
-      .site-footer {
-        padding: 40px 0 20px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .coming-soon {
-        padding: 40px 20px;
-      }
-      
-      .coming-soon p {
-        font-size: 1.1rem;
-      }
-      
-      .floating-contact-container {
-        bottom: 20px;
-        right: 20px;
-      }
-      
-      .floating-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-      }
-      
-      .floating-label {
-        display: none;
-      }
-      
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-      }
-      
-      .footer-bottom-links {
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .site-footer .row > div {
-        margin-bottom: 30px;
-      }
-    }
   </style>
 </head>
 
-<body>
+<body class="font-sans flex flex-col min-h-screen">
 
   <!-- ===== Main Section ===== -->
-  <main>
-    <section class="coming-soon">
-      <i class="fas fa-tools"></i>
-      <h1>Professional AV</h1>
-      <p class="lead">
+  <main class="flex-grow flex items-center justify-center p-5 md:p-10">
+    <section class="text-center max-w-4xl mx-auto p-5 md:p-10 lg:p-20">
+      <i class="fas fa-tools text-6xl text-primary mb-8 animate-bounce"></i>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-6 tracking-wider">Professional AV</h1>
+      <p class="text-xl md:text-2xl text-primary mb-6">
         <strong>Coming Soon</strong>
       </p>
-      <p>
-        We're working hard to bring you cutting-edge Audio-Visual solutions. 
-        Our team is designing state-of-the-art systems for conference rooms, 
+      <p class="text-lg md:text-xl text-primary-dark leading-relaxed max-w-3xl mx-auto mb-10">
+        We're working hard to bring you cutting-edge Audio-Visual solutions.
+        Our team is designing state-of-the-art systems for conference rooms,
         home theaters, live events, and professional installations.
       </p>
-      
-      <div class="countdown">
-        <div class="countdown-item">
-          <span id="days">00</span>
-          <small>Days</small>
-        </div>
-        <div class="countdown-item">
-          <span id="hours">00</span>
-          <small>Hours</small>
-        </div>
-        <div class="countdown-item">
-          <span id="minutes">00</span>
-          <small>Minutes</small>
-        </div>
-        <div class="countdown-item">
-          <span id="seconds">00</span>
-          <small>Seconds</small>
-        </div>
-      </div>
-      
-      <p style="font-size: 1.1rem; margin-top: 40px;">
+
+      <!-- Countdown Timer -->
+
+      <p class="text-lg text-primary-dark mt-10 mb-8">
         Stay tuned for our Professional Audio-Visual solutions!
       </p>
-      
-      <div class="coming-soon-form">
-        <input type="email" placeholder="Enter your email for updates">
-        <button type="button">Notify Me</button>
+
+      <!-- Email Form -->
+      <div class="max-w-md mx-auto mt-10">
+        <input type="email" placeholder="Enter your email for updates"
+          class="w-full p-4 border-2 border-lighter-bg rounded-lg mb-4 text-base focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all">
+        <button type="button"
+          class="w-full bg-gradient-to-r from-primary-dark to-primary text-white p-4 rounded-lg font-semibold text-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+          Notify Me
+        </button>
       </div>
     </section>
   </main>
 
-  <!-- Enhanced Footer Section -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <h4 class="footer-heading"> XpertRF</h4>
-          <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div class="col-lg-2 col-md-6 mb-4">
-          <h4 class="footer-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#products">Products</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="brady-products.html">Brady Products</a></li>
-            <li><a href="index.html#trainings">Trainings</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h4 class="footer-heading">Our Services</h4>
-          <ul class="footer-links">
-            <li><a href="https://xpertrf.in">RFID Solutions</a></li>
-            <li><a href="https://xpertrf.in">Web Development</a></li>
-            <li><a href="https://xpertrf.in">Android Development</a></li>
-            <li><a href="https://xpertrf.in">Antenna Design</a></li>
-            <li><a href="https://xpertrf.in">Technical Support</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h4 class="footer-heading">Contact Info</h4>
-          <ul class="footer-contact">
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Bangalore, Karnataka, India</span>
-            </li>
-            <li>
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919019609379">+91 90196 09379</a>
-            </li>
-            <li>
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:sales@xpertrf.in">sales@xpertrf.in</a>
-            </li>
-            <li>
-              <i class="fas fa-clock"></i>
-              <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
-            </li>
-          </ul>
+  <!-- Footer Section -->
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+         
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <div class="copyright">
-          &copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
+
         </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
         <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
-          <a href="site-map.html">Site Map</a>
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
         </div>
       </div>
     </div>
-  </footer>
+
+  </div>
+</footer>
+
 
   <!-- Floating Contact Buttons -->
-  <div class="floating-contact-container">
-    <a href="tel:+919019609379" class="floating-btn floating-btn-phone" aria-label="Call Us">
-      <i class="fas fa-phone"></i>
-      <span class="floating-label">Call +91 90196 09379</span>
-    </a>
-    
-    <a href="mailto:sales@xpertrf.in" class="floating-btn floating-btn-email" aria-label="Email Us">
-      <i class="fas fa-envelope"></i>
-      <span class="floating-label">Email sales@xpertrf.in</span>
-    </a>
-    
-    <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20Professional%20AV%20Solutions" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="Chat on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-      <span class="floating-label">WhatsApp Chat</span>
-    </a>
-  </div>
+  <a href="tel:+919019609379" class="phone-float" aria-label="Call Us"
+    style="position: fixed; width: 60px; height: 60px; bottom: 190px; right:30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
+      <path
+        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+    </svg>
+  </a>
 
+  <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us"
+    style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
+      <path
+        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  </a>
+
+  <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float"
+    aria-label="Chat on WhatsApp"
+    style="position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 12px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+      style="width: 100%; height: 100%; object-fit: contain;">
+  </a>
+
+  <!-- JavaScript -->
   <script>
     // Countdown timer
     function updateCountdown() {
       const launchDate = new Date('2025-12-31T00:00:00').getTime();
       const now = new Date().getTime();
       const distance = launchDate - now;
-      
+
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
         document.getElementById('days').textContent = days.toString().padStart(2, '0');
         document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
         document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
         document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
       }
     }
-    
+
     // Update countdown every second
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call
-    
+
     // Notify Me button
-    document.querySelector('.coming-soon-form button').addEventListener('click', function() {
-      const email = document.querySelector('.coming-soon-form input').value;
+    document.querySelector('.max-w-md button').addEventListener('click', function () {
+      const email = document.querySelector('.max-w-md input').value;
       if (email && email.includes('@')) {
         alert('Thank you! We will notify you when our Professional AV solutions are ready.');
-        document.querySelector('.coming-soon-form input').value = '';
+        document.querySelector('.max-w-md input').value = '';
       } else {
         alert('Please enter a valid email address.');
       }
     });
-    
+
     // Enter key support for email input
-    document.querySelector('.coming-soon-form input').addEventListener('keypress', function(e) {
+    document.querySelector('.max-w-md input').addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
-        document.querySelector('.coming-soon-form button').click();
+        document.querySelector('.max-w-md button').click();
       }
     });
-  </script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    // Mobile responsive behavior for floating buttons
+    function handleResize() {
+      const floatingLabels = document.querySelectorAll('.floating-label');
+      if (window.innerWidth < 768) {
+        floatingLabels.forEach(label => {
+          label.style.display = 'none';
+        });
+      } else {
+        floatingLabels.forEach(label => {
+          label.style.display = 'block';
+        });
+      }
+    }
+
+    // Initial call and event listener for resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
+  </script>
 </body>
+
 </html>

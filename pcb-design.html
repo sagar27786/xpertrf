@@ -8,55 +8,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+      <link rel="stylesheet" href="./src/styles/css/footer.css">
   <style>
-    :root {
-      --primary-blue: #2596be;
-      --dark-blue: #0a3d62;
-      --accent-green: #00cc88;
-      --accent-orange: #ff6600;
-      --light-gray: #f5f7fa;
-      --medium-gray: #e4e7eb;
-      --text-black: #fff;
-      --text-dark: #fff;
-      --text-medium: #e6f7fb;
-      --text-light: #e6f7fb;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: var(--text-black);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      color: var(--text-black);
-      line-height: 1.3;
-    }
-    
-    p {
-      color: var(--text-dark);
-    }
-    
-    /* Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-      z-index: 1000;
-      padding: 1rem 0;
-      transition: all 0.3s ease;
+      :root {
+        --primary-blue: #2596be;
+        --dark-blue: #0a3d62;
+        --accent-green: #00cc88;
+        --accent-orange: #ff6600;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e7eb;
+        --text-black: #fff;
+        --text-dark: #fff;
+        --text-medium: #e6f7fb;
+        --text-light: #e6f7fb;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: var(--text-black);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        color: var(--text-black);
+        line-height: 1.3;
+      }
+      p {
+        color: var(--text-dark);
+      }
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+        padding: 1rem 0;
+        transition: all 0.3s ease;
     }
     
     .nav-container {
@@ -681,103 +677,144 @@
     }
     
     /* ================== ENHANCED FLOATING BUTTONS ================== */
-    .floating-buttons {
-      position: fixed;
-      right: 30px;
-      bottom: 30px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    
-    .floating-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .floating-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-    
-    .floating-btn:hover::before {
-      transform: translateY(0);
-    }
-    
-    .floating-btn i {
-      font-size: 1.5rem;
-      color: white;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .floating-btn.phone {
-      background: #2596be;
-    }
-    
-    .floating-btn.email {
-      background: #2596be;
-    }
-    
-    .floating-btn.whatsapp {
-      background: #2596be;
-    }
-    
-    .floating-btn.chat {
-      background: linear-gradient(135deg, #8B5CF6, #7C3AED);
-    }
-    
-    .floating-btn:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    .floating-btn .tooltip {
-      position: absolute;
-      right: 70px;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateX(10px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-    
-    .floating-btn:hover .tooltip {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .floating-btn .pulse {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: inherit;
-      opacity: 0.6;
-      animation: pulse-ring 2s infinite;
-    }
+    /* ================= PREMIUM FLOATING CONTACT BUTTONS ================= */
+
+/* ================= FINAL FLOATING CONTACT BUTTONS ================= */
+
+.floating-buttons {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.floating-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #2596be;
+  position: relative;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-btn:hover::before {
+            transform: translateY(0);
+        }
+
+         .floating-btn:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating-btn-main {
+            background: linear-gradient(135deg, #2596be, #1e40af);
+        }
+        
+
+
+
+.floating-btn-phone {
+            background: #2596be;
+        }
+        
+        .floating-btn-email {
+            background: #2596be;
+        }
+        
+        .floating-btn-whatsapp {
+            background: #2596be;
+        }
+.floating-btn:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Tooltip (BLACK TEXT) */
+.floating-btn .tooltip {
+  position: absolute;
+  right: 70px;
+  background: #ffffff;
+  color: #000000;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.floating-btn:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* WhatsApp pulse */
+.floating-btn.whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.5);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@media (max-width: 576px) {
+  .floating-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
+
+
+
+
+/* Tooltip */
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .floating-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
+
     
     @keyframes pulse-ring {
       0% {
@@ -802,10 +839,7 @@
       }
     }
     
-    .floating-btn:nth-child(1) { animation: float-up 0.5s 0.1s both; }
-    .floating-btn:nth-child(2) { animation: float-up 0.5s 0.2s both; }
-    .floating-btn:nth-child(3) { animation: float-up 0.5s 0.3s both; }
-    .floating-btn:nth-child(4) { animation: float-up 0.5s 0.4s both; }
+   
     
     /* Back to Top */
     .back-to-top {
@@ -890,32 +924,125 @@
       .capabilities-grid {
         grid-template-columns: 1fr;
       }
-      
-      .floating-buttons {
-        right: 20px;
-        bottom: 20px;
-      }
-      
-      .floating-btn {
-        width: 50px;
-        height: 50px;
-      }
-      
-      .floating-btn i {
-        font-size: 1.2rem;
-      }
-      
-      .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-      
-      .footer-bottom-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
+       .floating-contact-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+        
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-btn:hover::before {
+            transform: translateY(0);
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating-btn-main {
+            background: linear-gradient(135deg, #2596be, #1e40af);
+        }
+        
+        .floating-btn-phone {
+            background: #2596be;
+        }
+        
+        .floating-btn-email {
+            background: #2596be;
+        }
+        
+        .floating-btn-whatsapp {
+            background: #2596be;
+        }
+        
+        .floating-btn svg, .floating-btn img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .floating-btn-whatsapp img {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .floating-label {
+            position: absolute;
+            right: 70px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            color: var(--industrial-gray);
+        }
+        
+        .floating-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 8px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .floating-btn:hover .floating-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .floating-btn-main .floating-label {
+            background: var(--safety-blue);
+            color: white;
+        }
+        
+        .floating-btn-main .floating-label::after {
+            border-color: transparent transparent transparent var(--safety-blue);
+        }
+     
+     
     }
     
     @media (max-width: 576px) {
@@ -1165,131 +1292,115 @@
  
 
   <!-- ================= ENHANCED FOOTER ================= -->
-  <footer id="footer" class="footer-container pt-20 pb-8 px-4 md:px-8">
-    <div class="footer-wave"></div>
-    
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        
-        <!-- Company Info Column -->
-        <div class="footer-column">
-          <h3 class="footer-logo">XpertRF</h3>
-          <p class="mt-4 text-blue-100">
-            Leading provider of RFID, automation, and safety solutions for industrial tracking and identification. 
-            We deliver innovative technology solutions for a smarter, more connected future.
-          </p>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        
-        <!-- Quick Links Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
-            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-            <li><a href="brady.html"><i class="fas fa-chevron-right"></i> Brady Products</a></li>
-            <li><a href="trainings.html"><i class="fas fa-chevron-right"></i> Trainings</a></li>
-            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          </ul>
-        </div>
-        
-        <!-- Our Services Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Our Services</h4>
-          <ul class="footer-links">
-            <li><a href="rfid-solutions.html"><i class="fas fa-rss"></i> RFID Solutions</a></li>
-            <li><a href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
-            <li><a href="android-development.html"><i class="fab fa-android"></i> Android Development</a></li>
-            <li><a href="antenna-design.html"><i class="fas fa-satellite"></i> Antenna Design</a></li>
-            <li><a href="technical-support.html"><i class="fas fa-headset"></i> Technical Support</a></li>
-            <li><a href="consulting.html"><i class="fas fa-lightbulb"></i> Consulting</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact & Newsletter Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Contact Info</h4>
-          <div class="space-y-4">
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Bangalore Office</p>
-                <p class="text-blue-100">Karnataka, India</p>
-              </div>
-            </div>
-            
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Call Us</p>
-                <a href="tel:+919876543210" class="text-blue-100 hover:text-white">+91 98765 43210</a>
-              </div>
-            </div>
-            
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Email Us</p>
-                <a href="mailto:contact@xpertrf.in" class="text-blue-100 hover:text-white">contact@xpertrf.in</a>
-              </div>
-            </div>
-          </div>
-          
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
          
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <div>
-          <p>&copy; 2025 <span class="font-bold">XpertRF TechnoSolutions</span>. All Rights Reserved.</p>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
+
         </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
         <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms & Conditions</a>
-          <a href="sitemap.html">Sitemap</a>
-          <a href="cookies.html">Cookie Policy</a>
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
         </div>
       </div>
     </div>
-  </footer>
+
+  </div>
+</footer>
 
   <!-- Enhanced Floating Contact Buttons -->
-  <div class="floating-buttons">
- 
-    
-    <div class="floating-btn email" onclick="window.location.href='mailto:sales@xpertrf.in'">
-      <i class="fas fa-envelope"></i>
-      <div class="tooltip">Send Email</div>
-    </div>
 
-    <div class="floating-btn phone" onclick="window.location.href='tel:+919876543210'">
-      <div class="pulse"></div>
-      <i class="fas fa-phone"></i>
-      <div class="tooltip">Call Us Now</div>
-    </div>
-    
-       <div class="floating-btn whatsapp" onclick="window.open('https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20your%20PCB%20Design%20services', '_blank')">
-      <div class="pulse"></div>
-      <i class="fab fa-whatsapp"></i>
-      <div class="tooltip">Chat on WhatsApp</div>
-    </div>
-    
-    
-    
-  </div>
 
   <!-- Back to Top Button -->
 
@@ -1413,5 +1524,34 @@
       });
     });
   </script>
+
+
+ 
+
+<!-- Floating Contact Buttons -->
+<div class="floating-buttons">
+
+  <a href="tel:+919019609379" class="floating-btn phone" aria-label="Call Us">
+    <i class="fas fa-phone-alt"></i>
+    <span class="tooltip">Call Us</span>
+  </a>
+
+  <a href="mailto:sales@xpertrf.in" class="floating-btn email" aria-label="Email Us">
+    <i class="fas fa-envelope"></i>
+    <span class="tooltip">Email Us</span>
+  </a>
+
+  <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested"
+     target="_blank"
+     class="floating-btn whatsapp"
+     aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">WhatsApp</span>
+  </a>
+
+</div>
+
+
 </body>
+
 </html>

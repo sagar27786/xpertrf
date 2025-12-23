@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/solid.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/styles/custom.css">
+    <link rel="stylesheet" href="./src/styles/css/footer.css">
     
     <!-- Professional Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +27,7 @@
             --light-gray: #f5f5f5;
             --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            --footer-bg: #1a237e;
-            --footer-light: #283593;
+            
         }
         
         body {
@@ -365,175 +365,7 @@
         }
         
         /* Enhanced Footer */
-        .site-footer {
-            background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-            color: #dbeafe;
-            padding: 70px 20px 20px 20px;
-            margin-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
         
-        .site-footer::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
-            background-size: 1200px 100%;
-        }
-        
-        .footer-heading {
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #fff;
-            border-radius: 2px;
-        }
-        
-        .footer-description {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            color: #fff;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links a:hover {
-            color: #dbeafe;
-            transform: translateX(5px);
-        }
-        
-        .footer-links a::before {
-            content: '›';
-            margin-right: 10px;
-            font-weight: bold;
-            color: #2596be;
-            transition: transform 0.3s ease;
-        }
-        
-        .footer-links a:hover::before {
-            transform: translateX(5px);
-        }
-        
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-contact li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 18px;
-        }
-        
-        .footer-contact i {
-            color: #2596be;
-            margin-right: 12px;
-            margin-top: 3px;
-            font-size: 1.1rem;
-        }
-        
-        .footer-contact span {
-            color: #fff;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .footer-contact a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-contact a:hover {
-            color: #dbeafe;
-            text-decoration: underline;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background: var(--safety-blue);
-            transform: translateY(-5px);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #2596be;
-            margin-top: 40px;
-            padding-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .footer-bottom-links {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .footer-bottom-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-bottom-links a:hover {
-            color: #dbeafe;
-        }
-        
-        .copyright {
-            color: #fff;
-        }
         
         /* Back to Top Button */
         .back-to-top {
@@ -879,117 +711,140 @@
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
+
 
     <!-- Enhanced Floating Contact Buttons -->
     <div class="floating-contact-container">
         
-         <a href="mailto:sales@xpertrf.in" class="floating-btn floating-btn-email" aria-label="Email Us">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-            <span class="floating-label">Email sales@xpertrf.in</span>
-        </a>
+         <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
         
-        <a href="tel:+919019609379" class="floating-btn floating-btn-phone" aria-label="Call Us">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <span class="floating-label">Call +91 90196 09379</span>
-        </a>
+       <a href="tel:+919019609379" class="phone-float" aria-label="Call Us">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
         
        
-        <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20Brady%20Products" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="Chat on WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <span class="floating-label">WhatsApp Chat</span>
-        </a>
+       <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+    
         
        
     </div>
 
     <!-- Enhanced Footer Section -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h4 class="footer-heading">About XpertRF</h4>
-                    <p class="footer-description">XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking and identification. We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#products">Products</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="brady-products.html">Brady Products</a></li>
-                        <li><a href="index.html#trainings">Trainings</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h4 class="footer-heading">Our Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://xpertrf.in">RFID Solutions</a></li>
-                        <li><a href="https://xpertrf.in">Web Development</a></li>
-                        <li><a href="https://xpertrf.in">Android Development</a></li>
-                        <li><a href="https://xpertrf.in">Antenna Design</a></li>
-                        <li><a href="https://xpertrf.in">Technical Support</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h4 class="footer-heading">Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Bangalore, Karnataka, India</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+919019609379">+91 90196 09379</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:sales@xpertrf.in">sales@xpertrf.in</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2024 XpertRF TechnoSolutions. All Rights Reserved.
-                </div>
-                <div class="footer-bottom-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="site-map.html">Site Map</a>
-                </div>
-            </div>
+     <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+         
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
         </div>
-    </footer>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

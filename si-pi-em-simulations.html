@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI & PI Simulation Analysis Services | XpertRF</title>
-    <meta name="description" content="Professional Signal Integrity and Power Integrity analysis services for high-speed PCB designs. Advanced simulation solutions for DDR4, SERDES, SGMII, SATA interfaces.">
+    <meta name="description"
+        content="Professional Signal Integrity and Power Integrity analysis services for high-speed PCB designs. Advanced simulation solutions for DDR4, SERDES, SGMII, SATA interfaces.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./src/styles/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
@@ -20,13 +24,13 @@
             --text-dark: #1e293b;
             --text-light: #64748b;
         }
-        
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
@@ -34,67 +38,67 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-        
+
         ::-webkit-scrollbar-thumb {
             background: var(--primary-blue);
             border-radius: 4px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--dark-blue);
         }
-        
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Navigation - Mobile First */
         .navbar {
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 1000;
             padding: 1rem 0;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
-        
+
         .nav-scrolled {
             padding: 0.7rem 0;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
         }
-        
-        .nav-container { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: relative;
         }
-        
+
         .logo {
-            font-size: 1.5rem; 
-            font-weight: 800; 
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--primary-blue);
-            text-decoration: none; 
-            display: flex; 
-            align-items: center; 
+            text-decoration: none;
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
-        
-        .nav-links { 
+
+        .nav-links {
             display: none;
             flex-direction: column;
             position: absolute;
@@ -107,28 +111,28 @@
             border-radius: 0 0 10px 10px;
             z-index: 1000;
         }
-        
+
         .nav-links.active {
             display: flex;
         }
-        
+
         .nav-links a {
-            color: var(--text-dark); 
-            text-decoration: none; 
+            color: var(--text-dark);
+            text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease; 
+            transition: color 0.3s ease;
             font-size: 1rem;
             padding: 0.8rem 0;
             border-bottom: 1px solid var(--medium-gray);
         }
-        
+
         .nav-links a:last-child {
             border-bottom: none;
         }
-        
+
         .nav-links a:hover,
-        .nav-links a.active { 
-            color: var(--primary-blue); 
+        .nav-links a.active {
+            color: var(--primary-blue);
         }
 
         .mobile-menu-btn {
@@ -144,8 +148,8 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
-            padding: 8rem 0 5rem; 
-            margin-top: 0; 
+            padding: 8rem 0 5rem;
+            margin-top: 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -153,39 +157,39 @@
             display: flex;
             align-items: center;
         }
-        
+
         .hero-bg-pattern {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(0, 163, 163, 0.05) 0%, transparent 50%);
             z-index: 0;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
             width: 100%;
         }
-        
+
         .hero h1 {
-            font-size: 2.2rem; 
-            margin-bottom: 1.5rem; 
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
             color: var(--dark-blue);
             line-height: 1.2;
             padding: 0 1rem;
         }
-        
+
         .hero-highlight {
             color: var(--primary-blue);
             position: relative;
             display: inline-block;
         }
-        
+
         .hero-highlight::after {
             content: '';
             position: absolute;
@@ -197,15 +201,15 @@
             z-index: -1;
             border-radius: 4px;
         }
-        
+
         .hero p {
-            font-size: 1.1rem; 
-            max-width: 800px; 
+            font-size: 1.1rem;
+            max-width: 800px;
             margin: 0 auto 3rem;
             color: var(--text-light);
             padding: 0 1rem;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 1rem;
@@ -214,7 +218,7 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .btn {
             padding: 0.9rem 2rem;
             border-radius: 50px;
@@ -231,24 +235,24 @@
             max-width: 280px;
             justify-content: center;
         }
-        
+
         .btn-primary {
             background: var(--primary-blue);
             color: white;
         }
-        
+
         .btn-primary:hover {
             background: var(--dark-blue);
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: var(--primary-blue);
             border-color: var(--primary-blue);
         }
-        
+
         .btn-secondary:hover {
             background: var(--primary-blue);
             color: white;
@@ -262,18 +266,18 @@
             padding: 4rem 0;
             position: relative;
         }
-        
+
         .stats-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             text-align: center;
         }
-        
+
         .stat-item {
             padding: 1.5rem;
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
@@ -281,7 +285,7 @@
             display: block;
             margin-bottom: 0.5rem;
         }
-        
+
         .stat-label {
             font-size: 1rem;
             opacity: 0.9;
@@ -292,20 +296,20 @@
             padding: 4rem 0;
             position: relative;
         }
-        
+
         .section:nth-child(even) {
             background: var(--light-gray);
         }
-        
+
         .section-title {
-            font-size: 2rem; 
-            text-align: center; 
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 1rem;
             color: var(--dark-blue);
             position: relative;
             padding: 0 1rem;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -317,13 +321,13 @@
             background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
             border-radius: 2px;
         }
-        
+
         .section-subtitle {
-            text-align: center; 
-            color: var(--text-light); 
+            text-align: center;
+            color: var(--text-light);
             margin-bottom: 3rem;
-            max-width: 700px; 
-            margin-left: auto; 
+            max-width: 700px;
+            margin-left: auto;
             margin-right: auto;
             font-size: 1.1rem;
             padding: 0 1rem;
@@ -331,15 +335,15 @@
 
         /* Service Cards */
         .service-cards {
-            display: grid; 
+            display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem; 
+            gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .service-card {
-            background: white; 
-            border-radius: 12px; 
+            background: white;
+            border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
@@ -349,12 +353,12 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .service-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -364,17 +368,17 @@
             height: 5px;
             background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
             border-color: rgba(0, 102, 204, 0.1);
         }
-        
+
         .service-icon {
-            font-size: 2.5rem; 
+            font-size: 2.5rem;
             color: var(--primary-blue);
-            margin-bottom: 1.5rem; 
+            margin-bottom: 1.5rem;
             display: inline-block;
             width: 70px;
             height: 70px;
@@ -383,13 +387,13 @@
             background: rgba(0, 102, 204, 0.1);
             border-radius: 50%;
         }
-        
+
         .service-card h3 {
-            font-size: 1.4rem; 
-            margin-bottom: 1rem; 
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
             color: var(--dark-blue);
         }
-        
+
         .service-card p {
             color: var(--text-light);
             margin-bottom: 1.5rem;
@@ -397,15 +401,15 @@
 
         /* SI Challenges Grid */
         .challenge-grid {
-            display: grid; 
+            display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem; 
+            gap: 1rem;
             margin-top: 1.5rem;
         }
-        
+
         .challenge-item {
-            background: white; 
-            padding: 1.2rem; 
+            background: white;
+            padding: 1.2rem;
             border-radius: 8px;
             border-left: 4px solid var(--accent-teal);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -413,12 +417,12 @@
             opacity: 0;
             transform: translateY(20px);
         }
-        
+
         .challenge-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .challenge-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -432,7 +436,7 @@
             margin-top: 3rem;
             position: relative;
         }
-        
+
         .process-step {
             background: white;
             border-radius: 12px;
@@ -443,12 +447,12 @@
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .process-step.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .step-number {
             width: 40px;
             height: 40px;
@@ -462,7 +466,7 @@
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
-        
+
         .step-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
@@ -481,7 +485,7 @@
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
             opacity: 0;
             transform: translateY(30px);
@@ -517,64 +521,64 @@
 
         .proof-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 55px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
         }
 
         /* Case Studies */
         .case-grid {
-            display: grid; 
+            display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem; 
+            gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .case-study {
-            background: white; 
-            border-radius: 12px; 
+            background: white;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .case-study.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .case-study:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
-        
+
         .case-header {
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             color: white;
             padding: 1.2rem;
             text-align: center;
         }
-        
+
         .case-header h4 {
             font-size: 1.3rem;
             margin: 0;
         }
-        
-        .case-content { 
-            padding: 1.5rem; 
+
+        .case-content {
+            padding: 1.5rem;
         }
-        
-        .case-list { 
-            padding-left: 1.2rem; 
-            margin: 1rem 0; 
+
+        .case-list {
+            padding-left: 1.2rem;
+            margin: 1rem 0;
         }
-        
-        .case-list li { 
-            margin-bottom: 0.5rem; 
-            color: var(--text-light); 
+
+        .case-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
             position: relative;
         }
-        
+
         .case-list li::before {
             content: '✓';
             color: var(--accent-teal);
@@ -586,23 +590,23 @@
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--dark-blue) 0%, #002244 100%);
-            color: white; 
-            padding: 3rem 1.5rem; 
-            text-align: center; 
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
             border-radius: 15px;
-            margin: 3rem auto; 
+            margin: 3rem auto;
             max-width: 1000px;
             position: relative;
             overflow: hidden;
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .cta-section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .cta-section::before {
             content: '';
             position: absolute;
@@ -610,16 +614,16 @@
             right: -50%;
             width: 100%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
         }
-        
-        .cta-title { 
-            font-size: 1.8rem; 
-            margin-bottom: 1rem; 
+
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
-        
+
         .cta-text {
             font-size: 1.1rem;
             margin-bottom: 2rem;
@@ -632,219 +636,10 @@
         }
 
         /* ================== ENHANCED FOOTER ================== */
-        .footer-container {
-            background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-            padding: 70px 20px 20px 20px;
-        }
-        
-        .footer-wave {
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
-            background-size: 1200px 100%;
-        }
-        
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-        }
-        
-        .footer-column {
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #93c5fd, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-            color: white;
-        }
-        
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #fff;
-            border-radius: 2px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-            transition: transform 0.2s ease;
-        }
-        
-        .footer-links li:hover {
-            transform: translateX(5px);
-        }
-        
-        .footer-links a {
-            color: #dbeafe;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s ease;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-links i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-            color: #93c5fd;
-        }
-        
-        .footer-description {
-            color: #dbeafe;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-            color: #dbeafe;
-        }
-        
-        .footer-contact-icon {
-            background: rgba(96, 165, 250, 0.2);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .footer-contact-icon i {
-            color: #2596be;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .footer-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .footer-social a:hover {
-            background: #3b82f6;
-            transform: translateY(-3px);
-        }
-        
-        /* SINGLE LINE FOOTER BOTTOM */
-        .footer-bottom-single-line {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            color: #dbeafe;
-            font-size: 0.9rem;
-            width: 100%;
-        }
-        
-        .footer-bottom-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-        
-        .footer-bottom-content span {
-            color: #dbeafe;
-        }
-        
-        .footer-bottom-content a {
-            color: #dbeafe;
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-        
-        .footer-bottom-content a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .separator {
-            color: #dbeafe;
-        }
-        
-        .copyright-text {
-            font-weight: 600;
-            color: white;
-        }
+       
 
+
+        
         /* ================== ENHANCED FLOATING BUTTONS ================== */
         .floating-buttons {
             position: fixed;
@@ -855,7 +650,7 @@
             flex-direction: column;
             gap: 15px;
         }
-        
+
         .floating-btn {
             width: 60px;
             height: 60px;
@@ -869,7 +664,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .floating-btn::before {
             content: '';
             position: absolute;
@@ -881,35 +676,35 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-        
+
         .floating-btn:hover::before {
             transform: translateY(0);
         }
-        
+
         .floating-btn i {
             font-size: 1.5rem;
             color: white;
             position: relative;
             z-index: 2;
         }
-        
+
         .floating-btn.phone {
             background: #2596be;
         }
-        
+
         .floating-btn.email {
             background: #2596be;
         }
-        
+
         .floating-btn.whatsapp {
             background: #2596be;
         }
-        
+
         .floating-btn:hover {
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .floating-btn .tooltip {
             position: absolute;
             right: 70px;
@@ -924,12 +719,12 @@
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .floating-btn:hover .tooltip {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .floating-btn .pulse {
             position: absolute;
             width: 100%;
@@ -939,67 +734,77 @@
             opacity: 0.6;
             animation: pulse-ring 2s infinite;
         }
-        
+
         @keyframes pulse-ring {
             0% {
                 transform: scale(0.8);
                 opacity: 0.8;
             }
+
             100% {
                 transform: scale(1.5);
                 opacity: 0;
             }
         }
-        
+
         /* Floating button animations */
         @keyframes float-up {
             0% {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        .floating-btn:nth-child(1) { animation: float-up 0.5s 0.1s both; }
-        .floating-btn:nth-child(2) { animation: float-up 0.5s 0.2s both; }
-        .floating-btn:nth-child(3) { animation: float-up 0.5s 0.3s both; }
-        
+
+        .floating-btn:nth-child(1) {
+            animation: float-up 0.5s 0.1s both;
+        }
+
+        .floating-btn:nth-child(2) {
+            animation: float-up 0.5s 0.2s both;
+        }
+
+        .floating-btn:nth-child(3) {
+            animation: float-up 0.5s 0.3s both;
+        }
+
         @media (max-width: 768px) {
             .floating-buttons {
                 right: 20px;
                 bottom: 20px;
             }
-            
+
             .floating-btn {
                 width: 50px;
                 height: 50px;
             }
-            
+
             .floating-btn i {
                 font-size: 1.2rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .floating-buttons {
                 right: 15px;
                 bottom: 15px;
                 gap: 10px;
             }
-            
+
             .floating-btn {
                 width: 45px;
                 height: 45px;
             }
-            
+
             .footer-bottom-content {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .separator {
                 display: none;
             }
@@ -1011,23 +816,34 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
+
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .stagger-delay-1 { transition-delay: 0.1s; }
-        .stagger-delay-2 { transition-delay: 0.2s; }
-        .stagger-delay-3 { transition-delay: 0.3s; }
-        .stagger-delay-4 { transition-delay: 0.4s; }
+
+        .stagger-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-delay-4 {
+            transition-delay: 0.4s;
+        }
 
         /* Desktop Styles */
         @media (min-width: 768px) {
             .logo {
                 font-size: 1.8rem;
             }
-            
+
             .nav-links {
                 display: flex;
                 flex-direction: row;
@@ -1038,13 +854,13 @@
                 border-radius: 0;
                 gap: 2rem;
             }
-            
+
             .nav-links a {
                 padding: 0;
                 border-bottom: none;
                 position: relative;
             }
-            
+
             .nav-links a::after {
                 content: '';
                 position: absolute;
@@ -1055,95 +871,95 @@
                 background: var(--primary-blue);
                 transition: width 0.3s ease;
             }
-            
+
             .nav-links a:hover::after,
             .nav-links a.active::after {
                 width: 100%;
             }
-            
+
             .mobile-menu-btn {
                 display: none;
             }
-            
+
             .hero {
                 padding: 12rem 0 8rem;
                 min-height: 100vh;
             }
-            
+
             .hero h1 {
                 font-size: 3.5rem;
                 padding: 0;
             }
-            
+
             .hero p {
                 font-size: 1.3rem;
                 padding: 0;
             }
-            
+
             .hero-buttons {
                 flex-direction: row;
             }
-            
+
             .btn {
                 width: auto;
                 max-width: none;
             }
-            
+
             .stats-container {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 3rem;
             }
-            
+
             .stat-number {
                 font-size: 3rem;
             }
-            
+
             .section {
                 padding: 6rem 0;
             }
-            
+
             .section-title {
                 font-size: 2.8rem;
             }
-            
+
             .section-title::after {
                 width: 80px;
             }
-            
+
             .service-cards {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                 gap: 2.5rem;
             }
-            
+
             .challenge-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 1.5rem;
             }
-            
+
             .process-steps {
                 flex-direction: row;
                 justify-content: space-between;
             }
-            
+
             .process-step {
                 flex: 1;
                 margin: 0 1rem;
             }
-            
+
             .proof-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            
+
             .case-grid {
                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                 gap: 2.5rem;
             }
-            
+
             .cta-section {
                 padding: 5rem 2rem;
                 margin: 5rem auto;
             }
-            
+
             .cta-title {
                 font-size: 2.5rem;
             }
@@ -1153,13 +969,14 @@
             .hero-buttons {
                 flex-direction: row;
             }
-            
+
             .service-cards {
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             }
         }
     </style>
 </head>
+
 <body>
 
 
@@ -1168,7 +985,9 @@
         <div class="hero-bg-pattern"></div>
         <div class="container hero-content">
             <h1 class="fade-up">Advanced <span class="hero-highlight">SI & PI</span> Simulation Analysis</h1>
-            <p class="fade-up stagger-delay-1">Simplify your complex designs from scratch to manufacturing using simulation-driven solutions for better output. XpertRF offers efficient analysis services designed as per client specifications within a stipulated time frame.</p>
+            <p class="fade-up stagger-delay-1">Simplify your complex designs from scratch to manufacturing using
+                simulation-driven solutions for better output. XpertRF offers efficient analysis services designed as
+                per client specifications within a stipulated time frame.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary fade-up stagger-delay-2">
                     <i class="fas fa-paper-plane"></i> Request Analysis
@@ -1185,7 +1004,9 @@
     <section class="section" id="si">
         <div class="container">
             <h2 class="section-title fade-up">Signal Integrity Analysis</h2>
-            <p class="section-subtitle fade-up stagger-delay-1">We offer a wide array of Signal Integrity Analysis Services to address the sharp upturn in system-level SI issues that cause project delays and increased costs. We support quick-turn design analysis.</p>
+            <p class="section-subtitle fade-up stagger-delay-1">We offer a wide array of Signal Integrity Analysis
+                Services to address the sharp upturn in system-level SI issues that cause project delays and increased
+                costs. We support quick-turn design analysis.</p>
 
             <div class="service-cards">
                 <div class="service-card fade-up">
@@ -1193,15 +1014,17 @@
                     <h3>SI Challenges We Solve</h3>
                     <p>Modern high-speed designs face numerous signal integrity hurdles:</p>
                     <div class="challenge-grid">
-                        <div class="challenge-item fade-up stagger-delay-1">Rapid rise times (increasing bandwidth)</div>
+                        <div class="challenge-item fade-up stagger-delay-1">Rapid rise times (increasing bandwidth)
+                        </div>
                         <div class="challenge-item fade-up stagger-delay-2">Controlled Impedance & Reflections</div>
                         <div class="challenge-item fade-up stagger-delay-3">Crosstalk & Skew</div>
-                        <div class="challenge-item fade-up stagger-delay-4">Loss & Dispersive effects (skin effect, dielectric losses)</div>
+                        <div class="challenge-item fade-up stagger-delay-4">Loss & Dispersive effects (skin effect,
+                            dielectric losses)</div>
                         <div class="challenge-item fade-up stagger-delay-1">Power supply droop and ground bounce</div>
                         <div class="challenge-item fade-up stagger-delay-2">Common-mode radiated noise (EMI)</div>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-up stagger-delay-1">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>SI Analysis Advantage</h3>
@@ -1223,7 +1046,9 @@
     <section class="section" id="pi">
         <div class="container">
             <h2 class="section-title fade-up">Power Integrity Analysis</h2>
-            <p class="section-subtitle fade-up stagger-delay-1">XpertRF offers efficient Power Integrity Analysis Services to various customers and organizations. We specially design these services as per the specifications given by the clients within a stipulated time frame.</p>
+            <p class="section-subtitle fade-up stagger-delay-1">XpertRF offers efficient Power Integrity Analysis
+                Services to various customers and organizations. We specially design these services as per the
+                specifications given by the clients within a stipulated time frame.</p>
 
             <div class="service-cards">
                 <div class="service-card fade-up">
@@ -1231,15 +1056,19 @@
                     <h3>Our PI Analysis Service</h3>
                     <p>Comprehensive power integrity solutions for your high-performance designs:</p>
                     <div class="challenge-grid">
-                        <div class="challenge-item fade-up stagger-delay-1">Power Delivery Network (PDN) Impedance Analysis</div>
+                        <div class="challenge-item fade-up stagger-delay-1">Power Delivery Network (PDN) Impedance
+                            Analysis</div>
                         <div class="challenge-item fade-up stagger-delay-2">DC Drop and Current Density Analysis</div>
-                        <div class="challenge-item fade-up stagger-delay-3">Decoupling Strategy and Capacitor Optimization</div>
-                        <div class="challenge-item fade-up stagger-delay-4">Simultaneous Switching Noise (SSN) Analysis</div>
+                        <div class="challenge-item fade-up stagger-delay-3">Decoupling Strategy and Capacitor
+                            Optimization</div>
+                        <div class="challenge-item fade-up stagger-delay-4">Simultaneous Switching Noise (SSN) Analysis
+                        </div>
                         <div class="challenge-item fade-up stagger-delay-1">Power Plane Resonance Analysis</div>
-                        <div class="challenge-item fade-up stagger-delay-2">Integration with SI for System-Level Performance</div>
+                        <div class="challenge-item fade-up stagger-delay-2">Integration with SI for System-Level
+                            Performance</div>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-up stagger-delay-1">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
                     <h3>PI Analysis Benefits</h3>
@@ -1310,27 +1139,28 @@
     <section class="section" id="process">
         <div class="container">
             <h2 class="section-title fade-up">Our Analysis Process</h2>
-            <p class="section-subtitle fade-up stagger-delay-1">Structured workflow ensuring accurate and reliable simulation results</p>
-            
+            <p class="section-subtitle fade-up stagger-delay-1">Structured workflow ensuring accurate and reliable
+                simulation results</p>
+
             <div class="process-steps">
                 <div class="process-step fade-up">
                     <div class="step-number">1</div>
                     <h4 class="step-title">Requirements Analysis</h4>
                     <p>Understand design specifications, constraints, and performance goals</p>
                 </div>
-                
+
                 <div class="process-step fade-up stagger-delay-1">
                     <div class="step-number">2</div>
                     <h4 class="step-title">Model Setup</h4>
                     <p>Create accurate simulation models and configure analysis parameters</p>
                 </div>
-                
+
                 <div class="process-step fade-up stagger-delay-2">
                     <div class="step-number">3</div>
                     <h4 class="step-title">Simulation Execution</h4>
                     <p>Run comprehensive SI/PI simulations using industry-standard tools</p>
                 </div>
-                
+
                 <div class="process-step fade-up stagger-delay-3">
                     <div class="step-number">4</div>
                     <h4 class="step-title">Results Analysis</h4>
@@ -1344,15 +1174,17 @@
     <section class="section" id="cases">
         <div class="container">
             <h2 class="section-title fade-up">SI Analysis Case Studies</h2>
-            <p class="section-subtitle fade-up stagger-delay-1">Real-world examples of our signal integrity analysis delivering clear, measurable results.</p>
-            
+            <p class="section-subtitle fade-up stagger-delay-1">Real-world examples of our signal integrity analysis
+                delivering clear, measurable results.</p>
+
             <div class="case-grid">
                 <div class="case-study fade-up">
                     <div class="case-header">
                         <h4>SGMII Interface SERDES Analysis</h4>
                     </div>
                     <div class="case-content">
-                        <p><strong>Scope:</strong> Multi-board post-layout Serdes simulations for an SGMII interface.</p>
+                        <p><strong>Scope:</strong> Multi-board post-layout Serdes simulations for an SGMII interface.
+                        </p>
                         <p><strong>Work Performed:</strong></p>
                         <ul class="case-list">
                             <li>Post-layout SI simulations for a transmitter pair running at 1.25 Gbps</li>
@@ -1360,16 +1192,18 @@
                             <li>Eye diagram analysis and margin verification</li>
                             <li>Compliance with SGMII standard specifications</li>
                         </ul>
-                        <p><strong>Result:</strong> Eye density plot satisfied all eye mask requirements per SGMII standard specifications.</p>
+                        <p><strong>Result:</strong> Eye density plot satisfied all eye mask requirements per SGMII
+                            standard specifications.</p>
                     </div>
                 </div>
-                
+
                 <div class="case-study fade-up stagger-delay-1">
                     <div class="case-header">
                         <h4>DDR4 Memory Interface Analysis</h4>
                     </div>
                     <div class="case-content">
-                        <p><strong>Scope:</strong> Post-layout SI simulations for a DDR4 section on a critical board.</p>
+                        <p><strong>Scope:</strong> Post-layout SI simulations for a DDR4 section on a critical board.
+                        </p>
                         <p><strong>Work Performed:</strong> Comprehensive analysis for:</p>
                         <ul class="case-list">
                             <li>Data Section timing and signal quality</li>
@@ -1377,16 +1211,18 @@
                             <li>Clock Section jitter and skew analysis</li>
                             <li>Timing Analysis for write/read operations</li>
                         </ul>
-                        <p><strong>Result:</strong> Eye diagrams confirmed waveforms at the receiver satisfied all threshold requirements for write operations.</p>
+                        <p><strong>Result:</strong> Eye diagrams confirmed waveforms at the receiver satisfied all
+                            threshold requirements for write operations.</p>
                     </div>
                 </div>
-                
+
                 <div class="case-study fade-up stagger-delay-2">
                     <div class="case-header">
                         <h4>SATA Interface SERDES Analysis</h4>
                     </div>
                     <div class="case-content">
-                        <p><strong>Scope:</strong> Multi-board post-layout Serdes simulations for a SATA interface across SOM, MCC, and Backplane cards.</p>
+                        <p><strong>Scope:</strong> Multi-board post-layout Serdes simulations for a SATA interface
+                            across SOM, MCC, and Backplane cards.</p>
                         <p><strong>Work Performed:</strong></p>
                         <ul class="case-list">
                             <li>Simulations for 3 Gbps transmitter pair from processor to backplane</li>
@@ -1394,143 +1230,154 @@
                             <li>Multi-board signal path analysis</li>
                             <li>Connector and via optimization</li>
                         </ul>
-                        <p><strong>Result:</strong> Eye density plot met all eye mask requirements as per SATA standard specifications.</p>
+                        <p><strong>Result:</strong> Eye density plot met all eye mask requirements as per SATA standard
+                            specifications.</p>
                     </div>
+                    ```
                 </div>
             </div>
         </div>
     </section>
 
-   
+    <!-- Footer Section -->
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
 
-    <!-- Footer -->
-    <footer class="footer-container">
-        <div class="footer-wave"></div>
-        
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Company Info Column -->
-                <div class="footer-column">
-                    <h3 class="footer-logo">XpertRF</h3>
-                    <p class="footer-description">
-                        Leading provider of SI/PI simulation, PCB design, RFID, and automation solutions. 
-                        We deliver innovative technology solutions for a smarter, more connected future.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> SI/PI Analysis</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> PCB Design</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> RFID Solutions</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Trainings</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Our Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chart-line"></i> SI/PI Simulation</a></li>
-                        <li><a href="#"><i class="fas fa-microchip"></i> PCB Design</a></li>
-                        <li><a href="#"><i class="fas fa-rss"></i> RFID Solutions</a></li>
-                        <li><a href="#"><i class="fas fa-code"></i> Web Development</a></li>
-                        <li><a href="#"><i class="fas fa-satellite"></i> Antenna Design</a></li>
-                        <li><a href="#"><i class="fas fa-headset"></i> Technical Support</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Contact Info</h4>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Bangalore Office</p>
-                            <p style="color: #dbeafe;">Karnataka, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Call Us</p>
-                            <a href="tel:+919876543210" style="color: #dbeafe; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#dbeafe'">+91 98765 43210</a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Email Us</p>
-                            <a href="mailto:contact@xpertrf.in" style="color: #dbeafe; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#dbeafe'">contact@xpertrf.in</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SINGLE LINE FOOTER BOTTOM -->
-            <div class="footer-bottom-single-line">
-                <div class="footer-bottom-content">
-                    <span>&copy; 2025 <span class="copyright-text">XpertRF TechnoSolutions</span>. All Rights Reserved.</span>
-                    <span class="separator">|</span>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="terms.html">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="sitemap.html">Sitemap</a>
-                    <span class="separator">|</span>
-                    <a href="cookies.html">Cookie Policy</a>
-                </div>
-            </div>
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+         
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
         </div>
-    </footer>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
 
     <!-- Floating Contact Buttons -->
-    <div class="floating-buttons">
-        
-        
-        <div class="floating-btn email" onclick="window.location.href='mailto:sales@xpertrf.in'">
-            <i class="fas fa-envelope"></i>
-            <div class="tooltip">Send Email</div>
-        </div>
-        <div class="floating-btn phone" onclick="window.location.href='tel:+919876543210'">
-            <div class="pulse"></div>
-            <i class="fas fa-phone"></i>
-            <div class="tooltip">Call Us Now</div>
-        </div>
-        
-        
+    <a href="tel:+919019609379" class="phone-float" aria-label="Call Us"
+        style="position: fixed; width: 60px; height: 60px; bottom: 190px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            style="width: 100%; height: 100%;">
+            <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+        </svg>
+    </a>
 
-        <div class="floating-btn whatsapp" onclick="window.open('https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20your%20SI%20PI%20Analysis%20services', '_blank')">
-            <div class="pulse"></div>
-            <i class="fab fa-whatsapp"></i>
-            <div class="tooltip">Chat on WhatsApp</div>
-        </div>
-    </div>
+    <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us"
+        style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            style="width: 100%; height: 100%;">
+            <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+    </a>
+
+    <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float"
+        aria-label="Chat on WhatsApp"
+        style="position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 12px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+            style="width: 100%; height: 100%; object-fit: contain;">
+    </a>
 
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
-        
+
         if (mobileMenuBtn) {
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
@@ -1563,7 +1410,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
+
                     // Animate counters in stats section
                     if (entry.target.classList.contains('stat-number')) {
                         animateCounter(entry.target);
@@ -1575,17 +1422,17 @@
         // Animated counter function
         function animateCounter(element) {
             if (!element.hasAttribute('data-count')) return;
-            
+
             const target = parseInt(element.getAttribute('data-count'));
             if (isNaN(target)) return;
-            
+
             // Check if already animated
             if (element.getAttribute('data-animated') === 'true') return;
             element.setAttribute('data-animated', 'true');
-            
+
             const increment = target / 50;
             let current = 0;
-            
+
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
@@ -1602,7 +1449,7 @@
             '.fade-up, .service-card, .challenge-item, .case-study, ' +
             '.cta-section, .process-step, .proof-card'
         );
-        
+
         animatedElements.forEach(el => {
             observer.observe(el);
         });
@@ -1611,17 +1458,17 @@
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (!navbar) return;
-            
+
             if (window.scrollY > 50) {
                 navbar.classList.add('nav-scrolled');
             } else {
                 navbar.classList.remove('nav-scrolled');
             }
-            
+
             // Update active nav link
             const sections = document.querySelectorAll('section[id]');
             const navLinksList = document.querySelectorAll('.nav-links a');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -1641,7 +1488,7 @@
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
@@ -1654,9 +1501,9 @@
                 }
             });
         });
-        
+
         // Initialize floating buttons animation
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const floatingButtons = document.querySelectorAll('.floating-btn');
             floatingButtons.forEach((btn, index) => {
                 btn.style.animationDelay = `${(index + 1) * 0.1}s`;
@@ -1664,4 +1511,5 @@
         });
     </script>
 </body>
+
 </html>

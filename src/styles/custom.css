@@ -708,3 +708,9 @@ header.header-autohide {
         justify-content: center;
     }
 }
+
+
+.site-footer,
+.site-footer * {
+  color: #ffffff !important;
+}

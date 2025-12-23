@@ -1,1176 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silicon Services | XpertRF - End-to-End Chip Development Solutions</title>
-    <meta name="description" content="Complete silicon services from architecture to production. Professional chip design, verification, fabrication, and testing solutions.">
+    <meta name="description"
+        content="Complete silicon services from architecture to production. Professional chip design, verification, fabrication, and testing solutions.">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="./src/styles/custom.css">
+     <link rel="stylesheet" href="./src/styles/css/footer.css">
 
-        :root {
-            --primary: #1a237e;
-            --primary-light: #534bae;
-            --primary-dark: #000051;
-            --secondary: #ff6f00;
-            --secondary-light: #ffa040;
-            --secondary-dark: #c43e00;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333;
-            --text-color: #333;
-            --text-light: #777;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: #111;
-            background: #2596be !important;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #2596be !important;
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--secondary-light);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: #2596be !important;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--secondary-dark);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 0;
-            background-color: var(--light-gray);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 4px;
-            background-color: var(--secondary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .service-card:hover .service-img img {
-            transform: scale(1.05);
-        }
-
-        .service-content {
-            padding: 1.5rem;
-        }
-
-        .service-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-content h3 i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        .service-content ul {
-            list-style-type: none;
-            margin-top: 1rem;
-        }
-
-        .service-content ul li {
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .service-content ul li:before {
-            content: "•";
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Process Flow Section */
-        .process-flow {
-            padding: 5rem 0;
-            background-color: white;
-        }
-
-        .process-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .process-line {
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            right: 50px;
-            height: 4px;
-            background-color: var(--primary-light);
-            z-index: 1;
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            z-index: 2;
-        }
-
-        .process-step {
-            text-align: center;
-            width: 100px;
-        }
-
-        .step-icon {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            border: 4px solid var(--primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        .step-text {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Foundry Partners */
-        .foundry-partners {
-            padding: 3rem 0;
-            background-color: var(--light-gray);
-            text-align: center;
-        }
-
-        .foundry-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .foundry-logo {
-            background-color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* ================== ENHANCED FOOTER ================== */
-        .footer-container {
-            background: linear-gradient(135deg, #0c4a6e 0%, #1e40af 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-            padding: 70px 20px 20px 20px;
-        }
-        
-        .footer-wave {
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
-            background-size: 1200px 100%;
-        }
-        
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-        }
-        
-        .footer-column {
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #93c5fd, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.75rem;
-            color: white;
-        }
-        
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(to right, #60a5fa, #93c5fd);
-            border-radius: 2px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-            transition: transform 0.2s ease;
-        }
-        
-        .footer-links li:hover {
-            transform: translateX(5px);
-        }
-        
-        .footer-links a {
-            color: #dbeafe;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s ease;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-links i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-            color: #93c5fd;
-        }
-        
-        .footer-description {
-            color: #dbeafe;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-            color: #dbeafe;
-        }
-        
-        .footer-contact-icon {
-            background: rgba(96, 165, 250, 0.2);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .footer-contact-icon i {
-            color: #93c5fd;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .footer-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .footer-social a:hover {
-            background: #3b82f6;
-            transform: translateY(-3px);
-        }
-        
-        /* SINGLE LINE FOOTER BOTTOM */
-        .footer-bottom-single-line {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            color: #dbeafe;
-            font-size: 0.9rem;
-            width: 100%;
-        }
-        
-        .footer-bottom-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-        
-        .footer-bottom-content span {
-            color: #dbeafe;
-        }
-        
-        .footer-bottom-content a {
-            color: #dbeafe;
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-        
-        .footer-bottom-content a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .separator {
-            color: #dbeafe;
-        }
-        
-        .copyright-text {
-            font-weight: 600;
-            color: white;
-        }
-
-        /* ================== ENHANCED FLOATING BUTTONS ================== */
-        .floating-buttons {
-            position: fixed;
-            right: 30px;
-            bottom: 30px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .floating-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .floating-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .floating-btn:hover::before {
-            transform: translateY(0);
-        }
-        
-        .floating-btn i {
-            font-size: 1.5rem;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .floating-btn.phone {
-            background: #2596be;
-        }
-        
-        .floating-btn.email {
-            background: #2596be;
-        }
-        
-        .floating-btn.whatsapp {
-            background: #2596be;
-        }
-        
-        .floating-btn:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .floating-btn .tooltip {
-            position: absolute;
-            right: 70px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .floating-btn:hover .tooltip {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .floating-btn .pulse {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: inherit;
-            opacity: 0.6;
-            animation: pulse-ring 2s infinite;
-        }
-        
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-        
-        /* Floating button animations */
-        @keyframes float-up {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .floating-btn:nth-child(1) { animation: float-up 0.5s 0.1s both; }
-        .floating-btn:nth-child(2) { animation: float-up 0.5s 0.2s both; }
-        .floating-btn:nth-child(3) { animation: float-up 0.5s 0.3s both; }
-        
-        @media (max-width: 768px) {
-            .floating-buttons {
-                right: 20px;
-                bottom: 20px;
-            }
-            
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .floating-btn i {
-                font-size: 1.2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .floating-buttons {
-                right: 15px;
-                bottom: 15px;
-                gap: 10px;
-            }
-            
-            .floating-btn {
-                width: 45px;
-                height: 45px;
-            }
-            
-            .footer-bottom-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .separator {
-                display: none;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .process-steps {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 2rem;
-            }
-            
-            .process-line {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- Header -->
- 
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>End-to-End Silicon Services</h1>
-            <p>Comprehensive chip design, verification, fabrication, and testing solutions from architecture to production. Partner with us for your next silicon project.</p>
-            <a href="#contact" class="cta-button">Start Your Project</a>
-        </div>
+<body class="bg-blue-50 text-gray-800 font-sans">
+
+    <!-- Hero -->
+    <section class="bg-blue-600 text-white text-center py-20">
+        <h1 class="text-4xl font-bold mb-4">End-to-End Silicon Services</h1>
+        <p class="text-lg mb-6 max-w-2xl mx-auto">
+            Comprehensive chip design, verification, fabrication, and testing solutions from architecture to production.
+            Partner with us for your next silicon project.
+        </p>
+        <a href="#contact"
+            class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold transition">
+            Start Your Project
+        </a>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Silicon Services</h2>
-                <p>Complete solutions covering every stage of silicon development</p>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="System Architecture">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-sitemap"></i> System & Architecture</h3>
-                        <p>Comprehensive planning and architecture definition for silicon projects</p>
-                        <ul>
-                            <li>Requirement analysis</li>
-                            <li>Block diagrams</li>
-                            <li>Specification writing</li>
-                            <li>Architecture definition</li>
+    <!-- Services -->
+    <section id="services" class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6">Our Silicon Services</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Complete solutions covering every stage of silicon development
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <!-- System & Architecture -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                        alt="Chip architecture diagram" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i class="fas fa-sitemap text-orange-500 mr-2"></i>System &
+                            Architecture</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Requirement Analysis</li>
+                            <li>Block Diagrams</li>
+                            <li>Specification Writing</li>
+                            <li>Architecture Definition</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1629654291660-3c98113a0438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Front-End Design">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-code"></i> Front-End Design</h3>
-                        <p>High-quality RTL design and implementation for optimal performance</p>
-                        <ul>
-                            <li>RTL design (Verilog/VHDL)</li>
-                            <li>IP selection/integration</li>
+
+                <!-- Front-End Design -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+                        alt="RTL design code" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i class="fas fa-code text-orange-500 mr-2"></i>Front-End
+                            Design</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>RTL Design (Verilog/VHDL)</li>
+                            <li>IP Integration</li>
                             <li>Synthesis</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1432&q=80" alt="Verification & Validation">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-check-circle"></i> Verification & Validation</h3>
-                        <p>Robust verification methodologies to ensure silicon correctness</p>
-                        <ul>
-                            <li>Functional verification</li>
+
+                <!-- Verification & Validation -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
+                        alt="Silicon testing lab" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i
+                                class="fas fa-check-circle text-orange-500 mr-2"></i>Verification & Validation</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Functional Verification</li>
                             <li>UVM</li>
-                            <li>Formal verification</li>
-                            <li>Emulation & FPGA prototyping</li>
+                            <li>Formal Verification</li>
+                            <li>FPGA Prototyping</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Physical Design">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-project-diagram"></i> Physical Design</h3>
-                        <p>Complete physical implementation from floorplanning to sign-off</p>
-                        <ul>
-                            <li>Floor planning</li>
-                            <li>Placement & routing</li>
-                            <li>Timing closure</li>
-                            <li>DRC/LVS & power optimization</li>
-                            <li>Sign-off</li>
+
+                <!-- Physical Design -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+                        alt="Physical chip layout" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i
+                                class="fas fa-project-diagram text-orange-500 mr-2"></i>Physical Design</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Floorplanning</li>
+                            <li>Placement & Routing</li>
+                            <li>Timing Closure</li>
+                            <li>DRC / LVS</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tape-Out Support">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-file-export"></i> Tape-Out Support</h3>
-                        <p>Preparation for manufacturing with industry-standard deliverables</p>
-                        <ul>
-                            <li>GDSII generation</li>
-                            <li>Mask preparation</li>
+
+                <!-- Tape-Out Support -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80"
+                        alt="Tape-out GDSII" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i
+                                class="fas fa-file-export text-orange-500 mr-2"></i>Tape-Out Support</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>GDSII Generation</li>
+                            <li>Mask Preparation</li>
                             <li>Documentation</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fabrication Support">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-industry"></i> Fabrication Support</h3>
-                        <p>Coordination with leading foundries for wafer processing</p>
-                        <ul>
-                            <li>Foundry coordination (TSMC / Samsung / GF / SMIC etc.)</li>
-                            <li>Wafer processing</li>
+
+                <!-- Fabrication Support -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80"
+                        alt="Semiconductor fabrication" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i
+                                class="fas fa-industry text-orange-500 mr-2"></i>Fabrication Support</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Foundry Coordination</li>
+                            <li>Wafer Processing</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 7 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Packaging">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-box"></i> Packaging</h3>
-                        <p>Advanced packaging solutions for optimal performance and reliability</p>
-                        <ul>
-                            <li>Wire bonding / flip-chip</li>
-                            <li>BGA/QFN etc.</li>
+
+                <!-- Packaging -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=800&q=80"
+                        alt="Chip packaging" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i class="fas fa-box text-orange-500 mr-2"></i>Packaging</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Wire Bonding</li>
+                            <li>Flip-Chip / BGA / QFN</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 8 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Silicon Testing">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-vial"></i> Silicon Testing</h3>
-                        <p>Comprehensive testing and validation of fabricated silicon</p>
-                        <ul>
-                            <li>Post-silicon validation</li>
-                            <li>ATE testing</li>
-                            <li>Yield analysis & debugging</li>
+
+                <!-- Silicon Testing -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80"
+                        alt="ATE testing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i class="fas fa-vial text-orange-500 mr-2"></i>Silicon
+                            Testing</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Post-Silicon Validation</li>
+                            <li>ATE Testing</li>
+                            <li>Yield Analysis</li>
                         </ul>
                     </div>
                 </div>
-                
-                <!-- Service 9 -->
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Production & Supply">
-                    </div>
-                    <div class="service-content">
-                        <h3><i class="fas fa-shipping-fast"></i> Production & Supply</h3>
-                        <p>End-to-end production management and supply chain solutions</p>
-                        <ul>
-                            <li>Volume ramp-up</li>
+
+                <!-- Production & Supply -->
+                <div class="bg-white rounded shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=800&q=80"
+                        alt="Production line" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2"><i
+                                class="fas fa-shipping-fast text-orange-500 mr-2"></i>Production & Supply</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Volume Ramp-Up</li>
                             <li>Qualification</li>
                             <li>Logistics</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Process Flow Section -->
-    <section id="process" class="process-flow">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Development Process</h2>
-                <p>Streamlined workflow from concept to production</p>
-            </div>
-            
-            <div class="process-container">
-                <div class="process-line"></div>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <div class="step-text">Architecture</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="step-text">Design</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="step-text">Verification</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="step-text">Physical Design</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <div class="step-text">Fabrication</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-vial"></i>
-                        </div>
-                        <div class="step-text">Testing</div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-shipping-fast"></i>
-                        </div>
-                        <div class="step-text">Production</div>
-                    </div>
+    <!-- Process -->
+    <section id="process" class="bg-white py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Our Development Process</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-gray-700">
+                <div><i class="fas fa-sitemap text-orange-500 text-3xl mb-2"></i>
+                    <p>Architecture</p>
+                </div>
+                <div><i class="fas fa-code text-orange-500 text-3xl mb-2"></i>
+                    <p>Design</p>
+                </div>
+                <div><i class="fas fa-check-circle text-orange-500 text-3xl mb-2"></i>
+                    <p>Verification</p>
+                </div>
+                <div><i class="fas fa-project-diagram text-orange-500 text-3xl mb-2"></i>
+                    <p>Physical</p>
+                </div>
+                <div><i class="fas fa-industry text-orange-500 text-3xl mb-2"></i>
+                    <p>Fabrication</p>
+                </div>
+                <div><i class="fas fa-vial text-orange-500 text-3xl mb-2"></i>
+                    <p>Testing</p>
+                </div>
+                <div><i class="fas fa-shipping-fast text-orange-500 text-3xl mb-2"></i>
+                    <p>Production</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Foundry Partners -->
-    <section id="partners" class="foundry-partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Foundry Partners</h2>
-                <p>We work with leading semiconductor foundries worldwide</p>
-            </div>
-            
-            <div class="foundry-logos">
-                <div class="foundry-logo">TSMC</div>
-                <div class="foundry-logo">Samsung</div>
-                <div class="foundry-logo">GlobalFoundries</div>
-                <div class="foundry-logo">SMIC</div>
-                <div class="foundry-logo">UMC</div>
-            </div>
+    <section id="partners" class="bg-gray-100 py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold">Foundry Partners</h2>
+            <p class="text-gray-600">We work with leading semiconductor foundries worldwide</p>
+        </div>
+        <div class="flex justify-center flex-wrap gap-8">
+            <span class="bg-white rounded shadow px-6 py-3 text-lg font-semibold">TSMC</span>
+            <span class="bg-white rounded shadow px-6 py-3 text-lg font-semibold">Samsung</span>
+            <span class="bg-white rounded shadow px-6 py-3 text-lg font-semibold">GlobalFoundries</span>
+            <span class="bg-white rounded shadow px-6 py-3 text-lg font-semibold">SMIC</span>
+            <span class="bg-white rounded shadow px-6 py-3 text-lg font-semibold">UMC</span>
         </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section id="contact" class="foundry-partners" style="background-color: var(--primary); color: white;">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">Ready to Start Your Silicon Project?</h2>
-                <p style="color: #ddd;">Contact us for a consultation on your next chip development project</p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="mailto:contact@xpertrf.in" class="cta-button" style="background-color: var(--secondary); margin-right: 1rem;">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
-                <a href="tel:+919876543210" class="cta-button" style="background-color: transparent; border: 2px solid white;">
-                    <i class="fas fa-phone"></i> Call Us
-                </a>
-            </div>
-        </div>
+    <!-- Contact -->
+    <section id="contact" class="bg-blue-600 text-white text-center py-16">
+        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Silicon Project?</h2>
+        <p class="text-lg mb-6">Contact us for a consultation on your next chip development project</p>
+        <a href="mailto:contact@xpertrf.in"
+            class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded font-semibold mr-4">Email Us</a>
+        <a href="tel:+919876543210"
+            class="bg-transparent border border-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded font-semibold">Call
+            Us</a>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-container">
-        <div class="footer-wave"></div>
-        
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Company Info Column -->
-                <div class="footer-column">
-                    <h3 class="footer-logo">XpertRF</h3>
-                    <p class="footer-description">
-                        Leading provider of silicon services, PCB design, RFID, and automation solutions. 
-                        We deliver innovative technology solutions for a smarter, more connected future.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Silicon Services</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> PCB Design</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> SI/PI Analysis</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> RFID Solutions</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Our Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-microchip"></i> Silicon Services</a></li>
-                        <li><a href="#"><i class="fas fa-chart-line"></i> SI/PI Simulation</a></li>
-                        <li><a href="#"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
-                        <li><a href="#"><i class="fas fa-rss"></i> RFID Solutions</a></li>
-                        <li><a href="#"><i class="fas fa-code"></i> Web Development</a></li>
-                        <li><a href="#"><i class="fas fa-headset"></i> Technical Support</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h4 class="footer-title">Contact Info</h4>
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Bangalore Office</p>
-                            <p style="color: #dbeafe;">Karnataka, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Call Us</p>
-                            <a href="tel:+919876543210" style="color: #dbeafe; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#dbeafe'">+91 98765 43210</a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p style="font-weight: 600; color: white;">Email Us</p>
-                            <a href="mailto:contact@xpertrf.in" style="color: #dbeafe; text-decoration: none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#dbeafe'">contact@xpertrf.in</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- SINGLE LINE FOOTER BOTTOM -->
-            <div class="footer-bottom-single-line">
-                <div class="footer-bottom-content">
-                    <span>&copy; 2025 <span class="copyright-text">XpertRF TechnoSolutions</span>. All Rights Reserved.</span>
-                    <span class="separator">|</span>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="terms.html">Terms & Conditions</a>
-                    <span class="separator">|</span>
-                    <a href="sitemap.html">Sitemap</a>
-                    <span class="separator">|</span>
-                    <a href="cookies.html">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
+      <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
 
-    <!-- Floating Contact Buttons -->
-    <div class="floating-buttons">
-       
-        
-        <div class="floating-btn email" onclick="window.location.href='mailto:sales@xpertrf.in'">
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+         
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
             <i class="fas fa-envelope"></i>
-            <div class="tooltip">Send Email</div>
-        </div>
-        <div class="floating-btn phone" onclick="window.location.href='tel:+919876543210'">
-            <div class="pulse"></div>
-            <i class="fas fa-phone"></i>
-            <div class="tooltip">Call Us Now</div>
-        </div>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
 
-         <div class="floating-btn whatsapp" onclick="window.open('https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20your%20Silicon%20Services', '_blank')">
-            <div class="pulse"></div>
-            <i class="fab fa-whatsapp"></i>
-            <div class="tooltip">Chat on WhatsApp</div>
         </div>
-        
-        
+      </div>
+
     </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#contact' || targetId.startsWith('#')) {
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-        
-        // Add animation to service cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe service cards for animation
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-        
-        // Initialize floating buttons animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const floatingButtons = document.querySelectorAll('.floating-btn');
-            floatingButtons.forEach((btn, index) => {
-                btn.style.animationDelay = `${(index + 1) * 0.1}s`;
-            });
-        });
-    </script>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+    
+
+    <!-- Floating Contact Buttons -->
+    <a href="tel:+919019609379" class="phone-float" aria-label="Call Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+        </svg>
+    </a>
+
+    <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+    </a>
+
+    <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float"
+        aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
 </body>
+
 </html>

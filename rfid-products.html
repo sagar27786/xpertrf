@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +8,12 @@
 
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
+
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./src/styles/css/footer.css">
+
+  
 
   <!-- Enhanced Scroll Animation Styles -->
   <style>
@@ -17,74 +21,74 @@
     .scroll-fade {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1),
-                  transform 0.7s cubic-bezier(.4,0,.2,1);
+      transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1),
+        transform 0.7s cubic-bezier(.4, 0, .2, 1);
     }
-    
+
     .scroll-fade.visible {
       opacity: 1;
       transform: none;
     }
-    
+
     /* Parallax effect for background elements */
     .parallax-bg {
       transition: transform 0.1s ease-out;
       will-change: transform;
     }
-    
+
     /* Scale-in animation */
     .scale-in {
       opacity: 0;
       transform: scale(0.9);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-    
+
     .scale-in.visible {
       opacity: 1;
       transform: scale(1);
     }
-    
+
     /* Slide-in from left */
     .slide-left {
       opacity: 0;
       transform: translateX(-50px);
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     }
-    
+
     .slide-left.visible {
       opacity: 1;
       transform: translateX(0);
     }
-    
+
     /* Slide-in from right */
     .slide-right {
       opacity: 0;
       transform: translateX(50px);
       transition: opacity 0.7s ease-out, transform 0.7s ease-out;
     }
-    
+
     .slide-right.visible {
       opacity: 1;
       transform: translateX(0);
     }
-    
+
     /* Staggered children animation */
-    .stagger-children > * {
+    .stagger-children>* {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
-    
+
     /* Card hover effects */
     .card-hover {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .card-hover:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
-    
+
     /* Progress scroll indicator */
     .scroll-progress {
       position: fixed;
@@ -96,243 +100,56 @@
       z-index: 1000;
       transition: width 0.1s ease;
     }
-    
+
     /* Custom button animation */
     .btn-pulse {
       animation: pulse 2s infinite;
     }
-    
+
     @keyframes pulse {
       0% {
         box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
       }
+
       70% {
         box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
       }
+
       100% {
         box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
       }
     }
-    
+
     /* Smooth scrolling for the whole page */
     html {
       scroll-behavior: smooth;
     }
-    
+
     /* Hero section styling */
     .hero-gradient {
       background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     }
-    
+
     /* Floating animation */
     @keyframes float {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-20px);
       }
     }
-    
+
     .floating {
       animation: float 6s ease-in-out infinite;
     }
-    
+
     /* ================== ENHANCED FOOTER STYLES ================== */
-    .footer-container {
-      background: linear-gradient(135deg, #0a3d62 0%, #2596be 100%);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .footer-wave {
-      position: absolute;
-      top: -50px;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%230c4a6e'%3E%3C/path%3E%3C/svg%3E");
-      background-size: 1200px 100%;
-    }
-    
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: linear-gradient(to right, #93c5fd, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-    
-    .footer-column {
-      margin-bottom: 2rem;
-    }
-    
-    .footer-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.75rem;
-    }
-    
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: linear-gradient(to right, #60a5fa, #93c5fd);
-      border-radius: 2px;
-    }
-    
-    .footer-links {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.8rem;
-      transition: transform 0.2s ease;
-    }
-    
-    .footer-links li:hover {
-      transform: translateX(5px);
-    }
-    
-    .footer-links a {
-      color: #e6f7fb;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      transition: color 0.2s ease;
-    }
-    
-    .footer-links a:hover {
-      color: #fff;
-    }
-    
-    .footer-links i {
-      margin-right: 10px;
-      width: 20px;
-      text-align: center;
-      color: #93c5fd;
-    }
-    
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1.2rem;
-      color: #dbeafe;
-    }
-    
-    .footer-contact-icon {
-      background: rgba(96, 165, 250, 0.2);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
-    
-    .footer-contact-icon i {
-      color: #fff;
-    }
-    
-    .footer-newsletter {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 1.5rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .footer-newsletter input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-newsletter input::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .footer-newsletter button {
-      width: 100%;
-      padding: 0.75rem;
-      background: linear-gradient(to right, #3b82f6, #60a5fa);
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .footer-newsletter button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-    }
-    
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .footer-social a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      transition: all 0.3s ease;
-    }
-    
-    .footer-social a:hover {
-      background: #3b82f6;
-      transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
-      margin-top: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      color: #dbeafe;
-      font-size: 0.9rem;
-    }
-    
-    .footer-bottom-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-    
-    .footer-bottom-links a {
-      color: #e6f7fb;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    
-    .footer-bottom-links a:hover {
-      color: #fff;
-    }
-    
+   
+
     /* ================== ENHANCED FLOATING BUTTONS ================== */
     .floating-buttons {
       position: fixed;
@@ -343,7 +160,7 @@
       flex-direction: column;
       gap: 15px;
     }
-    
+
     .floating-btn {
       width: 60px;
       height: 60px;
@@ -357,7 +174,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .floating-btn::before {
       content: '';
       position: absolute;
@@ -369,39 +186,39 @@
       transform: translateY(100%);
       transition: transform 0.3s ease;
     }
-    
+
     .floating-btn:hover::before {
       transform: translateY(0);
     }
-    
+
     .floating-btn i {
       font-size: 1.5rem;
       color: white;
       position: relative;
       z-index: 2;
     }
-    
+
     .floating-btn.phone {
       background: #2596be;
     }
-    
+
     .floating-btn.email {
       background: #2596be;
     }
-    
+
     .floating-btn.whatsapp {
       background: #2596be;
     }
-    
+
     .floating-btn.chat {
       background: linear-gradient(135deg, #8B5CF6, #7C3AED);
     }
-    
+
     .floating-btn:hover {
       transform: translateY(-5px) scale(1.1);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
-    
+
     .floating-btn .tooltip {
       position: absolute;
       right: 70px;
@@ -416,12 +233,12 @@
       transition: all 0.3s ease;
       pointer-events: none;
     }
-    
+
     .floating-btn:hover .tooltip {
       opacity: 1;
       transform: translateX(0);
     }
-    
+
     .floating-btn .pulse {
       position: absolute;
       width: 100%;
@@ -431,69 +248,82 @@
       opacity: 0.6;
       animation: pulse-ring 2s infinite;
     }
-    
+
     @keyframes pulse-ring {
       0% {
         transform: scale(0.8);
         opacity: 0.8;
       }
+
       100% {
         transform: scale(1.5);
         opacity: 0;
       }
     }
-    
+
     /* Floating button animations */
     @keyframes float-up {
       0% {
         opacity: 0;
         transform: translateY(30px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
-    .floating-btn:nth-child(1) { animation: float-up 0.5s 0.1s both; }
-    .floating-btn:nth-child(2) { animation: float-up 0.5s 0.2s both; }
-    .floating-btn:nth-child(3) { animation: float-up 0.5s 0.3s both; }
-    .floating-btn:nth-child(4) { animation: float-up 0.5s 0.4s both; }
-    
+
+    .floating-btn:nth-child(1) {
+      animation: float-up 0.5s 0.1s both;
+    }
+
+    .floating-btn:nth-child(2) {
+      animation: float-up 0.5s 0.2s both;
+    }
+
+    .floating-btn:nth-child(3) {
+      animation: float-up 0.5s 0.3s both;
+    }
+
+    .floating-btn:nth-child(4) {
+      animation: float-up 0.5s 0.4s both;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .floating-buttons {
         right: 20px;
         bottom: 20px;
       }
-      
+
       .floating-btn {
         width: 50px;
         height: 50px;
       }
-      
+
       .floating-btn i {
         font-size: 1.2rem;
       }
-      
+
       .footer-bottom {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
       }
-      
+
       .footer-bottom-links {
         justify-content: center;
       }
     }
-    
+
     @media (max-width: 576px) {
       .floating-buttons {
         right: 15px;
         bottom: 15px;
         gap: 10px;
       }
-      
+
       .floating-btn {
         width: 45px;
         height: 45px;
@@ -507,7 +337,7 @@
   <div class="scroll-progress"></div>
 
   <!-- Navigation -->
- 
+
 
   <!-- Hero Section -->
   <section class="pt-24 pb-20 px-4 hero-gradient text-white overflow-hidden">
@@ -521,10 +351,12 @@
             Next-generation RFID architecture delivering real-time operational intelligence across industries.
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href="#overview" class="bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition duration-300">
+            <a href="#overview"
+              class="bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition duration-300">
               Explore Solutions
             </a>
-            <a href="#footer" class="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition duration-300">
+            <a href="#footer"
+              class="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition duration-300">
               Contact Us
             </a>
           </div>
@@ -532,9 +364,9 @@
         <div class="relative">
           <div class="floating">
             <div class="bg-white/20 rounded-2xl p-2 backdrop-blur-sm border border-white/30">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                   alt="RFID Technology"
-                   class="w-full h-80 object-cover rounded-xl shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="RFID Technology" class="w-full h-80 object-cover rounded-xl shadow-2xl">
             </div>
           </div>
           <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-400/30 rounded-full blur-xl"></div>
@@ -546,8 +378,10 @@
 
   <!-- ================= RFID SYSTEM OVERVIEW ================= -->
   <section id="overview" class="py-20 px-4 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
-    <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 parallax-bg" data-speed="0.3"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-20 parallax-bg" data-speed="0.5"></div>
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 parallax-bg"
+      data-speed="0.3"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-20 parallax-bg"
+      data-speed="0.5"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="text-center mb-14 scroll-fade">
@@ -562,23 +396,25 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="bg-white rounded-2xl shadow-xl border border-blue-100 p-6 card-hover scale-in">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-               alt="RFID System Architecture"
-               class="w-full h-[300px] object-cover rounded-lg"
-               loading="lazy">
+          <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="RFID System Architecture" class="w-full h-[300px] object-cover rounded-lg" loading="lazy">
         </div>
 
         <div class="space-y-6 stagger-children">
           <div class="flex gap-4 slide-left">
-            <span class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">01</span>
+            <span
+              class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">01</span>
             <div>
               <h3 class="text-xl font-semibold text-blue-800">Smart RFID Tags</h3>
-              <p class="text-gray-600">Unique identifiers enabling contactless data capture with advanced encryption for security.</p>
+              <p class="text-gray-600">Unique identifiers enabling contactless data capture with advanced encryption for
+                security.</p>
             </div>
           </div>
 
           <div class="flex gap-4 slide-left" style="transition-delay: 0.1s">
-            <span class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">02</span>
+            <span
+              class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">02</span>
             <div>
               <h3 class="text-xl font-semibold text-blue-800">High-Performance Readers</h3>
               <p class="text-gray-600">Fast, bulk reading in dynamic environments with multi-protocol support.</p>
@@ -586,7 +422,8 @@
           </div>
 
           <div class="flex gap-4 slide-left" style="transition-delay: 0.2s">
-            <span class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">03</span>
+            <span
+              class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">03</span>
             <div>
               <h3 class="text-xl font-semibold text-blue-800">Automation & Middleware</h3>
               <p class="text-gray-600">Event filtering and real-time decision triggers for seamless integration.</p>
@@ -594,7 +431,8 @@
           </div>
 
           <div class="flex gap-4 slide-left" style="transition-delay: 0.3s">
-            <span class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">04</span>
+            <span
+              class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">04</span>
             <div>
               <h3 class="text-xl font-semibold text-blue-800">Analytics & Insights</h3>
               <p class="text-gray-600">Dashboards transforming data into actionable intelligence.</p>
@@ -636,30 +474,30 @@
           End-to-End Visibility & Traceability
         </h2>
         <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-          Complete asset visibility across production, warehousing, distribution, and retail environments with real-time tracking.
+          Complete asset visibility across production, warehousing, distribution, and retail environments with real-time
+          tracking.
         </p>
       </div>
 
       <div class="relative">
         <div class="bg-white rounded-2xl shadow-2xl border border-blue-100 overflow-hidden scale-in">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-               alt="RFID Visibility Diagram"
-               class="w-full h-auto object-cover"
-               loading="lazy">
+          <img
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="RFID Visibility Diagram" class="w-full h-auto object-cover" loading="lazy">
         </div>
-        
+
         <!-- Floating info cards around the image -->
         <div class="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-lg border slide-right">
           <div class="text-blue-700 font-bold">Production</div>
           <div class="text-xs text-gray-600">Real-time monitoring</div>
         </div>
-        
+
         <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg border slide-left">
           <div class="text-blue-700 font-bold">Retail</div>
           <div class="text-xs text-gray-600">Smart inventory</div>
         </div>
       </div>
-      
+
       <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
         <div class="bg-white p-6 rounded-xl shadow border border-blue-100 card-hover">
           <div class="flex items-center mb-3">
@@ -670,7 +508,7 @@
           </div>
           <p class="text-gray-600">Track assets and inventory in real-time across your entire operation.</p>
         </div>
-        
+
         <div class="bg-white p-6 rounded-xl shadow border border-blue-100 card-hover">
           <div class="flex items-center mb-3">
             <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
@@ -680,7 +518,7 @@
           </div>
           <p class="text-gray-600">Trace items from origin to destination with full audit trails.</p>
         </div>
-        
+
         <div class="bg-white p-6 rounded-xl shadow border border-blue-100 card-hover">
           <div class="flex items-center mb-3">
             <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
@@ -696,8 +534,10 @@
 
   <!-- ================= APPLICATION LANDSCAPE ================= -->
   <section id="applications" class="py-20 px-4 bg-gradient-to-b from-white to-blue-50 relative scroll-fade">
-    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40 parallax-bg" data-speed="0.4"></div>
-    <div class="absolute top-40 right-20 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-30 parallax-bg" data-speed="0.2"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-40 parallax-bg"
+      data-speed="0.4"></div>
+    <div class="absolute top-40 right-20 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-30 parallax-bg"
+      data-speed="0.2"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="text-center mb-14">
@@ -711,10 +551,9 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="bg-white rounded-2xl shadow-xl border p-6 card-hover scale-in">
-          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-               alt="RFID Applications"
-               class="w-full h-[300px] object-cover rounded-lg"
-               loading="lazy">
+          <img
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="RFID Applications" class="w-full h-[300px] object-cover rounded-lg" loading="lazy">
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 stagger-children">
@@ -753,132 +592,138 @@
     </div>
   </section>
 
- 
-  <!-- ================= ENHANCED FOOTER ================= -->
-  <footer id="footer" class="footer-container pt-20 pb-8 px-4 md:px-8">
-    <div class="footer-wave"></div>
-    
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        
-        <!-- Company Info Column -->
-        <div class="footer-column">
-          <h3 class="footer-logo">XpertRF</h3>
-          <p class="mt-4 text-blue-100">
-            Leading provider of RFID, automation, and safety solutions for industrial tracking and identification. 
-            We deliver innovative technology solutions for a smarter, more connected future.
-          </p>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        
-        <!-- Quick Links Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
-            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-            <li><a href="brady.html"><i class="fas fa-chevron-right"></i> Brady Products</a></li>
-            <li><a href="trainings.html"><i class="fas fa-chevron-right"></i> Trainings</a></li>
-            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          </ul>
-        </div>
-        
-        <!-- Our Services Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Our Services</h4>
-          <ul class="footer-links">
-            <li><a href="rfid-solutions.html"><i class="fas fa-rss"></i> RFID Solutions</a></li>
-            <li><a href="web-development.html"><i class="fas fa-code"></i> Web Development</a></li>
-            <li><a href="android-development.html"><i class="fab fa-android"></i> Android Development</a></li>
-            <li><a href="antenna-design.html"><i class="fas fa-satellite"></i> Antenna Design</a></li>
-            <li><a href="technical-support.html"><i class="fas fa-headset"></i> Technical Support</a></li>
-            <li><a href="consulting.html"><i class="fas fa-lightbulb"></i> Consulting</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact & Newsletter Column -->
-        <div class="footer-column">
-          <h4 class="footer-title">Contact Info</h4>
-          <div class="space-y-4">
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Bangalore Office</p>
-                <p class="text-blue-100">Karnataka, India</p>
-              </div>
-            </div>
-            
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Call Us</p>
-                <a href="tel:+919876543210" class="text-blue-100 hover:text-white">+91 98765 43210</a>
-              </div>
-            </div>
-            
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <p class="font-semibold">Email Us</p>
-                <a href="mailto:contact@xpertrf.in" class="text-blue-100 hover:text-white">contact@xpertrf.in</a>
-              </div>
-            </div>
-          </div>
-          
-         
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <div>
-          <p>&copy; 2025 <span class="font-bold">XpertRF TechnoSolutions</span>. All Rights Reserved.</p>
-        </div>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms & Conditions</a>
-          <a href="sitemap.html">Sitemap</a>
-          <a href="cookies.html">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Enhanced Floating Contact Buttons -->
-  <div class="floating-buttons">
-   
-    <div class="floating-btn email" onclick="window.location.href='mailto:sales@xpertrf.in'">
-      <i class="fas fa-envelope"></i>
-      <div class="tooltip">Send Email</div>
+  <!-- Footer Section -->
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-broadcast-tower"></i> XpertRF
+        </h4>
+        <p class="footer-description">
+          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
+          and identification.<br><br>
+          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+        </p>
+
+        <div class="d-flex gap-3 mt-3 ">
+          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+         
+          <a href="mailto:contact@xpertrf.in" aria-label="Email">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-cogs"></i> Services
+        </h4>
+        <ul class="footer-links">
+          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
+          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
+          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
+          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
+          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-6 col-md-12">
+        <h4 class="footer-heading d-flex align-items-center gap-2">
+          <i class="fas fa-address-book"></i> Contact Info
+        </h4>
+
+        <div class="row gy-3">
+
+          <!-- Head Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
+            <p class="mt-2 mb-1">
+              XpertRF Technosolutions Pvt Ltd<br>
+              #525/61 Shamanur, Vajapayee, Badavane<br>
+              Davanagere – 577004, Karnataka
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Branch Office -->
+          <div class="col-md-6">
+            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
+            <p class="mt-2 mb-1">
+              No A52, Fifth Floor, RPR Complex<br>
+              Kamdhenu Nagar, Mahadevapura<br>
+              Bengaluru – 560016
+            </p>
+            <p class="mb-0">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919019609379">9019609379</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 mt-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-   
-    
-    <div class="floating-btn phone" onclick="window.location.href='tel:+919876543210'">
-      <div class="pulse"></div>
-      <i class="fas fa-phone"></i>
-      <div class="tooltip">Call Us Now</div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom mt-4 pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms & Conditions</a>
+          <span class="separator">|</span>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
     </div>
-    
-    <div class="floating-btn whatsapp" onclick="window.open('https://wa.me/919019609379?text=Hello%20I%20am%20interested%20in%20your%20RFID%20solutions', '_blank')">
-      <div class="pulse"></div>
-      <i class="fab fa-whatsapp"></i>
-      <div class="tooltip">Chat on WhatsApp</div>
-    </div>
-    
-    
+
   </div>
+</footer>
+
+  <!-- Floating Contact Buttons -->
+  <a href="tel:+919019609379" class="phone-float" aria-label="Call Us"
+    style="position: fixed; width: 60px; height: 60px; bottom: 190px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
+      <path
+        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+    </svg>
+  </a>
+
+  <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us"
+    style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 15px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
+      <path
+        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  </a>
+
+  <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float"
+    aria-label="Chat on WhatsApp"
+    style="position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #2596be; color: #fff; border-radius: 50%; text-align: center; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none; padding: 12px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+      style="width: 100%; height: 100%; object-fit: contain;">
+  </a>
 
 
   <!-- Enhanced Scroll Animation Script -->
@@ -886,16 +731,16 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Scroll progress indicator
       const scrollProgress = document.querySelector('.scroll-progress');
-      
+
       // Back to top button
       const backToTopBtn = document.getElementById('backToTop');
-      
+
       // Observer for scroll animations
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
+
             // For staggered children animation
             if (entry.target.classList.contains('stagger-children')) {
               const children = entry.target.children;
@@ -908,17 +753,17 @@
             }
           }
         });
-      }, { 
+      }, {
         threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
       });
-      
+
       // Observe all animated elements
       document.querySelectorAll('.scroll-fade, .scale-in, .slide-left, .slide-right, .stagger-children').forEach(el => observer.observe(el));
-      
+
       // Parallax effect for background elements
       const parallaxElements = document.querySelectorAll('.parallax-bg');
-      
+
       // Scroll progress and back to top button
       window.addEventListener('scroll', () => {
         // Update scroll progress
@@ -926,7 +771,7 @@
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         scrollProgress.style.width = scrolled + '%';
-        
+
         // Show/hide back to top button
         if (winScroll > 300) {
           backToTopBtn.style.opacity = '1';
@@ -935,14 +780,14 @@
           backToTopBtn.style.opacity = '0';
           backToTopBtn.style.pointerEvents = 'none';
         }
-        
+
         // Parallax effect
         parallaxElements.forEach(element => {
           const speed = element.getAttribute('data-speed') || 0.5;
           const yPos = -(winScroll * speed);
           element.style.transform = `translateY(${yPos}px)`;
         });
-        
+
         // Floating buttons scroll effect
         const floatingContainer = document.querySelector('.floating-buttons');
         if (winScroll > 500) {
@@ -953,7 +798,7 @@
           floatingContainer.style.transform = 'translateY(10px)';
         }
       });
-      
+
       // Back to top functionality
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
@@ -961,7 +806,7 @@
           behavior: 'smooth'
         });
       });
-      
+
       // Mobile menu toggle
       const mobileMenuBtn = document.querySelector('button.md\\:hidden');
       if (mobileMenuBtn) {
@@ -969,7 +814,7 @@
           alert('Mobile menu would open here. In a full implementation, this would show/hide a menu.');
         });
       }
-      
+
       // Floating buttons click animations
       const floatingButtons = document.querySelectorAll('.floating-btn');
       floatingButtons.forEach(btn => {
@@ -984,4 +829,5 @@
     });
   </script>
 </body>
+
 </html>
