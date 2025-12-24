@@ -714,3 +714,6 @@ header.header-autohide {
 .site-footer * {
   color: #ffffff !important;
 }
+
+
+/* 🔒 Isolate Tailwind footer from Bootstrap */

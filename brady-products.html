@@ -1,912 +1,291 @@
 <!DOCTYPE html>
-<html class="no-js" dir="ltr" lang="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brady Products | XpertRF - Safety & Identification Solutions</title>
-    <link rel="stylesheet" href="/assets/css/titillium-fonts.css">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/brands.min.css">
-    <link rel="stylesheet" href="/assets/css/solid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/styles/custom.css">
-    <link rel="stylesheet" href="./src/styles/css/footer.css">
-    
-    <!-- Professional Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --safety-red: #e53935;
-            --safety-yellow: #ffb300;
-            --safety-blue: #1565c0;
-            --safety-green: #43a047;
-            --industrial-gray: #37474f;
-            --light-gray: #f5f5f5;
-            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--industrial-gray);
-            line-height: 1.6;
-            background-color: #fafafa;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            color: var(--industrial-gray);
-        }
-        
-        /* Header Section */
-        .hero-header {
-            background: linear-gradient(rgba(21, 101, 192, 0.9), rgba(21, 101, 192, 0.95)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 5rem 0 3rem;
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.1;
-        }
-        
-        .hero-header h1 {
-            color: white;
-            font-size: 2.75rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .back-btn {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 4px;
-            background-color: rgba(255, 255, 255, 0.15);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .back-btn:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            color: white;
-            transform: translateX(-5px);
-        }
-        
-        /* About Section */
-        .about-section {
-            margin-bottom: 4rem;
-        }
-        
-        .company-logo {
-            max-height: 60px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .certification-badge {
-            background: linear-gradient(135deg, var(--safety-blue), var(--safety-green));
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .certification-badge h5 {
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Product Cards */
-        .product-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            background: white;
-            box-shadow: var(--card-shadow);
-            border-top: 4px solid var(--safety-blue);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-        }
-        
-        .product-card .card-img-top {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .product-category {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-        
-        .product-category h3 {
-            border-bottom: 3px solid var(--safety-yellow);
-            padding-bottom: 10px;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        /* Intelligent Manufacturing Section */
-        .intelligent-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 3rem;
-            border-radius: 15px;
-            margin: 4rem 0;
-            border-left: 5px solid var(--safety-green);
-        }
-        
-        .tech-feature {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--safety-blue);
-        }
-        
-        .tech-feature h6 {
-            color: var(--safety-blue);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Printer Table */
-        .printer-table {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            margin: 3rem 0;
-        }
-        
-        .printer-table thead {
-            background: linear-gradient(to right, var(--safety-blue), #1e88e5);
-            color: white;
-        }
-        
-        .printer-table th {
-            font-weight: 600;
-            border: none;
-        }
-        
-        .printer-table tbody tr {
-            transition: background-color 0.2s ease;
-        }
-        
-        .printer-table tbody tr:hover {
-            background-color: rgba(21, 101, 192, 0.05);
-        }
-        
-        .printer-badge {
-            background-color: var(--safety-red);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-        
-        /* Industries Section */
-        .industries-section {
-            background: var(--light-gray);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-        }
-        
-        .industry-item {
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            background: white;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .industry-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-        
-        .industry-item::before {
-            content: "▸";
-            color: var(--safety-blue);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        /* Enhanced Floating Contact Buttons */
-        .floating-contact-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 15px;
-        }
-        
-        .floating-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .floating-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .floating-btn:hover::before {
-            transform: translateY(0);
-        }
-        
-        .floating-btn:hover {
-            transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .floating-btn-main {
-            background: linear-gradient(135deg, #2596be, #1e40af);
-        }
-        
-        .floating-btn-phone {
-            background: #2596be;
-        }
-        
-        .floating-btn-email {
-            background: #2596be;
-        }
-        
-        .floating-btn-whatsapp {
-            background: #2596be;
-        }
-        
-        .floating-btn svg, .floating-btn img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0) invert(1);
-            z-index: 2;
-            position: relative;
-        }
-        
-        .floating-btn-whatsapp img {
-            width: 32px;
-            height: 32px;
-        }
-        
-        .floating-label {
-            position: absolute;
-            right: 70px;
-            background: white;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            transform: translateX(20px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            color: var(--industrial-gray);
-        }
-        
-        .floating-label::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -8px;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 8px 0 8px 8px;
-            border-color: transparent transparent transparent white;
-        }
-        
-        .floating-btn:hover .floating-label {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .floating-btn-main .floating-label {
-            background: var(--safety-blue);
-            color: white;
-        }
-        
-        .floating-btn-main .floating-label::after {
-            border-color: transparent transparent transparent var(--safety-blue);
-        }
-        
-        /* Enhanced Footer */
-        
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--industrial-gray), #546e7a);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, #455a64, var(--industrial-gray));
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero-header {
-                padding: 3rem 0 2rem;
-            }
-            
-            .hero-header h1 {
-                font-size: 2rem;
-            }
-            
-            .intelligent-section {
-                padding: 2rem;
-            }
-            
-            .industries-section {
-                padding: 2rem;
-            }
-            
-            .floating-contact-container {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .floating-btn svg, .floating-btn img {
-                width: 24px;
-                height: 24px;
-            }
-            
-            .floating-btn-whatsapp img {
-                width: 26px;
-                height: 26px;
-            }
-            
-            .floating-label {
-                display: none;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .footer-bottom-links {
-                justify-content: center;
-            }
-            
-            .back-to-top {
-                bottom: 90px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-        
-        /* Safety Color Highlights */
-        .safety-red { color: var(--safety-red); }
-        .safety-yellow { color: var(--safety-yellow); }
-        .safety-blue { color: var(--safety-blue); }
-        .safety-green { color: var(--safety-green); }
-        
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(21, 101, 192, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
-        }
-        
-        .floating-btn-main {
-            animation: pulse 2s infinite;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brady Products | XpertRF</title>
+
+  <!-- Bootstrap (legacy support) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gmail-float, .phone-float, .whatsapp-float {
+      position: fixed;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2596be;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transition: transform .3s ease;
+      z-index: 999;
+    }
+
+    .gmail-float { bottom: 170px; }
+    .phone-float { bottom: 100px; }
+    .whatsapp-float { bottom: 30px; background:#25d366; }
+
+    .gmail-float svg,
+    .phone-float svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
 </head>
-<body>
-    <!-- Hero Header -->
-    <div class="hero-header">
-        <div class="container">
-            <a href="index.html" class="back-btn">&larr; Back to Home</a>
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h1>Brady Products - Safety & Identification Solutions</h1>
-                    <p class="lead" style="color: rgba(255,255,255,0.9); font-size: 1.25rem;">Complete workplace safety and identification solutions for industrial environments</p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px);">
-                        <h5 class="mb-2">Authorized Reseller</h5>
-                        <p class="mb-0">XpertRF is an authorized reseller for Brady Products across India</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <!-- About Brady Section -->
-        <div class="row about-section fade-in">
-            <div class="col-lg-6 mb-4">
-                <img src="https://www.bradyindia.co.in/-/media/Brady%20India/i7100_Circuit_Board_app.jpg" alt="Brady Industrial Printer" class="img-fluid rounded shadow" style="border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4">About Brady Corporation</h2>
-                <p class="lead" style="color: var(--industrial-gray);">Brady Corporation is an international manufacturer and marketer of complete solutions that identify and protect people, products and premises.</p>
-                
-                <p>Brady specializes in workplace safety as well as identification of cables, wires and products. Brady's products help customers increase safety, security, productivity, compliance, and performance with high-performance labels, signs, safety devices, printing systems and software.</p>
-                
-                <div class="certification-badge">
-                    <h5><i class="fas fa-certificate me-2"></i>Quality Certifications</h5>
-                    <p class="mb-0">Brady India Plant is ISO, IATF, AS9100D certified and under qualified Suppliers list for AIRBUS and BOEING Aerospace companies.</p>
-                </div>
-                
-                <div class="alert alert-warning" style="border-left: 4px solid var(--safety-yellow);">
-                    <strong><i class="fas fa-handshake me-2"></i>Authorized Partnership:</strong> XpertRF is associated with Brady India as Authorized Resellers for wide range of Brady Products dealing with supplies all over Karnataka and India. <strong>Contact us directly for inquiries and product catalogs.</strong>
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-50 text-gray-800">
 
-        <!-- Product Categories -->
-        <div class="product-category fade-in">
-            <h3>Our Product Categories</h3>
-            <p class="text-muted mb-4">Comprehensive range of safety and identification solutions</p>
-            
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="product-card">
-                        <img src="https://www.bradyindia.co.in/-/media/intelligent-manufacturing/image/comprehensive-label-offering.jpg" class="card-img-top" alt="Industrial Printers">
-                        <div class="card-body">
-                            <h5 class="card-title safety-blue">Industrial Printers</h5>
-                            <p class="card-text text-muted">High-performance label printers for industrial environments</p>
-                            <ul class="small" style="list-style: none; padding-left: 0;">
-                                <li><i class="fas fa-print text-muted me-2"></i>Portable handheld printers</li>
-                                <li><i class="fas fa-desktop text-muted me-2"></i>Desktop thermal printers</li>
-                                <li><i class="fas fa-industry text-muted me-2"></i>Industrial label printers</li>
-                                <li><i class="fas fa-palette text-muted me-2"></i>Inkjet color printers</li>
-                                <li><i class="fas fa-bolt text-muted me-2"></i>Wire marking systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="product-card">
-                        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_0Fm4u8q.13.58_PM_VZ7PTjH.jpeg" class="card-img-top" alt="Labels">
-                        <div class="card-body">
-                            <h5 class="card-title safety-green">Customized Labels</h5>
-                            <p class="card-text text-muted">Hundreds of custom materials for any industrial application</p>
-                            <ul class="small" style="list-style: none; padding-left: 0;">
-                                <li><i class="fas fa-barcode text-muted me-2"></i>Barcode labels</li>
-                                <li><i class="fas fa-rss text-muted me-2"></i>RFID labels (on/off-metal)</li>
-                                <li><i class="fas fa-flask text-muted me-2"></i>Chemical resistant labels</li>
-                                <li><i class="fas fa-fire text-muted me-2"></i>High-temperature labels</li>
-                                <li><i class="fas fa-thermometer-half text-muted me-2"></i>Temperature sensor tags</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="product-card">
-                        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_wbsl9QV.14.06_PM.jpeg" class="card-img-top" alt="Signages">
-                        <div class="card-body">
-                            <h5 class="card-title safety-red">Safety Signages</h5>
-                            <p class="card-text text-muted">Comprehensive safety and facility signage solutions</p>
-                            <ul class="small" style="list-style: none; padding-left: 0;">
-                                <li><i class="fas fa-exclamation-triangle text-muted me-2"></i>Warning & prohibition signs</li>
-                                <li><i class="fas fa-door-open text-muted me-2"></i>Emergency exit signs</li>
-                                <li><i class="fas fa-building text-muted me-2"></i>Custom facility signs</li>
-                                <li><i class="fas fa-lightbulb text-muted me-2"></i>LED sign projectors</li>
-                                <li><i class="fas fa-faucet text-muted me-2"></i>Pipe & valve markers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="product-card">
-                        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_MI40a2S.14.28_PM_8YoZ7ZA.jpeg" class="card-img-top" alt="Floor Tapes">
-                        <div class="card-body">
-                            <h5 class="card-title safety-yellow">Safety Products</h5>
-                            <p class="card-text text-muted">Durable floor marking and safety equipment</p>
-                            <ul class="small" style="list-style: none; padding-left: 0;">
-                                <li><i class="fas fa-road text-muted me-2"></i>Floor marking tapes</li>
-                                <li><i class="fas fa-stripe-s text-muted me-2"></i>Safety striping tapes</li>
-                                <li><i class="fas fa-lock text-muted me-2"></i>Lockout/Tagout devices</li>
-                                <li><i class="fas fa-tint text-muted me-2"></i>Spill absorbents</li>
-                                <li><i class="fas fa-tag text-muted me-2"></i>Tags & identification</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Intelligent Manufacturing Section -->
-        <div class="intelligent-section fade-in">
-            <h3 class="mb-4">Intelligent Manufacturing Solutions</h3>
-            <p class="lead mb-4">Brady's world-class technologies bring smart industrial data exchange to your operations with the software needed to connect it all.</p>
-            
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                    <div class="tech-feature">
-                        <h6><i class="fas fa-qrcode me-2 safety-blue"></i>Advanced Technologies</h6>
-                        <ul class="mb-0">
-                            <li><strong>Barcode Scanners:</strong> Industrial-grade V4500 wireless scanners</li>
-                            <li><strong>RFID Technology:</strong> Fixed and handheld RFID readers</li>
-                            <li><strong>Edge Computing:</strong> Local real-time data analysis</li>
-                            <li><strong>Mobile Solutions:</strong> Design and print from mobile devices</li>
-                            <li><strong>Software Integration:</strong> LINK360® Process Plus management</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                    <div class="tech-feature">
-                        <h6><i class="fas fa-cogs me-2 safety-green"></i>Key Features</h6>
-                        <ul class="mb-0">
-                            <li>Ruggedized industrial products</li>
-                            <li>Streamlined inventory tracking</li>
-                            <li>Work in progress optimization</li>
-                            <li>Enhanced integration to business systems</li>
-                            <li>On-premise and cloud API support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Printer Models Table -->
-        <div class="fade-in">
-            <h3 class="mb-4">Featured Brady Printer Models</h3>
-            <div class="printer-table">
-                <table class="table table-hover mb-0">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Type</th>
-                            <th>Key Features</th>
-                            <th>Primary Applications</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong class="safety-blue">M210</strong><br><span class="printer-badge">Portable</span></td>
-                            <td>Handheld Printer</td>
-                            <td>Fast, reliable, pre-sized labels, easy to use</td>
-                            <td>On-site labeling, field service, maintenance</td>
-                        </tr>
-                        <tr>
-                            <td><strong class="safety-blue">M410 / M510</strong><br><span class="printer-badge" style="background-color: var(--safety-green);">Multi-line</span></td>
-                            <td>Portable Printer</td>
-                            <td>Multi-line printing, wire markers, durable design</td>
-                            <td>Wire marking, labels, facility identification</td>
-                        </tr>
-                        <tr>
-                            <td><strong class="safety-blue">i7100</strong><br><span class="printer-badge" style="background-color: var(--safety-red);">600 DPI</span></td>
-                            <td>Industrial Printer</td>
-                            <td>High performance, simplified setup, 600 DPI quality</td>
-                            <td>Product ID, wire ID, warehouse labels</td>
-                        </tr>
-                        <tr>
-                            <td><strong class="safety-blue">J7300</strong><br><span class="printer-badge" style="background-color: #9c27b0;">Color</span></td>
-                            <td>Industrial Inkjet</td>
-                            <td>Full color printing, WiFi connectivity, included software</td>
-                            <td>Color labels, product identification, safety signs</td>
-                        </tr>
-                        <tr>
-                            <td><strong class="safety-blue">S3700</strong><br><span class="printer-badge" style="background-color: var(--safety-yellow); color: #333;">Multicolor</span></td>
-                            <td>Benchtop Printer</td>
-                            <td>Thermal transfer, multi-color capability, versatile</td>
-                            <td>Safety signs, arc flash labels, compliance marking</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Industries We Serve -->
-        <div class="industries-section fade-in">
-            <h3 class="mb-4">Industries We Serve</h3>
-            <p class="text-muted mb-4">Brady products are trusted across diverse industries for safety and identification needs</p>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="industry-item">Manufacturing</div>
-                    <div class="industry-item">Warehousing & Logistics</div>
-                    <div class="industry-item">Healthcare</div>
-                    <div class="industry-item">Chemical & Petrochemical</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="industry-item">Construction</div>
-                    <div class="industry-item">Utilities & Energy</div>
-                    <div class="industry-item">Food & Beverage</div>
-                    <div class="industry-item">Telecommunications</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Enhanced Floating Contact Buttons -->
-    <div class="floating-contact-container">
-        
-         <a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email Us">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-      </svg>
+<!-- HERO -->
+<section class="relative bg-[linear-gradient(rgba(21,101,192,.9),rgba(21,101,192,.95)),url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center text-white py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <a href="index.html" class="inline-block mb-8 px-4 py-2 bg-white/20 rounded hover:bg-white/30">
+      ← Back to Home
     </a>
-        
-       <a href="tel:+919019609379" class="phone-float" aria-label="Call Us">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-      </svg>
-    </a>
-        
-       
-       <a href="https://wa.me/919019609379?text=Hello%20I%20am%20interested" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-    
-        
-       
-    </div>
 
-    <!-- Enhanced Footer Section -->
-     <footer class="site-footer">
-  <div class="container">
-    <div class="row gy-4">
-
-      <!-- Company Info -->
-      <div class="col-lg-4 col-md-6">
-        <h4 class="footer-heading d-flex align-items-center gap-2">
-          <i class="fas fa-broadcast-tower"></i> XpertRF
-        </h4>
-        <p class="footer-description">
-          XpertRF TechnoSolutions is a leading provider of RFID, automation, and safety solutions for industrial tracking
-          and identification.<br><br>
-          We deliver innovative technology solutions that enable a smarter, more connected and sustainable future.
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+          Brady Products – Safety & Identification Solutions
+        </h1>
+        <p class="text-lg text-white/90 max-w-2xl">
+          Complete workplace safety and identification solutions for industrial environments
         </p>
+      </div>
 
-        <div class="d-flex gap-3 mt-3 ">
-          <a href="https://www.linkedin.com/company/xpertrf" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin fa-lg"></i>
-          </a>
-          <a href="https://twitter.com/xpertrf" target="_blank" aria-label="Twitter">
-            <i class="fab fa-twitter fa-lg"></i>
-          </a>
-         
-          <a href="mailto:contact@xpertrf.in" aria-label="Email">
-            <i class="fas fa-envelope fa-lg"></i>
-          </a>
+      <div class="lg:col-span-4 lg:text-right">
+        <div class="inline-block bg-white/20 backdrop-blur-lg p-6 rounded-xl">
+          <h5 class="font-semibold mb-2">Authorized Reseller</h5>
+          <p class="text-sm">XpertRF is an authorized reseller for Brady Products across India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="max-w-7xl mx-auto px-6">
+
+  <!-- ABOUT -->
+  <div class="grid lg:grid-cols-2 gap-12 my-16 fade-in">
+    <img src="https://www.bradyindia.co.in/-/media/Brady%20India/i7100_Circuit_Board_app.jpg"
+         class="rounded-xl shadow-lg border-[5px] border-white" alt="Brady Printer">
+
+    <div>
+      <h2 class="text-3xl font-bold mb-4">About Brady Corporation</h2>
+      <p class="text-lg mb-4 text-gray-700">
+        Brady Corporation is an international manufacturer and marketer of complete solutions
+        that identify and protect people, products and premises.
+      </p>
+      <p class="mb-6">
+        Brady specializes in workplace safety and identification solutions that increase
+        productivity, compliance and performance.
+      </p>
+
+      <div class="bg-gradient-to-r from-blue-700 to-green-600 text-white p-6 rounded-xl mb-6">
+        <h5 class="font-semibold mb-2">
+          <i class="fas fa-certificate mr-2"></i>Quality Certifications
+        </h5>
+        ISO, IATF, AS9100D certified and approved for AIRBUS & BOEING.
+      </div>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+        <strong><i class="fas fa-handshake mr-2"></i>Authorized Partnership:</strong>
+        XpertRF is an authorized reseller across India.
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT CARDS -->
+  <div class="my-20 fade-in">
+    <h3 class="text-3xl font-bold mb-8">Our Product Categories</h3>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <div class="bg-white rounded-xl shadow hover:-translate-y-2 transition border-t-4 border-blue-700">
+        <img src="https://www.bradyindia.co.in/-/media/intelligent-manufacturing/image/comprehensive-label-offering.jpg"
+             class="h-48 w-full object-cover rounded-t-xl">
+        <div class="p-5">
+          <h5 class="font-semibold text-blue-700 mb-2">Industrial Printers</h5>
+          <ul class="text-sm space-y-1">
+            <li>Portable printers</li>
+            <li>Desktop printers</li>
+            <li>Industrial systems</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Services -->
-      <div class="col-lg-2 col-md-6">
-        <h4 class="footer-heading d-flex align-items-center gap-2">
-          <i class="fas fa-cogs"></i> Services
-        </h4>
-        <ul class="footer-links">
-          <li><a href="silicon-services.html"><i class="fas fa-microchip"></i> Silicon Services</a></li>
-          <li><a href="si-pi-em-simulations.html"><i class="fas fa-wave-square"></i> SI/PI Simulation</a></li>
-          <li><a href="pcb-design.html"><i class="fas fa-project-diagram"></i> PCB Design</a></li>
-          <li><a href="rfid-products.html"><i class="fas fa-broadcast-tower"></i> RFID Products</a></li>
-          <li><a href="trainings.html"><i class="fas fa-graduation-cap"></i> Trainings</a></li>
+      <div class="bg-white rounded-xl shadow hover:-translate-y-2 transition border-t-4 border-green-600">
+        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_0Fm4u8q.13.58_PM_VZ7PTjH.jpeg"
+             class="h-48 w-full object-cover rounded-t-xl">
+        <div class="p-5">
+          <h5 class="font-semibold text-green-600 mb-2">Customized Labels</h5>
+          <ul class="text-sm space-y-1">
+            <li>Barcode</li>
+            <li>RFID</li>
+            <li>High temperature</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow hover:-translate-y-2 transition border-t-4 border-red-600">
+        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_wbsl9QV.14.06_PM.jpeg"
+             class="h-48 w-full object-cover rounded-t-xl">
+        <div class="p-5">
+          <h5 class="font-semibold text-red-600 mb-2">Safety Signages</h5>
+          <ul class="text-sm space-y-1">
+            <li>Warning signs</li>
+            <li>Emergency exits</li>
+            <li>Facility signs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow hover:-translate-y-2 transition border-t-4 border-yellow-500">
+        <img src="https://xpertrf.in/media/images/WhatsApp_Image_2024-07-30_at_7_MI40a2S.14.28_PM_8YoZ7ZA.jpeg"
+             class="h-48 w-full object-cover rounded-t-xl">
+        <div class="p-5">
+          <h5 class="font-semibold text-yellow-600 mb-2">Safety Products</h5>
+          <ul class="text-sm space-y-1">
+            <li>Floor tapes</li>
+            <li>Lockout devices</li>
+            <li>Tags</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- FLOATING BUTTONS -->
+<a href="mailto:sales@xpertrf.in" class="gmail-float" aria-label="Email">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+</a>
+
+<a href="tel:+919019609379" class="phone-float" aria-label="Phone">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.57 3.57 1 1 0 01-.25 1.02l-2.2 2.2z"/>
+  </svg>
+</a>
+
+<a href="https://wa.me/919019609379" target="_blank" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<!-- FOOTER (UNCHANGED) -->
+<footer class="bg-gradient-to-r from-[#0a3d62] to-[#1f7ea4] text-white">
+  <div class="max-w-7xl mx-auto px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-14">
+
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 relative inline-block">
+          XpertRF
+          <span class="block w-12 h-0.5 bg-white mt-2"></span>
+        </h3>
+        <p class="text-sm leading-7 text-white/90 max-w-md">
+          XpertRF Technosolutions Pvt Ltd is a leading provider of advanced electronic design
+          solutions and training services, specializing in PCB design, antenna design, RFID
+          solutions, and industrial IoT integration.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 relative inline-block">
+          Quick Links
+          <span class="block w-12 h-0.5 bg-white mt-2"></span>
+        </h3>
+        <ul class="space-y-3 text-sm text-white/90">
+          <li><a href="silicon-services.html" class="hover:text-white">Services</a></li>
+          <li><a href="trainings.html" class="hover:text-white">Trainings</a></li>
+          <li><a href="rfid-products.html" class="hover:text-white">RFID Products</a></li>
+          <li><a href="brady-products.html" class="hover:text-white">Brady Products</a></li>
         </ul>
       </div>
 
-      <!-- Contact Info -->
-      <div class="col-lg-6 col-md-12">
-        <h4 class="footer-heading d-flex align-items-center gap-2">
-          <i class="fas fa-address-book"></i> Contact Info
-        </h4>
+      <!-- Contact -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 relative inline-block">
+          Contact Us
+          <span class="block w-12 h-0.5 bg-white mt-2"></span>
+        </h3>
 
-        <div class="row gy-3">
-
-          <!-- Head Office -->
-          <div class="col-md-6">
-            <strong><i class="fas fa-map-marker-alt"></i> Head Office</strong>
-            <p class="mt-2 mb-1">
-              XpertRF Technosolutions Pvt Ltd<br>
-              #525/61 Shamanur, Vajapayee, Badavane<br>
+        <ul class="space-y-4 text-sm text-white/90">
+          <li class="flex gap-3">
+            <span>📍</span>
+            <span>
+              XpertRF Technosolutions Pvt Ltd, #525/61 Shamanur, Vajapayee, Badavane,
               Davanagere – 577004, Karnataka
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919019609379">9019609379</a>
-            </p>
-          </div>
+            </span>
+          </li>
 
-          <!-- Branch Office -->
-          <div class="col-md-6">
-            <strong><i class="fas fa-map-marker-alt"></i> Branch Office</strong>
-            <p class="mt-2 mb-1">
-              No A52, Fifth Floor, RPR Complex<br>
-              Kamdhenu Nagar, Mahadevapura<br>
-              Bengaluru – 560016
-            </p>
-            <p class="mb-0">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919019609379">9019609379</a>
-            </p>
-          </div>
+          <li class="flex gap-3">
+            <span>📞</span>
+            <span>+91 9019609379</span>
+          </li>
 
-          <!-- Email -->
-          <div class="col-12 mt-3">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:contact@xpertrf.in">contact@xpertrf.in</a>
-          </div>
-
-        </div>
+          <li class="flex gap-3">
+            <span>✉️</span>
+            <span>sales@xpertrf.com</span>
+          </li>
+        </ul>
       </div>
 
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom mt-4 pt-3">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-        <p class="mb-0">&copy; 2025 XpertRF TechnoSolutions. All Rights Reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <span class="separator">|</span>
-          <a href="#">Terms & Conditions</a>
-          <span class="separator">|</span>
-          <a href="#">Sitemap</a>
-        </div>
-      </div>
+    <!-- Divider -->
+    <div class="border-t border-white/20 mt-12 pt-6">
+      <p class="text-sm text-white/80">
+        © 2024 XpertRF Technosolutions Pvt Ltd. All rights reserved.
+      </p>
     </div>
-
   </div>
 </footer>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Add fade-in animations on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            fadeElements.forEach(element => {
-                element.style.opacity = '0';
-                observer.observe(element);
-            });
-            
-            // Back to top button
-            const backToTopButton = document.querySelector('.back-to-top');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('visible');
-                } else {
-                    backToTopButton.classList.remove('visible');
-                }
-            });
-            
-            backToTopButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Add hover effect to product cards
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    const borderColor = this.querySelector('.card-title').classList[1];
-                    this.style.borderTopColor = getComputedStyle(document.documentElement).getPropertyValue(`--${borderColor}`);
-                });
-            });
-            
-            // Floating button animations
-            const floatingButtons = document.querySelectorAll('.floating-btn');
-            floatingButtons.forEach(btn => {
-                btn.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.1)';
-                });
-                
-                btn.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-        });
-    </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animation = 'fadeInUp .6s ease forwards';
+          obs.unobserve(e.target);
+        }
+      });
+    });
+    fadeEls.forEach(el => { el.style.opacity = '0'; obs.observe(el); });
+  }
+});
+</script>
+
 </body>
 </html>
